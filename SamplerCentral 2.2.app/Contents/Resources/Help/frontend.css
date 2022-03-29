@@ -1,0 +1,11 @@
+.str { color: #606060; } /* strings */
+.kwd { color: #3333BF; } /* special values like true, nil.. */
+.com { color: #BF0000; } /* comments */
+.typ { color: #0000BF; } /* class names */
+.lit { color: #000000; } /* numbers and character literals */
+.pun { color: #000000; } /* punctuation */
+.pln { color: #000000; } /* plain text, methods and variable names */
+.tag { color: #6666BF; } /* special variables like super, thisProcess... */
+.dec { color: #0000FF; } /* declarations like var, const... */
+.atn { color: #007300; } /* symbols */
+.atv { color: #FF6600; } /* environment vars */

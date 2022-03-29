@@ -1,0 +1,27 @@
+var o, p;
+o = [
+	Array.prNew(2),  Event.prNew,  Array.prNew(8),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(2),  Array.prNew(2),  Array.prNew(2)
+];
+p = [
+	// Array
+	0, [ 1,  o[1] ],  
+	// Event
+	1, [ array: o[2],  size: 2,  
+		proto: nil,  parent: nil,  
+		know: true ],  
+	// Array
+	2, [ nil,  nil,  'hornBot',  o[3],  
+		nil,  nil,  'robot1',  o[4] ],  
+	// Array
+	3, [ 1,  0 ],  
+	// Array
+	4, [ o[5],  54.000000,  6.456000 ],  
+	// Array
+	5, [ o[6],  o[7] ],  
+	// Array
+	6, [ 0.000000,  0.415000 ],  
+	// Array
+	7, [ 0.630000,  0.160000 ]
+];
+prUnarchive(o,p);

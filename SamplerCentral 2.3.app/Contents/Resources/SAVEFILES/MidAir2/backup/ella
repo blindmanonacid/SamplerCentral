@@ -1,0 +1,205 @@
+var o, p;
+o = [
+	Array.prNew(4),  Array.prNew(37),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits/skritt/skritt_kvinne1.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits/skritt/skritt_kvinne2.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Et Dukkehjem/hosteIvar1.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits/astma.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits/klo.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops/operasjon2.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits/fitteSprutEn.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits/oyePlukke.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits/pillerRiste.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits/pillerApne.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits/pillerHelle.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops/pillerKnaske.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits/pillerLukke.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits/svelg.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits/sproyte.wav",  List.prNew,  Array.prNew(37),  Array.prNew(6),  
+	Array.prNew(6),  Array.prNew(6),  Array.prNew(6),  Array.prNew(6),  
+	Array.prNew(6),  Array.prNew(6),  Array.prNew(6),  Array.prNew(6),  
+	Array.prNew(6),  Array.prNew(6),  Array.prNew(6),  Array.prNew(6),  
+	Array.prNew(6),  Array.prNew(6),  Array.prNew(6),  Array.prNew(6),  
+	Array.prNew(6),  Array.prNew(6),  Array.prNew(6),  Array.prNew(6),  
+	Array.prNew(6),  Array.prNew(6),  Array.prNew(6),  Array.prNew(6),  
+	Array.prNew(6),  Array.prNew(6),  Array.prNew(6),  Array.prNew(6),  
+	Array.prNew(6),  Array.prNew(6),  Array.prNew(6),  Array.prNew(6),  
+	Array.prNew(6),  Array.prNew(6),  Array.prNew(6),  Array.prNew(6),  
+	Array.prNew(8),  Array.prNew(2),  "gpLooper",  Array.prNew(2),  
+	Array.prNew(2),  Array.prNew(2),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(2),  Array.prNew(2),  Array.prNew(9),  Array.prNew(2),  
+	"gpLooper",  Array.prNew(2),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(2),  Array.prNew(2),  Array.prNew(2),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops/sykkelTrehjul.wav",  
+	"diskin",  Array.prNew(2),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops/operasjon2.wav",  Array.prNew(2),  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Tale/Gregers/G Pust.wav"
+];
+p = [
+	// Array
+	0, [ o[1],  o[17],  o[56],  o[66] ],  
+	// Array
+	1, [ o[2],  o[3],  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  o[4],  o[5],  
+		nil,  o[6],  o[7],  o[8],  
+		o[9],  nil,  nil,  o[10],  
+		o[11],  o[12],  o[13],  o[14],  
+		o[15],  nil,  o[16],  nil,  
+		nil,  nil,  nil,  nil,  
+		nil ],  
+	// List
+	17, [ array: o[18] ],  
+	// Array
+	18, [ o[19],  o[20],  o[21],  o[22],  
+		o[23],  o[24],  o[25],  o[26],  
+		o[27],  o[28],  o[29],  o[30],  
+		o[31],  o[32],  o[33],  o[34],  
+		o[35],  o[36],  o[37],  o[38],  
+		o[39],  o[40],  o[41],  o[42],  
+		o[43],  o[44],  o[45],  o[46],  
+		o[47],  o[48],  o[49],  o[50],  
+		o[51],  o[52],  o[53],  o[54],  
+		o[55] ],  
+	// Array
+	19, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	20, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	21, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	22, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	23, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	24, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	25, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	26, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	27, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	28, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	29, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	30, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	31, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	32, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	33, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	34, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	35, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	36, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	37, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	38, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	39, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	40, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	41, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	42, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	43, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	44, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	45, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	46, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	47, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	48, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	49, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	50, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	51, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	52, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	53, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	54, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	55, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0 ],  
+	// Array
+	56, [ o[57],  o[59],  o[60],  o[61],  
+		o[62],  o[63],  o[64],  o[65] ],  
+	// Array
+	57, [ nil,  o[58] ],  
+	// Array
+	59, [ nil,  o[58] ],  
+	// Array
+	60, [ nil,  o[58] ],  
+	// Array
+	61, [ nil,  o[58] ],  
+	// Array
+	62, [ nil,  o[58] ],  
+	// Array
+	63, [ nil,  o[58] ],  
+	// Array
+	64, [ nil,  o[58] ],  
+	// Array
+	65, [ nil,  o[58] ],  
+	// Array
+	66, [ o[67],  o[69],  o[70],  o[71],  
+		o[72],  o[73],  o[74],  o[77],  
+		o[79] ],  
+	// Array
+	67, [ nil,  o[68] ],  
+	// Array
+	69, [ nil,  o[68] ],  
+	// Array
+	70, [ nil,  o[68] ],  
+	// Array
+	71, [ nil,  o[68] ],  
+	// Array
+	72, [ nil,  o[68] ],  
+	// Array
+	73, [ nil,  o[68] ],  
+	// Array
+	74, [ o[75],  o[76] ],  
+	// Array
+	77, [ o[78],  o[76] ],  
+	// Array
+	79, [ o[80],  o[76] ]
+];
+prUnarchive(o,p);

@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title></title>
+<meta name="Generator" content="Cocoa HTML Writer">
+<meta name="CocoaVersion" content="1038.36">
+<style type="text/css">
+p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px Helvetica}
+p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 20.0px Helvetica; min-height: 24.0px}
+p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 20.0px Helvetica}
+p.p6 {margin: 0.0px 0.0px 0.0px 0.0px}
+span.s1 {font: 12.0px Helvetica}
+span.Apple-tab-span {white-space:pre}
+</style>
+</head>
+<body>
+<p class="p1"><b>Preferences</b></p>
+<p class="p2"><br></p>
+<p class="p3">Preferences are accessed by clicking the black '<b>setup</b>' button in the upper right corner of the sampler.</p>
+<p class="p4"><br></p>
+<p class="p4"><br></p>
+<p class="p5">Preferences</p>
+<p class="p4"><br></p>
+<p class="p3">Some settings are greyed and cant be changed once the sampler is created - the number of keys, faders and knobs and the name.</p>
+<p class="p4"><br></p>
+<p class="p3">You can set up faders and knobs again, and change the lowest key on the keyboard, and change the midi input.</p>
+<p class="p4"><br></p>
+<p class="p3">There are some new settings in the preferences:</p>
+<p class="p4"><br></p>
+<p class="p3"><b>MIDI channel</b></p>
+<p class="p3">Only listen to one MIDI channel, 1-16, or set to 0 to accept MIDI from all channels.</p>
+<p class="p4"><br></p>
+<p class="p3"><b>Main Output</b></p>
+<p class="p3">This sets the output channel that the key/knob/slider will output on unless an other output channel is set at the key/knob/slider's own setting. If set to <b>nil</b> it will default to the first two channels on the soundcard. If set to anything else the sampler <i>should</i> be smart enough to sense if running on the internal soundcard (which only has stereo out) and play all sounds on those channels temporarily.</p>
+<p class="p4"><br></p>
+<p class="p4"><br></p>
+<p class="p4"><br></p>
+<p class="p5">Backups</p>
+<p class="p4"><br></p>
+<p class="p3">Previously saved presets are saved as backups. To restore one choose them from the menu at the bottom and press the black and red <b>L</b> (load) key. The name of the file is the date and time it was backed up. The backed up preset you load will not be active until you push the Save Preset button and restart.</p>
+<p class="p4"><br></p>
+<p class="p6"><span class="s1"><img src="attachments/Preferences/preferences3backup.png" alt="attachments/Preferences/preferences3backup.png"></span></p>
+<p class="p4"><br></p>
+<p class="p4"><br></p>
+<p class="p4"><br></p>
+<p class="p5">Folder Specific Rules</p>
+<p class="p4"><br></p>
+<p class="p3">This allows you to make soundfiles that come from certain folders to automatically get their own setting.</p>
+<p class="p4"><br></p>
+<p class="p6"><span class="s1"><img src="attachments/Preferences/preferences1rules.png" alt="attachments/Preferences/preferences1rules.png"></span></p>
+<p class="p4"><br></p>
+<p class="p3">1. Click <b>folder</b> button to specify which folder you want to carry the rule. You have to select any file in that folder. Files from all folders within this folder will also be subject to the rule.</p>
+<p class="p4"><br></p>
+<p class="p3">2. Click the <b>activate settings</b> buttons for the settings you want applied (they turn yellow).</p>
+<p class="p4"><br></p>
+<p class="p3">3. Click <b>edit</b> to edit the settings. This brings up a display below like the key-settings display. Edit the settings to how you want them.<span class="Apple-converted-space"> </span></p>
+<p class="p4"><br></p>
+<p class="p3"><b>vol</b> - volume slider</p>
+<p class="p3"><b>loop</b> - loop on / loop off button</p>
+<p class="p3"><b>mnu</b> - playback menu, choose from piano, shot and toggle</p>
+<p class="p3"><b>atk</b> - attack time</p>
+<p class="p3"><b>rls</b> - release time</p>
+<p class="p3"><b>kill</b> - "killa" button</p>
+<p class="p3">- (disabled)</p>
+<p class="p3">- (disabled)</p>
+<p class="p3"><b>shot</b> - sh button</p>
+<p class="p3"><b>pan</b> - panning</p>
+<p class="p3"><b>out</b> - output button</p>
+<p class="p3"><b>midi</b> - |--| (work in progress)</p>
+<p class="p4"><br></p>
+<p class="p3"><span class="Apple-tab-span">	</span><img src="attachments/Preferences/preferences2rules.png" alt="attachments/Preferences/preferences2rules.png"></p>
+<p class="p4"><br></p>
+<p class="p3">Note that for the settings to be applied, they have to be set in the settings display below <i>and </i>activated (yellow) in the <b>activate settings</b> buttons, <i>and</i> lastly:</p>
+<p class="p4"><br></p>
+<p class="p3">4. Click the <b>activate rule</b> button, reading <b>off</b>, so that it is green and says <b>on</b>.</p>
+<p class="p4"><br></p>
+<p class="p3">5. And offcourse, click <b>Save Preferences</b> in the end to save and restart.</p>
+<p class="p4"><br></p>
+<p class="p4"><br></p>
+<p class="p5">Things to take note of on Folder Specific Rules</p>
+<p class="p4"><br></p>
+<p class="p3"><b>Overriding</b></p>
+<p class="p4"><br></p>
+<p class="p3">If you have one rule on a folder, say:</p>
+<p class="p3"><i>~/sounds/loops/</i></p>
+<p class="p3">stored in "Rule 1"</p>
+<p class="p3">and then another rule on a sub-folder of the same folder, say:</p>
+<p class="p3"><i>~/sounds/loops/atmos/</i></p>
+<p class="p3">stored in "Rule 2"</p>
+<p class="p3">then the rules in "Rule 2" will overwrite the ones in "Rule 1" <i>if they are applied</i> (yellow).</p>
+<p class="p3">That is, the rules are checked with number 1 first and number 4 last.</p>
+<p class="p3">This can be useful if for example you have a folder of speech and you want all speech to have certain settings, but then have folders withing that speech folder which you want to have additional settings, but still keep some of the settings that all speech has.</p>
+<p class="p4"><br></p>
+<p class="p4"><br></p>
+<p class="p4"><br></p>
+<p class="p4"><br></p>
+</body>
+</html>

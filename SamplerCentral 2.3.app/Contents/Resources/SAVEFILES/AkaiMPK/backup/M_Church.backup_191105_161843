@@ -1,0 +1,1316 @@
+var o, p;
+o = [
+	Array.prNew(6),  Array.prNew(25),  "/Users/martin/Downloads/445009__layzerg__man-grunt-struggling.wav",  "/Users/martin/Downloads/445009__layzerg__man-grunt-struggling.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/packs/violencePack/02swoosh1.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/packs/violencePack/headSmash9.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/packs/violencePack/hitSmash2.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/packs/violencePack/slap1.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits Eng/weather/wolves1.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits Eng/weather/wolves2.wav",  Array.prNew(25),  List.prNew,  
+	Array.prNew(17),  Array.prNew(6),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(2),  Dictionary.prNew,  
+	Array.prNew(32),  Array.prNew(2),  Array.prNew(2),  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  List.prNew,  
+	Array.prNew(17),  Array.prNew(6),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(2),  Dictionary.prNew,  
+	Array.prNew(32),  Array.prNew(2),  Array.prNew(2),  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  List.prNew,  
+	Array.prNew(17),  Array.prNew(6),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(2),  Dictionary.prNew,  
+	Array.prNew(32),  Array.prNew(2),  Array.prNew(2),  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  List.prNew,  
+	Array.prNew(17),  Array.prNew(6),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(2),  Dictionary.prNew,  
+	Array.prNew(32),  Array.prNew(2),  Array.prNew(2),  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  List.prNew,  
+	Array.prNew(17),  Array.prNew(6),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(2),  Dictionary.prNew,  
+	Array.prNew(32),  Array.prNew(2),  Array.prNew(2),  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  List.prNew,  
+	Array.prNew(17),  Array.prNew(6),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(2),  Dictionary.prNew,  
+	Array.prNew(32),  Array.prNew(2),  Array.prNew(2),  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  List.prNew,  
+	Array.prNew(17),  Array.prNew(6),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(2),  Dictionary.prNew,  
+	Array.prNew(32),  Array.prNew(2),  Array.prNew(2),  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  List.prNew,  
+	Array.prNew(17),  Array.prNew(6),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(2),  Dictionary.prNew,  
+	Array.prNew(32),  Array.prNew(2),  Array.prNew(2),  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  List.prNew,  
+	Array.prNew(17),  Array.prNew(6),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(2),  Dictionary.prNew,  
+	Array.prNew(32),  Array.prNew(2),  Array.prNew(2),  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  List.prNew,  
+	Array.prNew(17),  Array.prNew(6),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(2),  Dictionary.prNew,  
+	Array.prNew(32),  Array.prNew(2),  Array.prNew(2),  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  List.prNew,  
+	Array.prNew(17),  Array.prNew(6),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(2),  Dictionary.prNew,  
+	Array.prNew(32),  Array.prNew(2),  Array.prNew(2),  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  List.prNew,  
+	Array.prNew(17),  Array.prNew(6),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(2),  Dictionary.prNew,  
+	Array.prNew(32),  Array.prNew(2),  Array.prNew(2),  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  List.prNew,  
+	Array.prNew(17),  Array.prNew(6),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(2),  Dictionary.prNew,  
+	Array.prNew(32),  Array.prNew(2),  Array.prNew(2),  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  List.prNew,  
+	Array.prNew(17),  Array.prNew(6),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(2),  Dictionary.prNew,  
+	Array.prNew(32),  Array.prNew(2),  Array.prNew(2),  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  List.prNew,  
+	Array.prNew(17),  Array.prNew(6),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(2),  Dictionary.prNew,  
+	Array.prNew(32),  Array.prNew(2),  Array.prNew(2),  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  List.prNew,  
+	Array.prNew(17),  Array.prNew(6),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(2),  Dictionary.prNew,  
+	Array.prNew(32),  Array.prNew(2),  Array.prNew(2),  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  List.prNew,  
+	Array.prNew(17),  Array.prNew(6),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(2),  Dictionary.prNew,  
+	Array.prNew(32),  Array.prNew(2),  Array.prNew(2),  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  List.prNew,  
+	Array.prNew(17),  Array.prNew(6),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(2),  Dictionary.prNew,  
+	Array.prNew(32),  Array.prNew(2),  Array.prNew(2),  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  List.prNew,  
+	Array.prNew(17),  Array.prNew(6),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(2),  Dictionary.prNew,  
+	Array.prNew(32),  Array.prNew(2),  Array.prNew(2),  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  List.prNew,  
+	Array.prNew(17),  Array.prNew(6),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(2),  Dictionary.prNew,  
+	Array.prNew(32),  Array.prNew(2),  Array.prNew(2),  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  List.prNew,  
+	Array.prNew(17),  Array.prNew(6),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(2),  Dictionary.prNew,  
+	Array.prNew(32),  Array.prNew(2),  Array.prNew(2),  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  List.prNew,  
+	Array.prNew(17),  Array.prNew(6),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(2),  Dictionary.prNew,  
+	Array.prNew(32),  Array.prNew(2),  Array.prNew(2),  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  List.prNew,  
+	Array.prNew(17),  Array.prNew(6),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(2),  Dictionary.prNew,  
+	Array.prNew(32),  Array.prNew(2),  Array.prNew(2),  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  List.prNew,  
+	Array.prNew(17),  Array.prNew(6),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(2),  Dictionary.prNew,  
+	Array.prNew(32),  Array.prNew(2),  Array.prNew(2),  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  List.prNew,  
+	Array.prNew(17),  Array.prNew(6),  Array.prNew(2),  Array.prNew(2),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(2),  Dictionary.prNew,  
+	Array.prNew(32),  Array.prNew(2),  Array.prNew(2),  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  DMXSubCue.prNew,  
+	Order.prNew,  Array.prNew,  Array.prNew,  Array.prNew(8),  
+	Array.prNew(5),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops Eng/weather/wolves1.wav",  "diskin",  Array.prNew(5),  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/packs/laughChoirPack/zombiesGrowl.wav",  Array.prNew(5),  "/Volumes/MEDIA/Ableton/nedmixer/12spaten/zombieSnarlL.wav",  Array.prNew(5),  
+	"/Volumes/MEDIA/Ableton/nedmixer/12spaten/lowBass2.wav",  Array.prNew(5),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops Eng/screams/babyCry5.wav",  Array.prNew(5),  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops Eng/wind_cold.wav",  Array.prNew(5),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops Eng/windAutumn.wav",  Array.prNew(5),  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops Eng/lowRumble.wav",  Array.prNew,  List.prNew,  Array.prNew(25),  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Event.prNew,  Array.prNew(36)
+];
+p = [
+	// Array
+	0, [ o[1],  o[10],  o[511],  o[529],  
+		o[530],  o[557] ],  
+	// Array
+	1, [ o[2],  o[3],  nil,  nil,  
+		nil,  o[4],  o[5],  o[6],  
+		o[7],  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		o[8],  o[9],  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil ],  
+	// Array
+	10, [ o[11],  o[31],  o[51],  o[71],  
+		o[91],  o[111],  o[131],  o[151],  
+		o[171],  o[191],  o[211],  o[231],  
+		o[251],  o[271],  o[291],  o[311],  
+		o[331],  o[351],  o[371],  o[391],  
+		o[411],  o[431],  o[451],  o[471],  
+		o[491] ],  
+	// List
+	11, [ array: o[12] ],  
+	// Array
+	12, [ 0.500000,  0,  0,  0.010000,  
+		0.100000,  0,  0,  3,  
+		0,  0,  nil,  o[13],  
+		o[16],  o[17],  1,  o[18],  
+		o[21] ],  
+	// Array
+	13, [ 0,  o[14],  o[15],  0,  
+		0.300000,  0 ],  
+	// Array
+	14, [ 0,  0 ],  
+	// Array
+	15, [ 0,  0 ],  
+	// Array
+	16, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	17, [ 0,  0,  1 ],  
+	// Array
+	18, [ 0,  o[19] ],  
+	// Dictionary
+	19, [ array: o[20],  size: 0 ],  
+	// Array
+	20, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	21, [ 0,  o[22] ],  
+	// Array
+	22, [ o[23],  o[27] ],  
+	// DMXSubCue
+	23, [ data: o[24] ],  
+	// Order
+	24, [ array: o[25],  indices: o[26] ],  
+	// DMXSubCue
+	27, [ data: o[28] ],  
+	// Order
+	28, [ array: o[29],  indices: o[30] ],  
+	// List
+	31, [ array: o[32] ],  
+	// Array
+	32, [ 0.500000,  0,  0,  0.010000,  
+		0.100000,  0,  0,  3,  
+		0,  0,  nil,  o[33],  
+		o[36],  o[37],  1,  o[38],  
+		o[41] ],  
+	// Array
+	33, [ 0,  o[34],  o[35],  0,  
+		0.300000,  0 ],  
+	// Array
+	34, [ 0,  0 ],  
+	// Array
+	35, [ 0,  0 ],  
+	// Array
+	36, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	37, [ 0,  0.393748,  0.583749 ],  
+	// Array
+	38, [ 0,  o[39] ],  
+	// Dictionary
+	39, [ array: o[40],  size: 0 ],  
+	// Array
+	40, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	41, [ 0,  o[42] ],  
+	// Array
+	42, [ o[43],  o[47] ],  
+	// DMXSubCue
+	43, [ data: o[44] ],  
+	// Order
+	44, [ array: o[45],  indices: o[46] ],  
+	// DMXSubCue
+	47, [ data: o[48] ],  
+	// Order
+	48, [ array: o[49],  indices: o[50] ],  
+	// List
+	51, [ array: o[52] ],  
+	// Array
+	52, [ 0.500000,  0,  0,  0.010000,  
+		0.100000,  0,  0,  3,  
+		0,  0,  nil,  o[53],  
+		o[56],  o[57],  1,  o[58],  
+		o[61] ],  
+	// Array
+	53, [ 0,  o[54],  o[55],  0,  
+		0.300000,  0 ],  
+	// Array
+	54, [ 0,  0 ],  
+	// Array
+	55, [ 0,  0 ],  
+	// Array
+	56, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	57, [ 0,  0,  1 ],  
+	// Array
+	58, [ 0,  o[59] ],  
+	// Dictionary
+	59, [ array: o[60],  size: 0 ],  
+	// Array
+	60, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	61, [ 0,  o[62] ],  
+	// Array
+	62, [ o[63],  o[67] ],  
+	// DMXSubCue
+	63, [ data: o[64] ],  
+	// Order
+	64, [ array: o[65],  indices: o[66] ],  
+	// DMXSubCue
+	67, [ data: o[68] ],  
+	// Order
+	68, [ array: o[69],  indices: o[70] ],  
+	// List
+	71, [ array: o[72] ],  
+	// Array
+	72, [ 0.500000,  0,  0,  0.010000,  
+		0.100000,  0,  0,  3,  
+		0,  0,  nil,  o[73],  
+		o[76],  o[77],  1,  o[78],  
+		o[81] ],  
+	// Array
+	73, [ 0,  o[74],  o[75],  0,  
+		0.300000,  0 ],  
+	// Array
+	74, [ 0,  0 ],  
+	// Array
+	75, [ 0,  0 ],  
+	// Array
+	76, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	77, [ 0,  0,  1 ],  
+	// Array
+	78, [ 0,  o[79] ],  
+	// Dictionary
+	79, [ array: o[80],  size: 0 ],  
+	// Array
+	80, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	81, [ 0,  o[82] ],  
+	// Array
+	82, [ o[83],  o[87] ],  
+	// DMXSubCue
+	83, [ data: o[84] ],  
+	// Order
+	84, [ array: o[85],  indices: o[86] ],  
+	// DMXSubCue
+	87, [ data: o[88] ],  
+	// Order
+	88, [ array: o[89],  indices: o[90] ],  
+	// List
+	91, [ array: o[92] ],  
+	// Array
+	92, [ 0.500000,  0,  0,  0.010000,  
+		0.100000,  0,  0,  3,  
+		0,  0,  nil,  o[93],  
+		o[96],  o[97],  1,  o[98],  
+		o[101] ],  
+	// Array
+	93, [ 0,  o[94],  o[95],  0,  
+		0.300000,  0 ],  
+	// Array
+	94, [ 0,  0 ],  
+	// Array
+	95, [ 0,  0 ],  
+	// Array
+	96, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	97, [ 0,  0,  1 ],  
+	// Array
+	98, [ 0,  o[99] ],  
+	// Dictionary
+	99, [ array: o[100],  size: 0 ],  
+	// Array
+	100, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	101, [ 0,  o[102] ],  
+	// Array
+	102, [ o[103],  o[107] ],  
+	// DMXSubCue
+	103, [ data: o[104] ],  
+	// Order
+	104, [ array: o[105],  indices: o[106] ],  
+	// DMXSubCue
+	107, [ data: o[108] ],  
+	// Order
+	108, [ array: o[109],  indices: o[110] ],  
+	// List
+	111, [ array: o[112] ],  
+	// Array
+	112, [ 0.500000,  0,  0,  0.010000,  
+		0.100000,  0,  0,  3,  
+		0,  0,  nil,  o[113],  
+		o[116],  o[117],  1,  o[118],  
+		o[121] ],  
+	// Array
+	113, [ 0,  o[114],  o[115],  0,  
+		0.300000,  0 ],  
+	// Array
+	114, [ 0,  0 ],  
+	// Array
+	115, [ 0,  0 ],  
+	// Array
+	116, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	117, [ 0,  0,  1 ],  
+	// Array
+	118, [ 0,  o[119] ],  
+	// Dictionary
+	119, [ array: o[120],  size: 0 ],  
+	// Array
+	120, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	121, [ 0,  o[122] ],  
+	// Array
+	122, [ o[123],  o[127] ],  
+	// DMXSubCue
+	123, [ data: o[124] ],  
+	// Order
+	124, [ array: o[125],  indices: o[126] ],  
+	// DMXSubCue
+	127, [ data: o[128] ],  
+	// Order
+	128, [ array: o[129],  indices: o[130] ],  
+	// List
+	131, [ array: o[132] ],  
+	// Array
+	132, [ 0.500000,  0,  0,  0.010000,  
+		0.100000,  0,  0,  3,  
+		0,  0,  nil,  o[133],  
+		o[136],  o[137],  1,  o[138],  
+		o[141] ],  
+	// Array
+	133, [ 0,  o[134],  o[135],  0,  
+		0.300000,  0 ],  
+	// Array
+	134, [ 0,  0 ],  
+	// Array
+	135, [ 0,  0 ],  
+	// Array
+	136, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	137, [ 0,  0,  1 ],  
+	// Array
+	138, [ 0,  o[139] ],  
+	// Dictionary
+	139, [ array: o[140],  size: 0 ],  
+	// Array
+	140, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	141, [ 0,  o[142] ],  
+	// Array
+	142, [ o[143],  o[147] ],  
+	// DMXSubCue
+	143, [ data: o[144] ],  
+	// Order
+	144, [ array: o[145],  indices: o[146] ],  
+	// DMXSubCue
+	147, [ data: o[148] ],  
+	// Order
+	148, [ array: o[149],  indices: o[150] ],  
+	// List
+	151, [ array: o[152] ],  
+	// Array
+	152, [ 0.500000,  0,  0,  0.010000,  
+		0.100000,  0,  0,  3,  
+		0,  0,  nil,  o[153],  
+		o[156],  o[157],  1,  o[158],  
+		o[161] ],  
+	// Array
+	153, [ 0,  o[154],  o[155],  0,  
+		0.300000,  0 ],  
+	// Array
+	154, [ 0,  0 ],  
+	// Array
+	155, [ 0,  0 ],  
+	// Array
+	156, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	157, [ 0,  0,  1 ],  
+	// Array
+	158, [ 0,  o[159] ],  
+	// Dictionary
+	159, [ array: o[160],  size: 0 ],  
+	// Array
+	160, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	161, [ 0,  o[162] ],  
+	// Array
+	162, [ o[163],  o[167] ],  
+	// DMXSubCue
+	163, [ data: o[164] ],  
+	// Order
+	164, [ array: o[165],  indices: o[166] ],  
+	// DMXSubCue
+	167, [ data: o[168] ],  
+	// Order
+	168, [ array: o[169],  indices: o[170] ],  
+	// List
+	171, [ array: o[172] ],  
+	// Array
+	172, [ 0.500000,  0,  0,  0.010000,  
+		0.100000,  0,  0,  3,  
+		0,  0,  nil,  o[173],  
+		o[176],  o[177],  1,  o[178],  
+		o[181] ],  
+	// Array
+	173, [ 0,  o[174],  o[175],  0,  
+		0.300000,  0 ],  
+	// Array
+	174, [ 0,  0 ],  
+	// Array
+	175, [ 0,  0 ],  
+	// Array
+	176, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	177, [ 0,  0,  1 ],  
+	// Array
+	178, [ 0,  o[179] ],  
+	// Dictionary
+	179, [ array: o[180],  size: 0 ],  
+	// Array
+	180, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	181, [ 0,  o[182] ],  
+	// Array
+	182, [ o[183],  o[187] ],  
+	// DMXSubCue
+	183, [ data: o[184] ],  
+	// Order
+	184, [ array: o[185],  indices: o[186] ],  
+	// DMXSubCue
+	187, [ data: o[188] ],  
+	// Order
+	188, [ array: o[189],  indices: o[190] ],  
+	// List
+	191, [ array: o[192] ],  
+	// Array
+	192, [ 0.500000,  0,  0,  0.010000,  
+		0.100000,  0,  0,  3,  
+		0,  0,  nil,  o[193],  
+		o[196],  o[197],  1,  o[198],  
+		o[201] ],  
+	// Array
+	193, [ 0,  o[194],  o[195],  0,  
+		0.300000,  0 ],  
+	// Array
+	194, [ 0,  0 ],  
+	// Array
+	195, [ 0,  0 ],  
+	// Array
+	196, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	197, [ 0,  0,  1 ],  
+	// Array
+	198, [ 0,  o[199] ],  
+	// Dictionary
+	199, [ array: o[200],  size: 0 ],  
+	// Array
+	200, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	201, [ 0,  o[202] ],  
+	// Array
+	202, [ o[203],  o[207] ],  
+	// DMXSubCue
+	203, [ data: o[204] ],  
+	// Order
+	204, [ array: o[205],  indices: o[206] ],  
+	// DMXSubCue
+	207, [ data: o[208] ],  
+	// Order
+	208, [ array: o[209],  indices: o[210] ],  
+	// List
+	211, [ array: o[212] ],  
+	// Array
+	212, [ 0.500000,  0,  0,  0.010000,  
+		0.100000,  0,  0,  3,  
+		0,  0,  nil,  o[213],  
+		o[216],  o[217],  1,  o[218],  
+		o[221] ],  
+	// Array
+	213, [ 0,  o[214],  o[215],  0,  
+		0.300000,  0 ],  
+	// Array
+	214, [ 0,  0 ],  
+	// Array
+	215, [ 0,  0 ],  
+	// Array
+	216, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	217, [ 0,  0,  1 ],  
+	// Array
+	218, [ 0,  o[219] ],  
+	// Dictionary
+	219, [ array: o[220],  size: 0 ],  
+	// Array
+	220, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	221, [ 0,  o[222] ],  
+	// Array
+	222, [ o[223],  o[227] ],  
+	// DMXSubCue
+	223, [ data: o[224] ],  
+	// Order
+	224, [ array: o[225],  indices: o[226] ],  
+	// DMXSubCue
+	227, [ data: o[228] ],  
+	// Order
+	228, [ array: o[229],  indices: o[230] ],  
+	// List
+	231, [ array: o[232] ],  
+	// Array
+	232, [ 0.500000,  0,  0,  0.010000,  
+		0.100000,  0,  0,  3,  
+		0,  0,  nil,  o[233],  
+		o[236],  o[237],  1,  o[238],  
+		o[241] ],  
+	// Array
+	233, [ 0,  o[234],  o[235],  0,  
+		0.300000,  0 ],  
+	// Array
+	234, [ 0,  0 ],  
+	// Array
+	235, [ 0,  0 ],  
+	// Array
+	236, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	237, [ 0,  0,  1 ],  
+	// Array
+	238, [ 0,  o[239] ],  
+	// Dictionary
+	239, [ array: o[240],  size: 0 ],  
+	// Array
+	240, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	241, [ 0,  o[242] ],  
+	// Array
+	242, [ o[243],  o[247] ],  
+	// DMXSubCue
+	243, [ data: o[244] ],  
+	// Order
+	244, [ array: o[245],  indices: o[246] ],  
+	// DMXSubCue
+	247, [ data: o[248] ],  
+	// Order
+	248, [ array: o[249],  indices: o[250] ],  
+	// List
+	251, [ array: o[252] ],  
+	// Array
+	252, [ 0.500000,  0,  0,  0.010000,  
+		0.100000,  0,  0,  3,  
+		0,  0,  nil,  o[253],  
+		o[256],  o[257],  1,  o[258],  
+		o[261] ],  
+	// Array
+	253, [ 0,  o[254],  o[255],  0,  
+		0.300000,  0 ],  
+	// Array
+	254, [ 0,  0 ],  
+	// Array
+	255, [ 0,  0 ],  
+	// Array
+	256, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	257, [ 0,  0,  1 ],  
+	// Array
+	258, [ 0,  o[259] ],  
+	// Dictionary
+	259, [ array: o[260],  size: 0 ],  
+	// Array
+	260, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	261, [ 0,  o[262] ],  
+	// Array
+	262, [ o[263],  o[267] ],  
+	// DMXSubCue
+	263, [ data: o[264] ],  
+	// Order
+	264, [ array: o[265],  indices: o[266] ],  
+	// DMXSubCue
+	267, [ data: o[268] ],  
+	// Order
+	268, [ array: o[269],  indices: o[270] ],  
+	// List
+	271, [ array: o[272] ],  
+	// Array
+	272, [ 0.500000,  0,  0,  0.010000,  
+		0.100000,  0,  0,  3,  
+		0,  0,  nil,  o[273],  
+		o[276],  o[277],  1,  o[278],  
+		o[281] ],  
+	// Array
+	273, [ 0,  o[274],  o[275],  0,  
+		0.300000,  0 ],  
+	// Array
+	274, [ 0,  0 ],  
+	// Array
+	275, [ 0,  0 ],  
+	// Array
+	276, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	277, [ 0,  0,  1 ],  
+	// Array
+	278, [ 0,  o[279] ],  
+	// Dictionary
+	279, [ array: o[280],  size: 0 ],  
+	// Array
+	280, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	281, [ 0,  o[282] ],  
+	// Array
+	282, [ o[283],  o[287] ],  
+	// DMXSubCue
+	283, [ data: o[284] ],  
+	// Order
+	284, [ array: o[285],  indices: o[286] ],  
+	// DMXSubCue
+	287, [ data: o[288] ],  
+	// Order
+	288, [ array: o[289],  indices: o[290] ],  
+	// List
+	291, [ array: o[292] ],  
+	// Array
+	292, [ 0.500000,  0,  0,  0.010000,  
+		0.100000,  0,  0,  3,  
+		0,  0,  nil,  o[293],  
+		o[296],  o[297],  1,  o[298],  
+		o[301] ],  
+	// Array
+	293, [ 0,  o[294],  o[295],  0,  
+		0.300000,  0 ],  
+	// Array
+	294, [ 0,  0 ],  
+	// Array
+	295, [ 0,  0 ],  
+	// Array
+	296, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	297, [ 0,  0,  1 ],  
+	// Array
+	298, [ 0,  o[299] ],  
+	// Dictionary
+	299, [ array: o[300],  size: 0 ],  
+	// Array
+	300, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	301, [ 0,  o[302] ],  
+	// Array
+	302, [ o[303],  o[307] ],  
+	// DMXSubCue
+	303, [ data: o[304] ],  
+	// Order
+	304, [ array: o[305],  indices: o[306] ],  
+	// DMXSubCue
+	307, [ data: o[308] ],  
+	// Order
+	308, [ array: o[309],  indices: o[310] ],  
+	// List
+	311, [ array: o[312] ],  
+	// Array
+	312, [ 0.500000,  0,  0,  0.010000,  
+		0.100000,  0,  0,  3,  
+		0,  0,  nil,  o[313],  
+		o[316],  o[317],  1,  o[318],  
+		o[321] ],  
+	// Array
+	313, [ 0,  o[314],  o[315],  0,  
+		0.300000,  0 ],  
+	// Array
+	314, [ 0,  0 ],  
+	// Array
+	315, [ 0,  0 ],  
+	// Array
+	316, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	317, [ 0,  0,  1 ],  
+	// Array
+	318, [ 0,  o[319] ],  
+	// Dictionary
+	319, [ array: o[320],  size: 0 ],  
+	// Array
+	320, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	321, [ 0,  o[322] ],  
+	// Array
+	322, [ o[323],  o[327] ],  
+	// DMXSubCue
+	323, [ data: o[324] ],  
+	// Order
+	324, [ array: o[325],  indices: o[326] ],  
+	// DMXSubCue
+	327, [ data: o[328] ],  
+	// Order
+	328, [ array: o[329],  indices: o[330] ],  
+	// List
+	331, [ array: o[332] ],  
+	// Array
+	332, [ 1.000000,  0,  0,  0.010000,  
+		0.100000,  0,  0,  3,  
+		0,  0,  nil,  o[333],  
+		o[336],  o[337],  1,  o[338],  
+		o[341] ],  
+	// Array
+	333, [ 0,  o[334],  o[335],  0,  
+		0.300000,  0 ],  
+	// Array
+	334, [ 0,  0 ],  
+	// Array
+	335, [ 0,  0 ],  
+	// Array
+	336, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	337, [ 0,  0,  1 ],  
+	// Array
+	338, [ 0,  o[339] ],  
+	// Dictionary
+	339, [ array: o[340],  size: 0 ],  
+	// Array
+	340, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	341, [ 0,  o[342] ],  
+	// Array
+	342, [ o[343],  o[347] ],  
+	// DMXSubCue
+	343, [ data: o[344] ],  
+	// Order
+	344, [ array: o[345],  indices: o[346] ],  
+	// DMXSubCue
+	347, [ data: o[348] ],  
+	// Order
+	348, [ array: o[349],  indices: o[350] ],  
+	// List
+	351, [ array: o[352] ],  
+	// Array
+	352, [ 1.000000,  0,  0,  0.010000,  
+		0.100000,  0,  0,  3,  
+		0,  0,  nil,  o[353],  
+		o[356],  o[357],  1,  o[358],  
+		o[361] ],  
+	// Array
+	353, [ 0,  o[354],  o[355],  0,  
+		0.300000,  0 ],  
+	// Array
+	354, [ 0,  0 ],  
+	// Array
+	355, [ 0,  0 ],  
+	// Array
+	356, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	357, [ 0,  0,  1 ],  
+	// Array
+	358, [ 0,  o[359] ],  
+	// Dictionary
+	359, [ array: o[360],  size: 0 ],  
+	// Array
+	360, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	361, [ 0,  o[362] ],  
+	// Array
+	362, [ o[363],  o[367] ],  
+	// DMXSubCue
+	363, [ data: o[364] ],  
+	// Order
+	364, [ array: o[365],  indices: o[366] ],  
+	// DMXSubCue
+	367, [ data: o[368] ],  
+	// Order
+	368, [ array: o[369],  indices: o[370] ],  
+	// List
+	371, [ array: o[372] ],  
+	// Array
+	372, [ 0.500000,  0,  0,  0.010000,  
+		0.100000,  0,  0,  3,  
+		0,  0,  nil,  o[373],  
+		o[376],  o[377],  1,  o[378],  
+		o[381] ],  
+	// Array
+	373, [ 0,  o[374],  o[375],  0,  
+		0.300000,  0 ],  
+	// Array
+	374, [ 0,  0 ],  
+	// Array
+	375, [ 0,  0 ],  
+	// Array
+	376, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	377, [ 0,  0,  1 ],  
+	// Array
+	378, [ 0,  o[379] ],  
+	// Dictionary
+	379, [ array: o[380],  size: 0 ],  
+	// Array
+	380, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	381, [ 0,  o[382] ],  
+	// Array
+	382, [ o[383],  o[387] ],  
+	// DMXSubCue
+	383, [ data: o[384] ],  
+	// Order
+	384, [ array: o[385],  indices: o[386] ],  
+	// DMXSubCue
+	387, [ data: o[388] ],  
+	// Order
+	388, [ array: o[389],  indices: o[390] ],  
+	// List
+	391, [ array: o[392] ],  
+	// Array
+	392, [ 0.500000,  0,  0,  0.010000,  
+		0.100000,  0,  0,  3,  
+		0,  0,  nil,  o[393],  
+		o[396],  o[397],  1,  o[398],  
+		o[401] ],  
+	// Array
+	393, [ 0,  o[394],  o[395],  0,  
+		0.300000,  0 ],  
+	// Array
+	394, [ 0,  0 ],  
+	// Array
+	395, [ 0,  0 ],  
+	// Array
+	396, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	397, [ 0,  0,  1 ],  
+	// Array
+	398, [ 0,  o[399] ],  
+	// Dictionary
+	399, [ array: o[400],  size: 0 ],  
+	// Array
+	400, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	401, [ 0,  o[402] ],  
+	// Array
+	402, [ o[403],  o[407] ],  
+	// DMXSubCue
+	403, [ data: o[404] ],  
+	// Order
+	404, [ array: o[405],  indices: o[406] ],  
+	// DMXSubCue
+	407, [ data: o[408] ],  
+	// Order
+	408, [ array: o[409],  indices: o[410] ],  
+	// List
+	411, [ array: o[412] ],  
+	// Array
+	412, [ 0.500000,  0,  0,  0.010000,  
+		0.100000,  0,  0,  3,  
+		0,  0,  nil,  o[413],  
+		o[416],  o[417],  1,  o[418],  
+		o[421] ],  
+	// Array
+	413, [ 0,  o[414],  o[415],  0,  
+		0.300000,  0 ],  
+	// Array
+	414, [ 0,  0 ],  
+	// Array
+	415, [ 0,  0 ],  
+	// Array
+	416, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	417, [ 0,  0,  1 ],  
+	// Array
+	418, [ 0,  o[419] ],  
+	// Dictionary
+	419, [ array: o[420],  size: 0 ],  
+	// Array
+	420, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	421, [ 0,  o[422] ],  
+	// Array
+	422, [ o[423],  o[427] ],  
+	// DMXSubCue
+	423, [ data: o[424] ],  
+	// Order
+	424, [ array: o[425],  indices: o[426] ],  
+	// DMXSubCue
+	427, [ data: o[428] ],  
+	// Order
+	428, [ array: o[429],  indices: o[430] ],  
+	// List
+	431, [ array: o[432] ],  
+	// Array
+	432, [ 0.500000,  0,  0,  0.010000,  
+		0.100000,  0,  0,  3,  
+		0,  0,  nil,  o[433],  
+		o[436],  o[437],  1,  o[438],  
+		o[441] ],  
+	// Array
+	433, [ 0,  o[434],  o[435],  0,  
+		0.300000,  0 ],  
+	// Array
+	434, [ 0,  0 ],  
+	// Array
+	435, [ 0,  0 ],  
+	// Array
+	436, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	437, [ 0,  0,  1 ],  
+	// Array
+	438, [ 0,  o[439] ],  
+	// Dictionary
+	439, [ array: o[440],  size: 0 ],  
+	// Array
+	440, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	441, [ 0,  o[442] ],  
+	// Array
+	442, [ o[443],  o[447] ],  
+	// DMXSubCue
+	443, [ data: o[444] ],  
+	// Order
+	444, [ array: o[445],  indices: o[446] ],  
+	// DMXSubCue
+	447, [ data: o[448] ],  
+	// Order
+	448, [ array: o[449],  indices: o[450] ],  
+	// List
+	451, [ array: o[452] ],  
+	// Array
+	452, [ 0.500000,  0,  0,  0.010000,  
+		0.100000,  0,  0,  3,  
+		0,  0,  nil,  o[453],  
+		o[456],  o[457],  1,  o[458],  
+		o[461] ],  
+	// Array
+	453, [ 0,  o[454],  o[455],  0,  
+		0.300000,  0 ],  
+	// Array
+	454, [ 0,  0 ],  
+	// Array
+	455, [ 0,  0 ],  
+	// Array
+	456, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	457, [ 0,  0,  1 ],  
+	// Array
+	458, [ 0,  o[459] ],  
+	// Dictionary
+	459, [ array: o[460],  size: 0 ],  
+	// Array
+	460, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	461, [ 0,  o[462] ],  
+	// Array
+	462, [ o[463],  o[467] ],  
+	// DMXSubCue
+	463, [ data: o[464] ],  
+	// Order
+	464, [ array: o[465],  indices: o[466] ],  
+	// DMXSubCue
+	467, [ data: o[468] ],  
+	// Order
+	468, [ array: o[469],  indices: o[470] ],  
+	// List
+	471, [ array: o[472] ],  
+	// Array
+	472, [ 0.500000,  0,  0,  0.010000,  
+		0.100000,  0,  0,  3,  
+		0,  0,  nil,  o[473],  
+		o[476],  o[477],  1,  o[478],  
+		o[481] ],  
+	// Array
+	473, [ 0,  o[474],  o[475],  0,  
+		0.300000,  0 ],  
+	// Array
+	474, [ 0,  0 ],  
+	// Array
+	475, [ 0,  0 ],  
+	// Array
+	476, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	477, [ 0,  0,  1 ],  
+	// Array
+	478, [ 0,  o[479] ],  
+	// Dictionary
+	479, [ array: o[480],  size: 0 ],  
+	// Array
+	480, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	481, [ 0,  o[482] ],  
+	// Array
+	482, [ o[483],  o[487] ],  
+	// DMXSubCue
+	483, [ data: o[484] ],  
+	// Order
+	484, [ array: o[485],  indices: o[486] ],  
+	// DMXSubCue
+	487, [ data: o[488] ],  
+	// Order
+	488, [ array: o[489],  indices: o[490] ],  
+	// List
+	491, [ array: o[492] ],  
+	// Array
+	492, [ 0.500000,  0,  0,  0.010000,  
+		0.100000,  0,  0,  3,  
+		0,  0,  nil,  o[493],  
+		o[496],  o[497],  1,  o[498],  
+		o[501] ],  
+	// Array
+	493, [ 0,  o[494],  o[495],  0,  
+		0.300000,  0 ],  
+	// Array
+	494, [ 0,  0 ],  
+	// Array
+	495, [ 0,  0 ],  
+	// Array
+	496, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	497, [ 0,  0,  1 ],  
+	// Array
+	498, [ 0,  o[499] ],  
+	// Dictionary
+	499, [ array: o[500],  size: 0 ],  
+	// Array
+	500, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	501, [ 0,  o[502] ],  
+	// Array
+	502, [ o[503],  o[507] ],  
+	// DMXSubCue
+	503, [ data: o[504] ],  
+	// Order
+	504, [ array: o[505],  indices: o[506] ],  
+	// DMXSubCue
+	507, [ data: o[508] ],  
+	// Order
+	508, [ array: o[509],  indices: o[510] ],  
+	// Array
+	511, [ o[512],  o[515],  o[517],  o[519],  
+		o[521],  o[523],  o[525],  o[527] ],  
+	// Array
+	512, [ o[513],  o[514],  0,  nil,  
+		1 ],  
+	// Array
+	515, [ o[516],  o[514],  0,  nil,  
+		1 ],  
+	// Array
+	517, [ o[518],  o[514],  0,  nil,  
+		1 ],  
+	// Array
+	519, [ o[520],  o[514],  0,  nil,  
+		1 ],  
+	// Array
+	521, [ o[522],  o[514],  0,  nil,  
+		1 ],  
+	// Array
+	523, [ o[524],  o[514],  0,  nil,  
+		1 ],  
+	// Array
+	525, [ o[526],  o[514],  0,  nil,  
+		1 ],  
+	// Array
+	527, [ o[528],  o[514],  0,  nil,  
+		1 ],  
+	// List
+	530, [ array: o[531] ],  
+	// Array
+	531, [ o[532],  o[533],  o[534],  o[535],  
+		o[536],  o[537],  o[538],  o[539],  
+		o[540],  o[541],  o[542],  o[543],  
+		o[544],  o[545],  o[546],  o[547],  
+		o[548],  o[549],  o[550],  o[551],  
+		o[552],  o[553],  o[554],  o[555],  
+		o[556] ],  
+	// Event
+	557, [ array: o[558],  size: 9,  
+		proto: nil,  parent: nil,  
+		know: true ],  
+	// Array
+	558, [ nil,  nil,  nil,  nil,  
+		'midi',  0,  nil,  nil,  
+		nil,  nil,  'vel',  0,  
+		'dmx',  0,  nil,  nil,  
+		'prView',  1,  'poly',  0,  
+		'kyPitch',  1,  nil,  nil,  
+		'slPitch',  0,  'osc',  0,  
+		'knPitch',  1,  nil,  nil,  
+		nil,  nil,  nil,  nil ]
+];
+prUnarchive(o,p);

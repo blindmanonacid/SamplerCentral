@@ -1,0 +1,179 @@
+<html><head><title>SCEnvelopeView</title>
+<link rel='stylesheet' href='./../scdoc.css' type='text/css' />
+<link rel='stylesheet' href='./../frontend.css' type='text/css' />
+<link rel='stylesheet' href='./../custom.css' type='text/css' />
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<script src='./../scdoc.js' type='text/javascript'></script>
+<script src='./../docmap.js' type='text/javascript'></script>
+<script src='./../prettify.js' type='text/javascript'></script>
+<script src='./../lang-sc.js' type='text/javascript'></script>
+<script src='./../MathJax/MathJax.js?config=TeX-AMS_HTML,scmathjax' type='text/javascript'></script>
+<script type='text/javascript'>var helpRoot='./..';</script>
+</head>
+<ul id='menubar'></ul>
+<body onload='fixTOC();prettyPrint()'>
+<div class='contents'>
+<div class='header'>
+<div id='label'>SuperCollider CLASSES</div>
+<div id='categories'><a href='./../Browse.html#Redirect Class Implementors'>Redirect Class Implementors</a></div>
+<h1>SCEnvelopeView</h1>
+<div id='summary'>Implements EnvelopeView</div>
+</div>
+<div class='subheader'>
+<div id='filename'>Source: /Applications/SamplerCentral 2.3.app/Contents/Resources/SCClassLibrary/Common/GUI/osx/scide_scapp/Base/<a href='file:///Applications/SamplerCentral 2.3.app/Contents/Resources/SCClassLibrary/Common/GUI/osx/scide_scapp/Base/SCView.sc'>SCView.sc</a></div><div id='superclasses'>Inherits from: <a href="../Classes/SCView.html">SCView</a> : <a href="../Classes/Object.html">Object</a></div>
+<div id='subclasses'>Subclasses: <a href="../Classes/SCEnvelopeEdit.html">SCEnvelopeEdit</a></div>
+</div>
+<div id='toc'>
+<ul class='toc'><li class='toc1'><a href='#description'>Description</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#classmethods'>Class methods</a></li>
+<ul class='toc'><li class='toc2'><a href='#Inherited class methods'>Inherited class methods</a></li>
+<li class='toc2'><a href='#Undocumented class methods'>Undocumented class methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#*paletteExample'>paletteExample</a> </li>
+</ul></ul><li class='toc1'><a href='#instancemethods'>Instance methods</a></li>
+<ul class='toc'><li class='toc2'><a href='#Inherited instance methods'>Inherited instance methods</a></li>
+<li class='toc2'><a href='#Undocumented instance methods'>Undocumented instance methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#-addPointAtMouse'>addPointAtMouse</a> </li>
+<li class='toc3'><a href='#-addValue'>addValue</a> </li>
+<li class='toc3'><a href='#-allConnections'>allConnections</a> </li>
+<li class='toc3'><a href='#-asEnv'>asEnv</a> </li>
+<li class='toc3'><a href='#-colors'>colors</a> </li>
+<li class='toc3'><a href='#-connect'>connect</a> </li>
+<li class='toc3'><a href='#-currentvalue'>currentvalue</a> </li>
+<li class='toc3'><a href='#-curveSegAtMouse'>curveSegAtMouse</a> </li>
+<li class='toc3'><a href='#-curves'>curves</a> </li>
+<li class='toc3'><a href='#-defaultCanReceiveDrag'>defaultCanReceiveDrag</a> </li>
+<li class='toc3'><a href='#-defaultGetDrag'>defaultGetDrag</a> </li>
+<li class='toc3'><a href='#-defaultKeyDownAction'>defaultKeyDownAction</a> </li>
+<li class='toc3'><a href='#-defaultReceiveDrag'>defaultReceiveDrag</a> </li>
+<li class='toc3'><a href='#-doMetaAction'>doMetaAction</a> </li>
+<li class='toc3'><a href='#-draw'>draw</a> </li>
+<li class='toc3'><a href='#-drawLines'>drawLines</a> </li>
+<li class='toc3'><a href='#-drawRects'>drawRects</a> </li>
+<li class='toc3'><a href='#-editEnv'>editEnv</a> </li>
+<li class='toc3'><a href='#-editable'>editable</a> </li>
+<li class='toc3'><a href='#-fillColor'>fillColor</a> </li>
+<li class='toc3'><a href='#-fixedSelection'>fixedSelection</a> </li>
+<li class='toc3'><a href='#-grid'>grid</a> </li>
+<li class='toc3'><a href='#-gridColor'>gridColor</a> </li>
+<li class='toc3'><a href='#-gridOn'>gridOn</a> </li>
+<li class='toc3'><a href='#-index'>index</a> </li>
+<li class='toc3'><a href='#-init'>init</a> </li>
+<li class='toc3'><a href='#-items'>items</a> </li>
+<li class='toc3'><a href='#-lastIndex'>lastIndex</a> </li>
+<li class='toc3'><a href='#-levelsTimes'>levelsTimes</a> </li>
+<li class='toc3'><a href='#-metaAction'>metaAction</a> </li>
+<li class='toc3'><a href='#-mouseBeginTrack'>mouseBeginTrack</a> </li>
+<li class='toc3'><a href='#-mouseEndTrack'>mouseEndTrack</a> </li>
+<li class='toc3'><a href='#-mouseTrack'>mouseTrack</a> </li>
+<li class='toc3'><a href='#-prSetCurve'>prSetCurve</a> </li>
+<li class='toc3'><a href='#-prSetCurves'>prSetCurves</a> </li>
+<li class='toc3'><a href='#-properties'>properties</a> </li>
+<li class='toc3'><a href='#-select'>select</a> </li>
+<li class='toc3'><a href='#-selectIndex'>selectIndex</a> </li>
+<li class='toc3'><a href='#-selectionColor'>selectionColor</a> </li>
+<li class='toc3'><a href='#-setEditable'>setEditable</a> </li>
+<li class='toc3'><a href='#-setEnv'>setEnv</a> </li>
+<li class='toc3'><a href='#-setFillColor'>setFillColor</a> </li>
+<li class='toc3'><a href='#-setString'>setString</a> </li>
+<li class='toc3'><a href='#-setThumbHeight'>setThumbHeight</a> </li>
+<li class='toc3'><a href='#-setThumbSize'>setThumbSize</a> </li>
+<li class='toc3'><a href='#-setThumbWidth'>setThumbWidth</a> </li>
+<li class='toc3'><a href='#-shapeNumber'>shapeNumber</a> </li>
+<li class='toc3'><a href='#-size'>size</a> </li>
+<li class='toc3'><a href='#-step'>step</a> </li>
+<li class='toc3'><a href='#-strings'>strings</a> </li>
+<li class='toc3'><a href='#-strokeColor'>strokeColor</a> </li>
+<li class='toc3'><a href='#-thumbHeight'>thumbHeight</a> </li>
+<li class='toc3'><a href='#-thumbSize'>thumbSize</a> </li>
+<li class='toc3'><a href='#-thumbWidth'>thumbWidth</a> </li>
+<li class='toc3'><a href='#-value'>value</a> </li>
+<li class='toc3'><a href='#-valueAction'>valueAction</a> </li>
+<li class='toc3'><a href='#-x'>x</a> </li>
+<li class='toc3'><a href='#-y'>y</a> </li>
+</ul></ul></ul></div><h2><a class='anchor' name='description'>Description</a></h2>
+
+<p>Implements <a href="./../Classes/EnvelopeView.html">EnvelopeView</a><h2><a class='anchor' name='classmethods'>Class Methods</a></h2>
+<h3><a class='anchor' name='Inherited class methods'>Inherited class methods</a></h3>
+<div id='inheritedclassmets'></div><h3><a class='anchor' name='Undocumented class methods'>Undocumented class methods</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*paletteExample' href='./../Overviews/Methods.html#paletteExample'>paletteExample</a> (<span class='argstr'>parent</span>, <span class='argstr'>bounds</span>)</h3>
+<h2><a class='anchor' name='instancemethods'>Instance Methods</a></h2>
+<h3><a class='anchor' name='Inherited instance methods'>Inherited instance methods</a></h3>
+<div id='inheritedinstmets'></div><h3><a class='anchor' name='Undocumented instance methods'>Undocumented instance methods</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-addPointAtMouse' href='./../Overviews/Methods.html#addPointAtMouse'>addPointAtMouse</a> (<span class='argstr'>x</span>, <span class='argstr'>y</span>)</h3>
+<div class='extmethod'>From extension in <a href='/Applications/SamplerCentral 2.3.app/Contents/Resources/SCClassLibrary/QUARKS/Conductor/classes/extView.sc'>/Applications/SamplerCentral 2.3.app/Contents/Resources/SCClassLibrary/QUARKS/Conductor/classes/extView.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-addValue' href='./../Overviews/Methods.html#addValue'>addValue</a> (<span class='argstr'>xval</span>, <span class='argstr'>yval</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-allConnections' href='./../Overviews/Methods.html#allConnections'>allConnections</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-allConnections' href='./../Overviews/Methods.html#allConnections'>allConnections</a> = value</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asEnv' href='./../Overviews/Methods.html#asEnv'>asEnv</a> (<span class='argstr'>env</span>, <span class='argstr'>minValue</span>, <span class='argstr'>maxValue</span>, <span class='argstr'>duration</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-colors' href='./../Overviews/Methods.html#colors'>colors</a><h3 class='imethodname'><span class='methprefix'>-</span><a name='-colors' href='./../Overviews/Methods.html#colors'>colors</a>_ (<span class='argstr'>strokec</span>, <span class='argstr'>fillc</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-connect' href='./../Overviews/Methods.html#connect'>connect</a> (<span class='argstr'>from</span>, <span class='argstr'>aconnections</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-currentvalue' href='./../Overviews/Methods.html#currentvalue'>currentvalue</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-currentvalue' href='./../Overviews/Methods.html#currentvalue'>currentvalue</a> = <span class='argstr'>iny</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-curveSegAtMouse' href='./../Overviews/Methods.html#curveSegAtMouse'>curveSegAtMouse</a> (<span class='argstr'>x</span>, <span class='argstr'>y</span>, <span class='argstr'>i</span>)</h3>
+<div class='extmethod'>From extension in <a href='/Applications/SamplerCentral 2.3.app/Contents/Resources/SCClassLibrary/QUARKS/Conductor/classes/extView.sc'>/Applications/SamplerCentral 2.3.app/Contents/Resources/SCClassLibrary/QUARKS/Conductor/classes/extView.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-curves' href='./../Overviews/Methods.html#curves'>curves</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-curves' href='./../Overviews/Methods.html#curves'>curves</a> = <span class='argstr'>inCurves</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-defaultCanReceiveDrag' href='./../Overviews/Methods.html#defaultCanReceiveDrag'>defaultCanReceiveDrag</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-defaultGetDrag' href='./../Overviews/Methods.html#defaultGetDrag'>defaultGetDrag</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-defaultKeyDownAction' href='./../Overviews/Methods.html#defaultKeyDownAction'>defaultKeyDownAction</a> (<span class='argstr'>key</span>, <span class='argstr'>modifiers</span>, <span class='argstr'>unicode</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-defaultReceiveDrag' href='./../Overviews/Methods.html#defaultReceiveDrag'>defaultReceiveDrag</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-doMetaAction' href='./../Overviews/Methods.html#doMetaAction'>doMetaAction</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-draw' href='./../Overviews/Methods.html#draw'>draw</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-drawLines' href='./../Overviews/Methods.html#drawLines'>drawLines</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-drawLines' href='./../Overviews/Methods.html#drawLines'>drawLines</a> = <span class='argstr'>abool</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-drawRects' href='./../Overviews/Methods.html#drawRects'>drawRects</a><h3 class='imethodname'><span class='methprefix'>-</span><a name='-drawRects' href='./../Overviews/Methods.html#drawRects'>drawRects</a> = <span class='argstr'>abool</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-editEnv' href='./../Overviews/Methods.html#editEnv'>editEnv</a> (<span class='argstr'>env</span>, <span class='argstr'>minValue</span>, <span class='argstr'>maxValue</span>, <span class='argstr'>duration</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-editable' href='./../Overviews/Methods.html#editable'>editable</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-editable' href='./../Overviews/Methods.html#editable'>editable</a> = <span class='argstr'>boolean</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-fillColor' href='./../Overviews/Methods.html#fillColor'>fillColor</a><h3 class='imethodname'><span class='methprefix'>-</span><a name='-fillColor' href='./../Overviews/Methods.html#fillColor'>fillColor</a> = <span class='argstr'>color</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-fixedSelection' href='./../Overviews/Methods.html#fixedSelection'>fixedSelection</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-fixedSelection' href='./../Overviews/Methods.html#fixedSelection'>fixedSelection</a> = <span class='argstr'>bool</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-grid' href='./../Overviews/Methods.html#grid'>grid</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-grid' href='./../Overviews/Methods.html#grid'>grid</a> = <span class='argstr'>point</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-gridColor' href='./../Overviews/Methods.html#gridColor'>gridColor</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-gridColor' href='./../Overviews/Methods.html#gridColor'>gridColor</a> = <span class='argstr'>color</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-gridOn' href='./../Overviews/Methods.html#gridOn'>gridOn</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-gridOn' href='./../Overviews/Methods.html#gridOn'>gridOn</a> = <span class='argstr'>bool</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-index' href='./../Overviews/Methods.html#index'>index</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-init' href='./../Overviews/Methods.html#init'>init</a> (<span class='argstr'>argParent</span>, <span class='argstr'>argBounds</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-items' href='./../Overviews/Methods.html#items'>items</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-items' href='./../Overviews/Methods.html#items'>items</a> = value</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-lastIndex' href='./../Overviews/Methods.html#lastIndex'>lastIndex</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-levelsTimes' href='./../Overviews/Methods.html#levelsTimes'>levelsTimes</a> </h3>
+<div class='extmethod'>From extension in <a href='/Applications/SamplerCentral 2.3.app/Contents/Resources/SCClassLibrary/QUARKS/Conductor/classes/extView.sc'>/Applications/SamplerCentral 2.3.app/Contents/Resources/SCClassLibrary/QUARKS/Conductor/classes/extView.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-metaAction' href='./../Overviews/Methods.html#metaAction'>metaAction</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-metaAction' href='./../Overviews/Methods.html#metaAction'>metaAction</a> = value</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-mouseBeginTrack' href='./../Overviews/Methods.html#mouseBeginTrack'>mouseBeginTrack</a> (<span class='argstr'>x</span>, <span class='argstr'>y</span>, <span class='argstr'>modifiers</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-mouseEndTrack' href='./../Overviews/Methods.html#mouseEndTrack'>mouseEndTrack</a> (<span class='argstr'>x</span>, <span class='argstr'>y</span>, <span class='argstr'>modifiers</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-mouseTrack' href='./../Overviews/Methods.html#mouseTrack'>mouseTrack</a> (<span class='argstr'>x</span>, <span class='argstr'>y</span>, <span class='argstr'>modifiers</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-prSetCurve' href='./../Overviews/Methods.html#prSetCurve'>prSetCurve</a> (<span class='argstr'>arr</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-prSetCurves' href='./../Overviews/Methods.html#prSetCurves'>prSetCurves</a> (<span class='argstr'>arr</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-properties' href='./../Overviews/Methods.html#properties'>properties</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-select' href='./../Overviews/Methods.html#select'>select</a> (<span class='argstr'>index</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-selectIndex' href='./../Overviews/Methods.html#selectIndex'>selectIndex</a> (<span class='argstr'>index</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-selectionColor' href='./../Overviews/Methods.html#selectionColor'>selectionColor</a><h3 class='imethodname'><span class='methprefix'>-</span><a name='-selectionColor' href='./../Overviews/Methods.html#selectionColor'>selectionColor</a> = <span class='argstr'>acolor</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setEditable' href='./../Overviews/Methods.html#setEditable'>setEditable</a> (<span class='argstr'>index</span>, <span class='argstr'>boolean</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setEnv' href='./../Overviews/Methods.html#setEnv'>setEnv</a> (<span class='argstr'>env</span>, <span class='argstr'>minValue</span>, <span class='argstr'>maxValue</span>, <span class='argstr'>minTime</span>, <span class='argstr'>maxTime</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setFillColor' href='./../Overviews/Methods.html#setFillColor'>setFillColor</a> (<span class='argstr'>index</span>, <span class='argstr'>color</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setString' href='./../Overviews/Methods.html#setString'>setString</a> (<span class='argstr'>index</span>, <span class='argstr'>astring</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setThumbHeight' href='./../Overviews/Methods.html#setThumbHeight'>setThumbHeight</a> (<span class='argstr'>index</span>, <span class='argstr'>height</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setThumbSize' href='./../Overviews/Methods.html#setThumbSize'>setThumbSize</a> (<span class='argstr'>index</span>, <span class='argstr'>size</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setThumbWidth' href='./../Overviews/Methods.html#setThumbWidth'>setThumbWidth</a> (<span class='argstr'>index</span>, <span class='argstr'>width</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-shapeNumber' href='./../Overviews/Methods.html#shapeNumber'>shapeNumber</a> (<span class='argstr'>shapeName</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-size' href='./../Overviews/Methods.html#size'>size</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-size' href='./../Overviews/Methods.html#size'>size</a> = value</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-step' href='./../Overviews/Methods.html#step'>step</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-step' href='./../Overviews/Methods.html#step'>step</a> = <span class='argstr'>stepSize</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-strings' href='./../Overviews/Methods.html#strings'>strings</a><h3 class='imethodname'><span class='methprefix'>-</span><a name='-strings' href='./../Overviews/Methods.html#strings'>strings</a> = <span class='argstr'>astrings</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-strokeColor' href='./../Overviews/Methods.html#strokeColor'>strokeColor</a><h3 class='imethodname'><span class='methprefix'>-</span><a name='-strokeColor' href='./../Overviews/Methods.html#strokeColor'>strokeColor</a> = <span class='argstr'>acolor</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-thumbHeight' href='./../Overviews/Methods.html#thumbHeight'>thumbHeight</a><h3 class='imethodname'><span class='methprefix'>-</span><a name='-thumbHeight' href='./../Overviews/Methods.html#thumbHeight'>thumbHeight</a> = <span class='argstr'>height</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-thumbSize' href='./../Overviews/Methods.html#thumbSize'>thumbSize</a><h3 class='imethodname'><span class='methprefix'>-</span><a name='-thumbSize' href='./../Overviews/Methods.html#thumbSize'>thumbSize</a> = <span class='argstr'>size</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-thumbWidth' href='./../Overviews/Methods.html#thumbWidth'>thumbWidth</a><h3 class='imethodname'><span class='methprefix'>-</span><a name='-thumbWidth' href='./../Overviews/Methods.html#thumbWidth'>thumbWidth</a> = <span class='argstr'>width</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-value' href='./../Overviews/Methods.html#value'>value</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-value' href='./../Overviews/Methods.html#value'>value</a> = <span class='argstr'>val</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-valueAction' href='./../Overviews/Methods.html#valueAction'>valueAction</a><h3 class='imethodname'><span class='methprefix'>-</span><a name='-valueAction' href='./../Overviews/Methods.html#valueAction'>valueAction</a> = <span class='argstr'>val</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-x' href='./../Overviews/Methods.html#x'>x</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-x' href='./../Overviews/Methods.html#x'>x</a> = <span class='argstr'>ax</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-y' href='./../Overviews/Methods.html#y'>y</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-y' href='./../Overviews/Methods.html#y'>y</a> = <span class='argstr'>ay</span></h3>
+<div class='doclink'>link::Classes/SCEnvelopeView::<br>sc version: 3.6dev</div></div></body></html>

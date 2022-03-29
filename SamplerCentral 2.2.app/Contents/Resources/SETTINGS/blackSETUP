@@ -1,0 +1,21 @@
+var o, p;
+o = [
+	Array.prNew(8),  Array.prNew(8),  Array.prNew(9),  "black",  
+	"Origin37",  "Origin37",  Color.prNew
+];
+p = [
+	// Array
+	0, [ 37.000000,  48.000000,  o[1],  o[2],  
+		o[3],  o[4],  o[5],  o[6] ],  
+	// Array
+	1, [ 82,  83,  28,  29,  
+		16,  80,  18,  19 ],  
+	// Array
+	2, [ 74,  71,  81,  91,  
+		2,  10,  5,  21,  
+		22 ],  
+	// Color
+	6, [ red: 0.682020,  green: 0.827950,  
+		blue: 0.373601,  alpha: 1.000000 ]
+];
+prUnarchive(o,p);

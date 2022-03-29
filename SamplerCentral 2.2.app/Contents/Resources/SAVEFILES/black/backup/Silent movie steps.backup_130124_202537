@@ -1,0 +1,609 @@
+var o, p;
+o = [
+	Array.prNew(5),  Array.prNew(37),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 3 fanfare per step/Tessman 3 fanfare per step 1.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 3 fanfare long/Tessman fanfare long.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 2 Lully in steps (single notes)/Tessman 22.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 2 Lully in steps/Tessman 2.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 1 clunky Autumn Leaves in steps/Tessman 1.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Solness LOOP/solness LOOP.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Ragnar 2/Ragnar 2.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Ragnar 1/Ragnar 1.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann joy joy spasti LOOP/Peter Stockmann LOOP messy version.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann joy joy LOOP/Peter Stockmann LOOP.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 1a.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil LOOP/Peter Stockmann LOOP evil version.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Loevborg Crawling, puking every 4 chords/Loevborg Crawling, puking every 4 chords 1a.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Loevborg SCREAMS 20 sec/Loevborg SCREAMS insane piano (Tina) .wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Loevborg puking LOOP/Loevborg puking LOOP.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Loevborg PSYCHOTIC steps (for LOOP)/Loevborg PERILOUS MUSIC upper keys more psychotic step 1.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Loevborg PSYCHOTIC bckgnd LOOP/Loevborg PSYCHOTIC bckgnd LOOP .wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Loevborg PERILOUS steps (for LOOP)/Loevborg PERILOUS MUSIC step 1 .wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Loevborg PERILOUS bckgnd LOOP/Loevborg PERILOUS MUSIC upper keys Em tremolo LOOP.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Loevborg brave battle music LOOP/Loevborg brave battle music LOOP.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Hilda 1/Hilda 1.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Gulle LOOP 1A/Gulle LOOP 1A.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Gulle LOOP 1/Gulle LOOP 1.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Elvsted 2/Elvsted step 2 melodrama.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Elvsted 1/Elvsted step 1.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Berte 3/Berte 3.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Berte 2/Berte 2.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Berte 1/Berte 1.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Alina standalone steps/Alina standalone steps 1.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Alina LOOP 2 - exorcist/Alina LOOP 2 - exorcist.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Alina LOOP 1/Alina LOOP 1.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Alina (to LOOP 2 - exorcist) step 1/Alina (to LOOP 2 - exorcist) step 1.wav",  List.prNew,  Array.prNew(37),  
+	Array.prNew(17),  Array.prNew(3),  Array.prNew(3),  Array.prNew(17),  
+	Array.prNew(17),  Array.prNew(17),  Array.prNew(3),  Array.prNew(3),  
+	Array.prNew(17),  Array.prNew(3),  Array.prNew(3),  Array.prNew(17),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(17),  Array.prNew(17),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(17),  Array.prNew(3),  
+	Array.prNew(3),  Array.prNew(17),  Array.prNew(3),  Array.prNew(3),  
+	Array.prNew(17),  Array.prNew(3),  Array.prNew(3),  Array.prNew(17),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(17),  Array.prNew(3),  
+	Array.prNew(3),  Array.prNew(17),  Array.prNew(3),  Array.prNew(3),  
+	Array.prNew(17),  Array.prNew(3),  Array.prNew(3),  Array.prNew(17),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(17),  Array.prNew(3),  
+	Array.prNew(3),  Array.prNew(17),  Array.prNew(3),  Array.prNew(3),  
+	Array.prNew(17),  Array.prNew(3),  Array.prNew(3),  Array.prNew(17),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(17),  Array.prNew(3),  
+	Array.prNew(3),  Array.prNew(17),  Array.prNew(3),  Array.prNew(3),  
+	Array.prNew(17),  Array.prNew(3),  Array.prNew(3),  Array.prNew(17),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(17),  Array.prNew(3),  
+	Array.prNew(3),  Array.prNew(17),  Array.prNew(3),  Array.prNew(3),  
+	Array.prNew(17),  Array.prNew(3),  Array.prNew(3),  Array.prNew(17),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(17),  Array.prNew(3),  
+	Array.prNew(3),  Array.prNew(17),  Array.prNew(3),  Array.prNew(3),  
+	Array.prNew(17),  Array.prNew(3),  Array.prNew(3),  Array.prNew(17),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(17),  Array.prNew(3),  
+	Array.prNew(3),  Array.prNew(17),  Array.prNew(3),  Array.prNew(3),  
+	Array.prNew(17),  Array.prNew(3),  Array.prNew(3),  Array.prNew(17),  
+	Array.prNew(3),  Array.prNew(3),  Array.prNew(17),  Array.prNew(8),  
+	Array.prNew(5),  "gpLooper",  Array.prNew(5),  Array.prNew(5),  
+	Array.prNew(5),  Array.prNew(5),  Array.prNew(5),  Array.prNew(5),  
+	Array.prNew(5),  Array.prNew(9),  Array.prNew(5),  "gpLooper",  
+	Array.prNew(5),  Array.prNew(5),  Array.prNew(5),  Array.prNew(5),  
+	Array.prNew(5),  Array.prNew(5),  Array.prNew(5),  Array.prNew(5),  
+	List.prNew,  Array.prNew(37),  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew(5),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 3 fanfare per step/Tessman 3 fanfare per step 1a.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 3 fanfare per step/Tessman 3 fanfare per step 1b.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 3 fanfare per step/Tessman 3 fanfare per step 1c.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 3 fanfare per step/Tessman 3 fanfare per step 1d.wav",  Array.prNew(1),  Array.prNew(9),  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 2 Lully in steps (single notes)/Tessman 22a.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 2 Lully in steps (single notes)/Tessman 22b.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 2 Lully in steps (single notes)/Tessman 22c.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 2 Lully in steps (single notes)/Tessman 22d.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 2 Lully in steps (single notes)/Tessman 22e.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 2 Lully in steps (single notes)/Tessman 22f.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 2 Lully in steps (single notes)/Tessman 22g.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 2 Lully in steps (single notes)/Tessman 22h.wav",  
+	Array.prNew,  Array.prNew(9),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 2 Lully in steps/Tessman 2a.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 2 Lully in steps/Tessman 2b.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 2 Lully in steps/Tessman 2c.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 2 Lully in steps/Tessman 2d.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 2 Lully in steps/Tessman 2e.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 2 Lully in steps/Tessman 2f.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 2 Lully in steps/Tessman 2g.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 2 Lully in steps/Tessman 2h.wav",  Array.prNew(7),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 1 clunky Autumn Leaves in steps/Tessman 1a.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 1 clunky Autumn Leaves in steps/Tessman 1b.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 1 clunky Autumn Leaves in steps/Tessman 1c.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 1 clunky Autumn Leaves in steps/Tessman 1d.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 1 clunky Autumn Leaves in steps/Tessman 1e.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Tessman 1 clunky Autumn Leaves in steps/Tessman 1f.wav",  Array.prNew(1),  Array.prNew(7),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Ragnar 2/Ragnar 2a.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Ragnar 2/Ragnar 2b.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Ragnar 2/Ragnar 2c.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Ragnar 2/Ragnar 2d.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Ragnar 2/Ragnar 2e.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Ragnar 2/Ragnar 2f.wav",  Array.prNew(4),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Ragnar 1/Ragnar 1a.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Ragnar 1/Ragnar 1b.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Ragnar 1/Ragnar 1c.wav",  Array.prNew(1),  Array.prNew(1),  Array.prNew(26),  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 1b.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 1c.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 1d.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 2.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 2a.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 2b.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 2c.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 2d.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 2e.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 2f.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 2g.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 2h.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 2i.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 2j.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 2k.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 2l.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 2m.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 2n.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 2o.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 2p.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 2q.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 2r.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 2s.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 2t.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Peter Stockmann evil step 1/Peter Stockmann 2u.wav",  Array.prNew(1),  Array.prNew(5),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Loevborg Crawling, puking every 4 chords/Loevborg Crawling, puking every 4 chords 1b.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Loevborg Crawling, puking every 4 chords/Loevborg Crawling, puking every 4 chords 1c.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Loevborg Crawling, puking every 4 chords/Loevborg Crawling, puking every 4 chords 1d.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Loevborg Crawling, puking every 4 chords/Loevborg Crawling, puking every 4 chords 1e LOOP.wav",  Array.prNew(1),  
+	Array.prNew(1),  Array.prNew(2),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Loevborg PSYCHOTIC steps (for LOOP)/Loevborg PERILOUS MUSIC upper keys more psychotic step 1a.wav",  Array.prNew(1),  
+	Array.prNew(4),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Loevborg PERILOUS steps (for LOOP)/Loevborg PERILOUS MUSIC step 1a .wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Loevborg PERILOUS steps (for LOOP)/Loevborg PERILOUS MUSIC step 1b .wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Loevborg PERILOUS steps (for LOOP)/Loevborg PERILOUS MUSIC step 1c .wav",  
+	Array.prNew(1),  Array.prNew(1),  Array.prNew(3),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Hilda 1/Hilda 1a.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Hilda 1/Hilda 1b.wav",  Array.prNew(1),  Array.prNew(1),  Array.prNew(3),  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Elvsted 2/Elvsted step 2a melodrama.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Elvsted 2/Elvsted step 2b melodrama.wav",  Array.prNew(1),  Array.prNew(4),  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Berte 3/Berte 3a.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Berte 3/Berte 3b.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Berte 3/Berte 3c.wav",  Array.prNew(3),  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Berte 2/Berte 2a.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Berte 2/Berte 2b.wav",  Array.prNew(2),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Berte 1/Berte 1a.wav",  
+	Array.prNew(4),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Alina standalone steps/Alina standalone steps 1a.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Alina standalone steps/Alina standalone steps 1b.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Alina standalone steps/Alina standalone steps 1c.wav",  
+	Array.prNew(1),  Array.prNew(1),  Array.prNew(7),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Alina (to LOOP 2 - exorcist) step 1/Alina (to LOOP 2 - exorcist) step 1a.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Alina (to LOOP 2 - exorcist) step 1/Alina (to LOOP 2 - exorcist) step 1b.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Alina (to LOOP 2 - exorcist) step 1/Alina (to LOOP 2 - exorcist) step 1c.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Alina (to LOOP 2 - exorcist) step 1/Alina (to LOOP 2 - exorcist) step 1d.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Alina (to LOOP 2 - exorcist) step 1/Alina (to LOOP 2 - exorcist) step 1e.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Characters/silent movie steps/Alina (to LOOP 2 - exorcist) step 1/Alina (to LOOP 2 - exorcist) step 1f.wav",  Array.prNew
+];
+p = [
+	// Array
+	0, [ o[1],  o[34],  o[139],  o[149],  
+		o[160] ],  
+	// Array
+	1, [ nil,  nil,  nil,  o[2],  
+		o[3],  o[4],  nil,  o[5],  
+		o[6],  o[7],  o[8],  o[9],  
+		o[10],  o[11],  o[12],  o[13],  
+		o[14],  o[15],  o[16],  o[17],  
+		o[18],  o[19],  o[20],  o[21],  
+		o[22],  o[23],  o[24],  o[25],  
+		o[26],  o[27],  o[28],  o[29],  
+		o[30],  o[31],  o[32],  o[33],  
+		nil ],  
+	// List
+	34, [ array: o[35] ],  
+	// Array
+	35, [ o[36],  o[39],  o[40],  o[41],  
+		o[44],  o[47],  o[50],  o[51],  
+		o[54],  o[57],  o[60],  o[63],  
+		o[66],  o[69],  o[72],  o[75],  
+		o[78],  o[81],  o[84],  o[87],  
+		o[90],  o[93],  o[96],  o[99],  
+		o[102],  o[105],  o[108],  o[111],  
+		o[114],  o[117],  o[120],  o[123],  
+		o[126],  o[129],  o[132],  o[135],  
+		o[138] ],  
+	// Array
+	36, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		o[37],  o[38],  1,  nil,  
+		nil ],  
+	// Array
+	37, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	38, [ 0,  0,  1 ],  
+	// Array
+	39, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		o[37],  o[38],  1,  nil,  
+		nil ],  
+	// Array
+	40, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		o[37],  o[38],  1,  nil,  
+		nil ],  
+	// Array
+	41, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		o[42],  o[43],  1,  nil,  
+		nil ],  
+	// Array
+	42, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	43, [ 0,  0,  1 ],  
+	// Array
+	44, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		o[45],  o[46],  1,  nil,  
+		nil ],  
+	// Array
+	45, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	46, [ 0,  0,  1 ],  
+	// Array
+	47, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		o[48],  o[49],  1,  nil,  
+		nil ],  
+	// Array
+	48, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	49, [ 0,  0,  1 ],  
+	// Array
+	50, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		o[37],  o[38],  1,  nil,  
+		nil ],  
+	// Array
+	51, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		o[52],  o[53],  1,  nil,  
+		nil ],  
+	// Array
+	52, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	53, [ 0,  0,  1 ],  
+	// Array
+	54, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		o[55],  o[56],  1,  nil,  
+		nil ],  
+	// Array
+	55, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	56, [ 0,  0,  1 ],  
+	// Array
+	57, [ 0.500000,  1,  5,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		o[58],  o[59],  1,  nil,  
+		nil ],  
+	// Array
+	58, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	59, [ 0,  0,  1 ],  
+	// Array
+	60, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  6,  
+		0,  0,  nil,  nil,  
+		o[61],  o[62],  1,  nil,  
+		nil ],  
+	// Array
+	61, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	62, [ 0,  0,  1 ],  
+	// Array
+	63, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  0,  
+		0,  0,  nil,  nil,  
+		o[64],  o[65],  1,  nil,  
+		nil ],  
+	// Array
+	64, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	65, [ 0,  0,  1 ],  
+	// Array
+	66, [ 0.500000,  1,  5,  0.010000,  
+		0.200000,  0,  0,  0,  
+		0,  0,  nil,  nil,  
+		o[67],  o[68],  1,  nil,  
+		nil ],  
+	// Array
+	67, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	68, [ 0,  0,  1 ],  
+	// Array
+	69, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  0,  
+		0,  0,  nil,  nil,  
+		o[70],  o[71],  1,  nil,  
+		nil ],  
+	// Array
+	70, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	71, [ 0,  0,  1 ],  
+	// Array
+	72, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  4,  
+		0,  0,  nil,  nil,  
+		o[73],  o[74],  1,  nil,  
+		nil ],  
+	// Array
+	73, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	74, [ 0,  0,  1 ],  
+	// Array
+	75, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  0,  
+		0,  0,  nil,  nil,  
+		o[76],  o[77],  1,  nil,  
+		nil ],  
+	// Array
+	76, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	77, [ 0,  0,  1 ],  
+	// Array
+	78, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  1,  
+		0,  0,  nil,  nil,  
+		o[79],  o[80],  1,  nil,  
+		nil ],  
+	// Array
+	79, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	80, [ 0,  0,  1 ],  
+	// Array
+	81, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  0,  
+		0,  0,  nil,  nil,  
+		o[82],  o[83],  1,  nil,  
+		nil ],  
+	// Array
+	82, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	83, [ 0,  0,  1 ],  
+	// Array
+	84, [ 0.500000,  1,  5,  0.010000,  
+		0.200000,  0,  0,  0,  
+		0,  0,  nil,  nil,  
+		o[85],  o[86],  1,  nil,  
+		nil ],  
+	// Array
+	85, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	86, [ 0,  0,  1 ],  
+	// Array
+	87, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  0,  
+		0,  0,  nil,  nil,  
+		o[88],  o[89],  1,  nil,  
+		nil ],  
+	// Array
+	88, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	89, [ 0,  0,  1 ],  
+	// Array
+	90, [ 0.500000,  1,  5,  0.010000,  
+		0.200000,  0,  0,  0,  
+		0,  0,  nil,  nil,  
+		o[91],  o[92],  1,  nil,  
+		nil ],  
+	// Array
+	91, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	92, [ 0,  0,  1 ],  
+	// Array
+	93, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  0,  
+		0,  0,  nil,  nil,  
+		o[94],  o[95],  1,  nil,  
+		nil ],  
+	// Array
+	94, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	95, [ 0,  0,  1 ],  
+	// Array
+	96, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  0,  
+		0,  0,  nil,  nil,  
+		o[97],  o[98],  1,  nil,  
+		nil ],  
+	// Array
+	97, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	98, [ 0,  0,  1 ],  
+	// Array
+	99, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  0,  
+		0,  0,  nil,  nil,  
+		o[100],  o[101],  1,  nil,  
+		nil ],  
+	// Array
+	100, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	101, [ 0,  0,  1 ],  
+	// Array
+	102, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  1,  
+		0,  0,  nil,  nil,  
+		o[103],  o[104],  1,  nil,  
+		nil ],  
+	// Array
+	103, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	104, [ 0,  0,  1 ],  
+	// Array
+	105, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  0,  
+		0,  0,  nil,  nil,  
+		o[106],  o[107],  1,  nil,  
+		nil ],  
+	// Array
+	106, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	107, [ 0,  0,  1 ],  
+	// Array
+	108, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  0,  
+		0,  0,  nil,  nil,  
+		o[109],  o[110],  1,  nil,  
+		nil ],  
+	// Array
+	109, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	110, [ 0,  0,  1 ],  
+	// Array
+	111, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  0,  
+		0,  0,  nil,  nil,  
+		o[112],  o[113],  1,  nil,  
+		nil ],  
+	// Array
+	112, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	113, [ 0,  0,  1 ],  
+	// Array
+	114, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  0,  
+		0,  0,  nil,  nil,  
+		o[115],  o[116],  1,  nil,  
+		nil ],  
+	// Array
+	115, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	116, [ 0,  0,  1 ],  
+	// Array
+	117, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		o[118],  o[119],  1,  nil,  
+		nil ],  
+	// Array
+	118, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	119, [ 0,  0,  1 ],  
+	// Array
+	120, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  1,  
+		0,  0,  nil,  nil,  
+		o[121],  o[122],  1,  nil,  
+		nil ],  
+	// Array
+	121, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	122, [ 0,  0,  1 ],  
+	// Array
+	123, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  0,  
+		0,  0,  nil,  nil,  
+		o[124],  o[125],  1,  nil,  
+		nil ],  
+	// Array
+	124, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	125, [ 0,  0,  1 ],  
+	// Array
+	126, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  2,  
+		0,  0,  nil,  nil,  
+		o[127],  o[128],  1,  nil,  
+		nil ],  
+	// Array
+	127, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	128, [ 0,  0,  1 ],  
+	// Array
+	129, [ 0.500000,  1,  5,  0.010000,  
+		0.200000,  0,  0,  0,  
+		0,  0,  nil,  nil,  
+		o[130],  o[131],  1,  nil,  
+		nil ],  
+	// Array
+	130, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	131, [ 0,  0,  1 ],  
+	// Array
+	132, [ 0.500000,  1,  5,  0.010000,  
+		0.200000,  0,  0,  0,  
+		0,  0,  nil,  nil,  
+		o[133],  o[134],  1,  nil,  
+		nil ],  
+	// Array
+	133, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	134, [ 0,  0,  1 ],  
+	// Array
+	135, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  1,  
+		0,  0,  nil,  nil,  
+		o[136],  o[137],  1,  nil,  
+		nil ],  
+	// Array
+	136, [ 0.100000,  0.200000,  0 ],  
+	// Array
+	137, [ 0,  0,  1 ],  
+	// Array
+	138, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		o[37],  o[38],  1,  nil,  
+		nil ],  
+	// Array
+	139, [ o[140],  o[142],  o[143],  o[144],  
+		o[145],  o[146],  o[147],  o[148] ],  
+	// Array
+	140, [ nil,  o[141],  0,  nil,  
+		1 ],  
+	// Array
+	142, [ nil,  o[141],  0,  nil,  
+		1 ],  
+	// Array
+	143, [ nil,  o[141],  0,  nil,  
+		1 ],  
+	// Array
+	144, [ nil,  o[141],  0,  nil,  
+		1 ],  
+	// Array
+	145, [ nil,  o[141],  0,  nil,  
+		1 ],  
+	// Array
+	146, [ nil,  o[141],  0,  nil,  
+		1 ],  
+	// Array
+	147, [ nil,  o[141],  0,  nil,  
+		1 ],  
+	// Array
+	148, [ nil,  o[141],  0,  nil,  
+		1 ],  
+	// Array
+	149, [ o[150],  o[152],  o[153],  o[154],  
+		o[155],  o[156],  o[157],  o[158],  
+		o[159] ],  
+	// Array
+	150, [ nil,  o[151],  0,  nil,  
+		1 ],  
+	// Array
+	152, [ nil,  o[151],  0,  nil,  
+		1 ],  
+	// Array
+	153, [ nil,  o[151],  0,  nil,  
+		1 ],  
+	// Array
+	154, [ nil,  o[151],  0,  nil,  
+		1 ],  
+	// Array
+	155, [ nil,  o[151],  0,  nil,  
+		1 ],  
+	// Array
+	156, [ nil,  o[151],  0,  nil,  
+		1 ],  
+	// Array
+	157, [ nil,  o[151],  0,  nil,  
+		1 ],  
+	// Array
+	158, [ nil,  o[151],  0,  nil,  
+		1 ],  
+	// Array
+	159, [ nil,  o[151],  0,  nil,  
+		1 ],  
+	// List
+	160, [ array: o[161] ],  
+	// Array
+	161, [ o[162],  o[163],  o[164],  o[165],  
+		o[170],  o[171],  o[180],  o[181],  
+		o[190],  o[197],  o[198],  o[205],  
+		o[209],  o[210],  o[211],  o[237],  
+		o[238],  o[243],  o[244],  o[245],  
+		o[247],  o[248],  o[252],  o[253],  
+		o[254],  o[257],  o[258],  o[259],  
+		o[262],  o[263],  o[267],  o[270],  
+		o[272],  o[276],  o[277],  o[278],  
+		o[285] ],  
+	// Array
+	165, [ o[2],  o[166],  o[167],  o[168],  
+		o[169] ],  
+	// Array
+	170, [ o[3] ],  
+	// Array
+	171, [ o[4],  o[172],  o[173],  o[174],  
+		o[175],  o[176],  o[177],  o[178],  
+		o[179] ],  
+	// Array
+	181, [ o[5],  o[182],  o[183],  o[184],  
+		o[185],  o[186],  o[187],  o[188],  
+		o[189] ],  
+	// Array
+	190, [ o[6],  o[191],  o[192],  o[193],  
+		o[194],  o[195],  o[196] ],  
+	// Array
+	197, [ o[7] ],  
+	// Array
+	198, [ o[8],  o[199],  o[200],  o[201],  
+		o[202],  o[203],  o[204] ],  
+	// Array
+	205, [ o[9],  o[206],  o[207],  o[208] ],  
+	// Array
+	209, [ o[10] ],  
+	// Array
+	210, [ o[11] ],  
+	// Array
+	211, [ o[12],  o[212],  o[213],  o[214],  
+		o[215],  o[216],  o[217],  o[218],  
+		o[219],  o[220],  o[221],  o[222],  
+		o[223],  o[224],  o[225],  o[226],  
+		o[227],  o[228],  o[229],  o[230],  
+		o[231],  o[232],  o[233],  o[234],  
+		o[235],  o[236] ],  
+	// Array
+	237, [ o[13] ],  
+	// Array
+	238, [ o[14],  o[239],  o[240],  o[241],  
+		o[242] ],  
+	// Array
+	243, [ o[15] ],  
+	// Array
+	244, [ o[16] ],  
+	// Array
+	245, [ o[17],  o[246] ],  
+	// Array
+	247, [ o[18] ],  
+	// Array
+	248, [ o[19],  o[249],  o[250],  o[251] ],  
+	// Array
+	252, [ o[20] ],  
+	// Array
+	253, [ o[21] ],  
+	// Array
+	254, [ o[22],  o[255],  o[256] ],  
+	// Array
+	257, [ o[23] ],  
+	// Array
+	258, [ o[24] ],  
+	// Array
+	259, [ o[25],  o[260],  o[261] ],  
+	// Array
+	262, [ o[26] ],  
+	// Array
+	263, [ o[27],  o[264],  o[265],  o[266] ],  
+	// Array
+	267, [ o[28],  o[268],  o[269] ],  
+	// Array
+	270, [ o[29],  o[271] ],  
+	// Array
+	272, [ o[30],  o[273],  o[274],  o[275] ],  
+	// Array
+	276, [ o[31] ],  
+	// Array
+	277, [ o[32] ],  
+	// Array
+	278, [ o[33],  o[279],  o[280],  o[281],  
+		o[282],  o[283],  o[284] ]
+];
+prUnarchive(o,p);

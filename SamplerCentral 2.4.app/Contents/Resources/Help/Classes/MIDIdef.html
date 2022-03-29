@@ -1,0 +1,121 @@
+<html><head><title>MIDIdef</title>
+<link rel='stylesheet' href='./../scdoc.css' type='text/css' />
+<link rel='stylesheet' href='./../frontend.css' type='text/css' />
+<link rel='stylesheet' href='./../custom.css' type='text/css' />
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<script src='./../scdoc.js' type='text/javascript'></script>
+<script src='./../docmap.js' type='text/javascript'></script>
+<script src='./../prettify.js' type='text/javascript'></script>
+<script src='./../lang-sc.js' type='text/javascript'></script>
+<script src='./../MathJax/MathJax.js?config=TeX-AMS_HTML,scmathjax' type='text/javascript'></script>
+<script type='text/javascript'>var helpRoot='./..';</script>
+</head>
+<ul id='menubar'></ul>
+<body onload='fixTOC();prettyPrint()'>
+<div class='contents'>
+<div class='header'>
+<div id='label'>SuperCollider CLASSES</div>
+<div id='categories'><a href='./../Browse.html#External Control>MIDI'>External Control>MIDI</a></div>
+<h1>MIDIdef</h1>
+<div id='summary'>MIDI response reference definition</div>
+</div>
+<div class='subheader'>
+<div id='filename'>Source: /Applications/SamplerCentral 2.2.app/Contents/Resources/SCClassLibrary/Common/Control/<a href='file:///Applications/SamplerCentral 2.2.app/Contents/Resources/SCClassLibrary/Common/Control/ResponseDefs.sc'>ResponseDefs.sc</a></div><div id='superclasses'>Inherits from: <a href="../Classes/MIDIFunc.html">MIDIFunc</a> : <a href="../Classes/AbstractResponderFunc.html">AbstractResponderFunc</a> : <a href="../Classes/Object.html">Object</a></div>
+<div id='related'>See also: <a href="./../Guides/MIDI.html">MIDI</a>, <a href="./../Classes/MIDIdef.html">MIDIdef</a></div>
+</div>
+<div id='toc'>
+<ul class='toc'><li class='toc1'><a href='#description'>Description</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#classmethods'>Class methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#*all'>all</a> </li>
+<li class='toc3'><a href='#*new'>new</a> </li>
+<li class='toc3'><a href='#*cc'>cc</a> </li>
+<li class='toc3'><a href='#*noteOn'>noteOn</a> </li>
+<li class='toc3'><a href='#*noteOff'>noteOff</a> </li>
+<li class='toc3'><a href='#*polytouch'>polytouch</a> </li>
+<li class='toc3'><a href='#*touch'>touch</a> </li>
+<li class='toc3'><a href='#*bend'>bend</a> </li>
+<li class='toc3'><a href='#*program'>program</a> </li>
+<li class='toc3'><a href='#*freeAll'>freeAll</a> </li>
+<li class='toc2'><a href='#Inherited class methods'>Inherited class methods</a></li>
+</ul><li class='toc1'><a href='#instancemethods'>Instance methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#-key'>key</a> </li>
+<li class='toc3'><a href='#-free'>free</a> </li>
+<li class='toc2'><a href='#Inherited instance methods'>Inherited instance methods</a></li>
+</ul><li class='toc1'><a href='#examples'>Examples</a></li>
+<ul class='toc'></ul></ul></div><h2><a class='anchor' name='description'>Description</a></h2>
+
+<p>MIDIdef provides a global reference to the functionality of its superclass <a href="./../Classes/MIDIFunc.html">MIDIFunc</a>. Essentially it stores itself at a key within a global dictionary, allowing replacement at any time. Most methods are inherited from its superclass.<div class='note'><span class='notelabel'>NOTE:</span> Use of the older classes MIDIResponder, CCResponder, NoteOnResponder, NoteOffResponder, BendResponder, TouchResponder, and ProgramChangeResponder can be unsafe, since responders in user and class code can override each other unintentionally. MIDIdef and <a href="./../Classes/MIDIFunc.html">MIDIFunc</a> are faster, safer, and have more logical argument order. Thus they are the recommended way of registering for incoming MIDI messages as of SC 3.5.</div><h2><a class='anchor' name='classmethods'>Class Methods</a></h2>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*all' href='./../Overviews/Methods.html#all'>all</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*all' href='./../Overviews/Methods.html#all'>all</a> = value</h3>
+<div class='method'>
+<p>Get the global dictionary of all MIDIdefs.<h4>Returns:</h4>
+<div class='returnvalue'>
+<p>An <a href="./../Classes/IdentityDictionary.html">IdentityDictionary</a>.</div></div><h3 class='cmethodname'><span class='methprefix'>*</span><a name='*new' href='./../Overviews/Methods.html#new'>new</a> (<span class='argstr'>key</span>, <span class='argstr'>func</span>, <span class='argstr'>msgNum</span>, <span class='argstr'>chan</span>, <span class='argstr'>msgType</span>, <span class='argstr'>srcID</span>, <span class='argstr'>argTemplate</span>, <span class='argstr'>dispatcher</span>)</h3>
+<div class='method'>
+<p>Create a new, enabled MIDIdef. If a MIDIdef already exists at this key, its parameters will be replaced with the ones provided (args for which nil is passed will use the old values). Normally one would use one of the message type specific convenience methods below, rather than use this method directly.<h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>key<td class='argumentdesc'>
+<p>The key at which to store this OSCdef in the global collection. Generally this will be a <a href="./../Classes/Symbol.html">Symbol</a>.<tr><td class='argumentname'>func<td class='argumentdesc'>
+<p>A <a href="./../Classes/Function.html">Function</a> or similar object which will respond to the incoming message. When evaluated for noteOn, noteOff, control, and polytouch messages it will be passed the arguments val, num, chan, and src, corresponding to the message value (e.g. velocity, control value, etc.), message number (e.g. note number), MIDI channel, and MIDI source uid. For touch, programme change and bend messages it will be passed only val, chan, and src.<tr><td class='argumentname'>msgNum<td class='argumentdesc'>
+<p>An <a href="./../Classes/Integer.html">Integer</a> indicating the MIDI message number (note number, control number, or programme number) for this MIDIdef. This can be an array. If nil, the MIDIdef will respond to messages of all possible message numbers.<tr><td class='argumentname'>chan<td class='argumentdesc'>
+<p>An <a href="./../Classes/Integer.html">Integer</a> indicating the MIDI channel number for this MIDIdef. This can be an array. If nil, the MIDIdef will respond to messages received on all channels.<tr><td class='argumentname'>msgType<td class='argumentdesc'>
+<p>A <a href="./../Classes/Symbol.html">Symbol</a> indicating which kind of MIDI message this MIDIdef should respond to. One of <code class='code prettyprint lang-sc'>\noteOn</code>, <code class='code prettyprint lang-sc'>\noteOff</code>, <code class='code prettyprint lang-sc'>\control</code>, <code class='code prettyprint lang-sc'>\touch</code>, <code class='code prettyprint lang-sc'>\polytouch</code>, <code class='code prettyprint lang-sc'>\bend</code>, or <code class='code prettyprint lang-sc'>program</code>.<tr><td class='argumentname'>srcID<td class='argumentdesc'>
+<p>An <a href="./../Classes/Integer.html">Integer</a> corresponding to the uid of the MIDI input. (See <a href="./../Classes/MIDIClient.html">MIDIClient</a>.) If nil, the MIDIdef will respond to messages received from all sources.<tr><td class='argumentname'>argTemplate<td class='argumentdesc'>
+<p>An optional <a href="./../Classes/Integer.html">Integer</a> or <a href="./../Classes/Function.html">Function</a> (or object which responds to the method <a href="./../Overviews/Methods.html#matchItem">Methods: matchItem</a>) used to match the value of an incoming MIDI message. (e.g. velocity, control value, program number, etc.). If a Function, it will be evaluated with the message value as an argument, and should return a <a href="./../Classes/Boolean.html">Boolean</a> indicating whether the message matches and this MIDIdef should respond.<tr><td class='argumentname'>dispatcher<td class='argumentdesc'>
+<p>An optional instance of an appropriate subclass of <a href="./../Classes/AbstractDispatcher.html">AbstractDispatcher</a>. This can be used to allow for customised dispatching. Normally this should not be needed.</table><h4>Returns:</h4>
+<div class='returnvalue'>
+<p>An instance of MIDIdef.</div></div><h3 class='cmethodname'><span class='methprefix'>*</span><a name='*cc' href='./../Overviews/Methods.html#cc'>cc</a> (<span class='argstr'>key</span>, <span class='argstr'>func</span>, <span class='argstr'>ccNum</span>, <span class='argstr'>chan</span>, <span class='argstr'>srcID</span>, <span class='argstr'>argTemplate</span>, <span class='argstr'>dispatcher</span>)</h3>
+<div class='method'>
+<p>A convenience method to create a new MIDIdef which responds to MIDI control messages. See <a href="#*new">*new</a> for argument descriptions.<h4>Returns:</h4>
+<div class='returnvalue'>
+<p>An instance of MIDIdef which responds to MIDI control messages.</div></div><h3 class='cmethodname'><span class='methprefix'>*</span><a name='*noteOn' href='./../Overviews/Methods.html#noteOn'>noteOn</a> (<span class='argstr'>key</span>, <span class='argstr'>func</span>, <span class='argstr'>noteNum</span>, <span class='argstr'>chan</span>, <span class='argstr'>srcID</span>, <span class='argstr'>argTemplate</span>, <span class='argstr'>dispatcher</span>)</h3>
+<div class='method'>
+<p>A convenience method to create a new MIDIdef which responds to MIDI note on messages. See <a href="#*new">*new</a> for argument descriptions.<h4>Returns:</h4>
+<div class='returnvalue'>
+<p>An instance of MIDIdef which responds to MIDI note on messages.</div></div><h3 class='cmethodname'><span class='methprefix'>*</span><a name='*noteOff' href='./../Overviews/Methods.html#noteOff'>noteOff</a> (<span class='argstr'>key</span>, <span class='argstr'>func</span>, <span class='argstr'>noteNum</span>, <span class='argstr'>chan</span>, <span class='argstr'>srcID</span>, <span class='argstr'>argTemplate</span>, <span class='argstr'>dispatcher</span>)</h3>
+<div class='method'>
+<p>A convenience method to create a new MIDIdef which responds to MIDI note off messages. See <a href="#*new">*new</a> for argument descriptions.<h4>Returns:</h4>
+<div class='returnvalue'>
+<p>An instance of MIDIdef which responds to MIDI note off messages.</div></div><h3 class='cmethodname'><span class='methprefix'>*</span><a name='*polytouch' href='./../Overviews/Methods.html#polytouch'>polytouch</a> (<span class='argstr'>key</span>, <span class='argstr'>func</span>, <span class='argstr'>noteNum</span>, <span class='argstr'>chan</span>, <span class='argstr'>srcID</span>, <span class='argstr'>argTemplate</span>, <span class='argstr'>dispatcher</span>)</h3>
+<div class='method'>
+<p>A convenience method to create a new MIDIdef which responds to MIDI polytouch messages. See <a href="#*new">*new</a> for argument descriptions.<h4>Returns:</h4>
+<div class='returnvalue'>
+<p>An instance of MIDIdef which responds to MIDI polytouch messages.</div></div><h3 class='cmethodname'><span class='methprefix'>*</span><a name='*touch' href='./../Overviews/Methods.html#touch'>touch</a> (<span class='argstr'>key</span>, <span class='argstr'>func</span>, <span class='argstr'>chan</span>, <span class='argstr'>srcID</span>, <span class='argstr'>argTemplate</span>, <span class='argstr'>dispatcher</span>)</h3>
+<div class='method'>
+<p>A convenience method to create a new MIDIdef which responds to MIDI touch messages. See <a href="#*new">*new</a> for argument descriptions.<h4>Returns:</h4>
+<div class='returnvalue'>
+<p>An instance of MIDIdef which responds to MIDI touch messages.</div></div><h3 class='cmethodname'><span class='methprefix'>*</span><a name='*bend' href='./../Overviews/Methods.html#bend'>bend</a> (<span class='argstr'>key</span>, <span class='argstr'>func</span>, <span class='argstr'>chan</span>, <span class='argstr'>srcID</span>, <span class='argstr'>argTemplate</span>, <span class='argstr'>dispatcher</span>)</h3>
+<div class='method'>
+<p>A convenience method to create a new MIDIdef which responds to MIDI bend messages. See <a href="#*new">*new</a> for argument descriptions.<h4>Returns:</h4>
+<div class='returnvalue'>
+<p>An instance of MIDIdef which responds to MIDI bend messages.</div></div><h3 class='cmethodname'><span class='methprefix'>*</span><a name='*program' href='./../Overviews/Methods.html#program'>program</a> (<span class='argstr'>key</span>, <span class='argstr'>func</span>, <span class='argstr'>chan</span>, <span class='argstr'>srcID</span>, <span class='argstr'>argTemplate</span>, <span class='argstr'>dispatcher</span>)</h3>
+<div class='method'>
+<p>A convenience method to create a new MIDIdef which responds to MIDI program change messages. See <a href="#*new">*new</a> for argument descriptions.<h4>Returns:</h4>
+<div class='returnvalue'>
+<p>An instance of MIDIdef which responds to MIDI program change messages.</div></div><h3 class='cmethodname'><span class='methprefix'>*</span><a name='*freeAll' href='./../Overviews/Methods.html#freeAll'>freeAll</a> </h3>
+<div class='method'>
+<p>Clears and deactivates all MIDIdefs from the global collection.</div><h3><a class='anchor' name='Inherited class methods'>Inherited class methods</a></h3>
+<div id='inheritedclassmets'></div><h2><a class='anchor' name='instancemethods'>Instance Methods</a></h2>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-key' href='./../Overviews/Methods.html#key'>key</a> </h3>
+<div class='method'>
+<p>Get this MIDIdef's key.<h4>Returns:</h4>
+<div class='returnvalue'>
+<p>Usually a <a href="./../Classes/Symbol.html">Symbol</a>.</div></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-free' href='./../Overviews/Methods.html#free'>free</a> </h3>
+<div class='method'>
+<p>Clears this MIDIdef from the global collection and deactivates it.</div><h3><a class='anchor' name='Inherited instance methods'>Inherited instance methods</a></h3>
+<div id='inheritedinstmets'></div><h2><a class='anchor' name='examples'>Examples</a></h2>
+<pre class='code prettyprint lang-sc'>MIDIIn.connectAll
+MIDIdef.cc(\test1, {arg ...args; args.postln}, 1); // match cc 1
+MIDIdef.cc(\test2, {arg ...args; args.postln}, 1, 1); // match cc1, chan 1
+MIDIdef.cc(\test3, {arg ...args; args.postln}, (1..10)); // match cc 1-10
+MIDIdef.noteOn(\test4, {arg ...args; args.postln}); // match any noteOn
+
+MIDIIn.doNoteOnAction(1, 1, 64, 64); // spoof a note on
+MIDIIn.doControlAction(1, 1, 1, 64); // spoof a cc
+MIDIIn.doControlAction(1, 1, 9, 64);
+MIDIIn.doControlAction(1, 10, 1, 64);
+
+MIDIdef(\test1).free; // free one def
+MIDIdef.freeAll;      // free all registered MIDIdefs</pre>
+
+<p><div class='doclink'>source: <a href='file:///Applications/SamplerCentral 2.2.app/Contents/Resources/HelpSource/Classes/MIDIdef.schelp'>/Applications/SamplerCentral 2.2.app/Contents/Resources/HelpSource/Classes/MIDIdef.schelp</a><br>link::Classes/MIDIdef::<br>sc version: 3.6dev</div></div></body></html>
