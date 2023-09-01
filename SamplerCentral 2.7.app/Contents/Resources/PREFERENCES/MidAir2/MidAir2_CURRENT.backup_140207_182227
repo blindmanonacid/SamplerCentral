@@ -1,0 +1,84 @@
+var o, p;
+o = [
+	Array.prNew(14),  Array.prNew(8),  Array.prNew(9),  "MidAir2",  
+	Array.prNew(3),  Array.prNew(2),  "AudioFire12 (1576)",  "Plug 1",  
+	Array.prNew(2),  "ProFire Lightbridge",  "ProFire Lightbridge",  Array.prNew(3),  
+	Array.prNew(2),  "AudioFire12 (1576)",  "Plug 1",  Array.prNew(2),  
+	"ProFire Lightbridge",  "ProFire Lightbridge",  Color.prNew,  Array.prNew(4),  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/packs/balconyBackLeft",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/packs/balconyBackRight",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Tale",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Musikk/musicloops",  
+	List.prNew,  Array.prNew(4),  Array.prNew(12),  Array.prNew(12),  
+	Array.prNew(12),  Array.prNew(12),  Array.prNew(4),  Array.prNew(12),  
+	Array.prNew(12),  Array.prNew(12),  Array.prNew(12),  Array.prNew(4)
+];
+p = [
+	// Array
+	0, [ 37.000000,  36.000000,  o[1],  o[2],  
+		o[3],  o[4],  o[11],  o[18],  
+		0,  o[19],  o[24],  o[30],  
+		o[35],  2 ],  
+	// Array
+	1, [ 75,  76,  92,  95,  
+		10,  2,  12,  13 ],  
+	// Array
+	2, [ 74,  71,  91,  93,  
+		73,  72,  5,  84,  
+		11 ],  
+	// Array
+	4, [ o[5],  o[8],  nil ],  
+	// Array
+	5, [ o[6],  o[7] ],  
+	// Array
+	8, [ o[9],  o[10] ],  
+	// Array
+	11, [ o[12],  o[15],  nil ],  
+	// Array
+	12, [ o[13],  o[14] ],  
+	// Array
+	15, [ o[16],  o[17] ],  
+	// Color
+	18, [ red: 0.223881,  green: 0.447761,  
+		blue: 1.000000,  alpha: 1.000000 ],  
+	// Array
+	19, [ o[20],  o[21],  o[22],  o[23] ],  
+	// List
+	24, [ array: o[25] ],  
+	// Array
+	25, [ o[26],  o[27],  o[28],  o[29] ],  
+	// Array
+	26, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  -1.000000,  8,  nil ],  
+	// Array
+	27, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  1.000000,  8,  nil ],  
+	// Array
+	28, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0.000000,  12,  nil ],  
+	// Array
+	29, [ 0.500000,  1,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil ],  
+	// Array
+	30, [ o[31],  o[32],  o[33],  o[34] ],  
+	// Array
+	31, [ 0,  0,  0,  0,  
+		0,  0,  0,  0,  
+		0,  1,  1,  0 ],  
+	// Array
+	32, [ 0,  0,  0,  0,  
+		0,  0,  0,  0,  
+		0,  1,  1,  0 ],  
+	// Array
+	33, [ 0,  0,  0,  0,  
+		0,  0,  0,  0,  
+		0,  0,  1,  0 ],  
+	// Array
+	34, [ 0,  1,  0,  0,  
+		0,  0,  0,  0,  
+		0,  0,  0,  0 ],  
+	// Array
+	35, [ 1,  1,  1,  1 ]
+];
+prUnarchive(o,p);

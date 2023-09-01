@@ -1,0 +1,466 @@
+<html><head><title>CocoaGUI</title>
+<link rel='stylesheet' href='./../scdoc.css' type='text/css' />
+<link rel='stylesheet' href='./../frontend.css' type='text/css' />
+<link rel='stylesheet' href='./../custom.css' type='text/css' />
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<script src='./../scdoc.js' type='text/javascript'></script>
+<script src='./../docmap.js' type='text/javascript'></script>
+<script src='./../prettify.js' type='text/javascript'></script>
+<script src='./../lang-sc.js' type='text/javascript'></script>
+<script src='./../MathJax/MathJax.js?config=TeX-AMS_HTML,scmathjax' type='text/javascript'></script>
+<script type='text/javascript'>var helpRoot='./..';</script>
+</head>
+<ul id='menubar'></ul>
+<body onload='fixTOC();prettyPrint()'>
+<div class='contents'>
+<div class='header'>
+<div id='label'>SuperCollider CLASSES</div>
+<div id='categories'><a href='./../Browse.html#Undocumented classes'>Undocumented classes</a></div>
+<h1>CocoaGUI</h1>
+<div id='summary'>(Undocumented class)</div>
+</div>
+<div class='subheader'>
+<div id='filename'>Source: /Applications/SamplerCentral 2.6.app/Contents/Resources/SCClassLibrary/Platform/osx/scide_scapp/<a href='file:///Applications/SamplerCentral 2.6.app/Contents/Resources/SCClassLibrary/Platform/osx/scide_scapp/CocoaGUI.sc'>CocoaGUI.sc</a></div><div id='superclasses'>Inherits from: <a href="../Classes/Object.html">Object</a></div>
+</div>
+<div id='toc'>
+<ul class='toc'><li class='toc1'><a href='#description'>Description</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#classmethods'>Class methods</a></li>
+<ul class='toc'><li class='toc2'><a href='#Inherited class methods'>Inherited class methods</a></li>
+<li class='toc2'><a href='#Undocumented class methods'>Undocumented class methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#*button'>button</a> </li>
+<li class='toc3'><a href='#*compositeView'>compositeView</a> </li>
+<li class='toc3'><a href='#*dialog'>dialog</a> </li>
+<li class='toc3'><a href='#*doesNotUnderstand'>doesNotUnderstand</a> </li>
+<li class='toc3'><a href='#*dragBoth'>dragBoth</a> </li>
+<li class='toc3'><a href='#*dragSink'>dragSink</a> </li>
+<li class='toc3'><a href='#*dragSource'>dragSource</a> </li>
+<li class='toc3'><a href='#*envelopeView'>envelopeView</a> </li>
+<li class='toc3'><a href='#*ezListView'>ezListView</a> </li>
+<li class='toc3'><a href='#*ezNumber'>ezNumber</a> </li>
+<li class='toc3'><a href='#*ezPopUpMenu'>ezPopUpMenu</a> </li>
+<li class='toc3'><a href='#*ezRanger'>ezRanger</a> </li>
+<li class='toc3'><a href='#*ezScroller'>ezScroller</a> </li>
+<li class='toc3'><a href='#*ezSlider'>ezSlider</a> </li>
+<li class='toc3'><a href='#*font'>font</a> </li>
+<li class='toc3'><a href='#*freqScope'>freqScope</a> </li>
+<li class='toc3'><a href='#*freqScopeView'>freqScopeView</a> </li>
+<li class='toc3'><a href='#*hLayoutView'>hLayoutView</a> </li>
+<li class='toc3'><a href='#*id'>id</a> </li>
+<li class='toc3'><a href='#*image'>image</a> </li>
+<li class='toc3'><a href='#*initClass'>initClass</a> </li>
+<li class='toc3'><a href='#*keyState'>keyState</a> </li>
+<li class='toc3'><a href='#*knob'>knob</a> </li>
+<li class='toc3'><a href='#*levelIndicator'>levelIndicator</a> </li>
+<li class='toc3'><a href='#*listView'>listView</a> </li>
+<li class='toc3'><a href='#*menuItem'>menuItem</a> </li>
+<li class='toc3'><a href='#*mouseButton'>mouseButton</a> </li>
+<li class='toc3'><a href='#*mouseX'>mouseX</a> </li>
+<li class='toc3'><a href='#*mouseY'>mouseY</a> </li>
+<li class='toc3'><a href='#*movieView'>movieView</a> </li>
+<li class='toc3'><a href='#*multiSliderView'>multiSliderView</a> </li>
+<li class='toc3'><a href='#*numberBox'>numberBox</a> </li>
+<li class='toc3'><a href='#*pen'>pen</a> </li>
+<li class='toc3'><a href='#*popUpMenu'>popUpMenu</a> </li>
+<li class='toc3'><a href='#*put'>put</a> </li>
+<li class='toc3'><a href='#*quartzComposerView'>quartzComposerView</a> </li>
+<li class='toc3'><a href='#*rangeSlider'>rangeSlider</a> </li>
+<li class='toc3'><a href='#*scopeView'>scopeView</a> </li>
+<li class='toc3'><a href='#*scrollView'>scrollView</a> </li>
+<li class='toc3'><a href='#*slider'>slider</a> </li>
+<li class='toc3'><a href='#*slider2D'>slider2D</a> </li>
+<li class='toc3'><a href='#*soundFileView'>soundFileView</a> </li>
+<li class='toc3'><a href='#*speech'>speech</a> </li>
+<li class='toc3'><a href='#*staticText'>staticText</a> </li>
+<li class='toc3'><a href='#*stethoscope'>stethoscope</a> </li>
+<li class='toc3'><a href='#*stringBounds'>stringBounds</a> </li>
+<li class='toc3'><a href='#*tabletSlider2D'>tabletSlider2D</a> </li>
+<li class='toc3'><a href='#*tabletView'>tabletView</a> </li>
+<li class='toc3'><a href='#*textField'>textField</a> </li>
+<li class='toc3'><a href='#*textView'>textView</a> </li>
+<li class='toc3'><a href='#*userView'>userView</a> </li>
+<li class='toc3'><a href='#*vLayoutView'>vLayoutView</a> </li>
+<li class='toc3'><a href='#*view'>view</a> </li>
+<li class='toc3'><a href='#*webView'>webView</a> </li>
+<li class='toc3'><a href='#*window'>window</a> </li>
+</ul></ul><li class='toc1'><a href='#instancemethods'>Instance methods</a></li>
+<ul class='toc'><li class='toc2'><a href='#Inherited instance methods'>Inherited instance methods</a></li>
+</ul><li class='toc1'><a href='#Help template'>Help template</a></li>
+<ul class='toc'></ul></ul></div><h2><a class='anchor' name='description'>Description</a></h2>
+
+<p>This class is missing documentation.<h2><a class='anchor' name='classmethods'>Class Methods</a></h2>
+<h3><a class='anchor' name='Inherited class methods'>Inherited class methods</a></h3>
+<div id='inheritedclassmets'></div><h3><a class='anchor' name='Undocumented class methods'>Undocumented class methods</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*button' href='./../Overviews/Methods.html#button'>button</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*compositeView' href='./../Overviews/Methods.html#compositeView'>compositeView</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*dialog' href='./../Overviews/Methods.html#dialog'>dialog</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*doesNotUnderstand' href='./../Overviews/Methods.html#doesNotUnderstand'>doesNotUnderstand</a> (<span class='argstr'>selector</span> <span class='argstr'>... args</span>)</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*dragBoth' href='./../Overviews/Methods.html#dragBoth'>dragBoth</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*dragSink' href='./../Overviews/Methods.html#dragSink'>dragSink</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*dragSource' href='./../Overviews/Methods.html#dragSource'>dragSource</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*envelopeView' href='./../Overviews/Methods.html#envelopeView'>envelopeView</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*ezListView' href='./../Overviews/Methods.html#ezListView'>ezListView</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*ezNumber' href='./../Overviews/Methods.html#ezNumber'>ezNumber</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*ezPopUpMenu' href='./../Overviews/Methods.html#ezPopUpMenu'>ezPopUpMenu</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*ezRanger' href='./../Overviews/Methods.html#ezRanger'>ezRanger</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*ezScroller' href='./../Overviews/Methods.html#ezScroller'>ezScroller</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*ezSlider' href='./../Overviews/Methods.html#ezSlider'>ezSlider</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*font' href='./../Overviews/Methods.html#font'>font</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*freqScope' href='./../Overviews/Methods.html#freqScope'>freqScope</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*freqScopeView' href='./../Overviews/Methods.html#freqScopeView'>freqScopeView</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*hLayoutView' href='./../Overviews/Methods.html#hLayoutView'>hLayoutView</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*id' href='./../Overviews/Methods.html#id'>id</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*image' href='./../Overviews/Methods.html#image'>image</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*initClass' href='./../Overviews/Methods.html#initClass'>initClass</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*keyState' href='./../Overviews/Methods.html#keyState'>keyState</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*knob' href='./../Overviews/Methods.html#knob'>knob</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*levelIndicator' href='./../Overviews/Methods.html#levelIndicator'>levelIndicator</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*listView' href='./../Overviews/Methods.html#listView'>listView</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*menuItem' href='./../Overviews/Methods.html#menuItem'>menuItem</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*mouseButton' href='./../Overviews/Methods.html#mouseButton'>mouseButton</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*mouseX' href='./../Overviews/Methods.html#mouseX'>mouseX</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*mouseY' href='./../Overviews/Methods.html#mouseY'>mouseY</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*movieView' href='./../Overviews/Methods.html#movieView'>movieView</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*multiSliderView' href='./../Overviews/Methods.html#multiSliderView'>multiSliderView</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*numberBox' href='./../Overviews/Methods.html#numberBox'>numberBox</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*pen' href='./../Overviews/Methods.html#pen'>pen</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*popUpMenu' href='./../Overviews/Methods.html#popUpMenu'>popUpMenu</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*put' href='./../Overviews/Methods.html#put'>put</a> (<span class='argstr'>key</span>, <span class='argstr'>object</span>)</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*quartzComposerView' href='./../Overviews/Methods.html#quartzComposerView'>quartzComposerView</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*rangeSlider' href='./../Overviews/Methods.html#rangeSlider'>rangeSlider</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*scopeView' href='./../Overviews/Methods.html#scopeView'>scopeView</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*scrollView' href='./../Overviews/Methods.html#scrollView'>scrollView</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*slider' href='./../Overviews/Methods.html#slider'>slider</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*slider2D' href='./../Overviews/Methods.html#slider2D'>slider2D</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*soundFileView' href='./../Overviews/Methods.html#soundFileView'>soundFileView</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*speech' href='./../Overviews/Methods.html#speech'>speech</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*staticText' href='./../Overviews/Methods.html#staticText'>staticText</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*stethoscope' href='./../Overviews/Methods.html#stethoscope'>stethoscope</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*stringBounds' href='./../Overviews/Methods.html#stringBounds'>stringBounds</a> (<span class='argstr'>string</span>, <span class='argstr'>font</span>)</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*tabletSlider2D' href='./../Overviews/Methods.html#tabletSlider2D'>tabletSlider2D</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*tabletView' href='./../Overviews/Methods.html#tabletView'>tabletView</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*textField' href='./../Overviews/Methods.html#textField'>textField</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*textView' href='./../Overviews/Methods.html#textView'>textView</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*userView' href='./../Overviews/Methods.html#userView'>userView</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*vLayoutView' href='./../Overviews/Methods.html#vLayoutView'>vLayoutView</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*view' href='./../Overviews/Methods.html#view'>view</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*webView' href='./../Overviews/Methods.html#webView'>webView</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*window' href='./../Overviews/Methods.html#window'>window</a> </h3>
+<h2><a class='anchor' name='instancemethods'>Instance Methods</a></h2>
+<h3><a class='anchor' name='Inherited instance methods'>Inherited instance methods</a></h3>
+<div id='inheritedinstmets'></div><h2><a class='anchor' name='Help template'>Help template</a></h2>
+
+<p>Copy and paste the text below and save to HelpSource/Classes/CocoaGUI.schelp<pre class='code prettyprint lang-sc'>TITLE:: CocoaGUI
+summary:: (put short description here)
+categories:: Undocumented classes
+related:: Classes/SomeRelatedClass, Reference/SomeRelatedStuff, etc.
+
+DESCRIPTION::
+(put long description here)
+
+
+CLASSMETHODS::
+
+METHOD:: ezNumber
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: menuItem
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: soundFileView
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: webView
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: dragSource
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: userView
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: compositeView
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: mouseX
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: window
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: dragBoth
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: rangeSlider
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: stethoscope
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: hLayoutView
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: envelopeView
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: ezListView
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: doesNotUnderstand
+(describe method here)
+
+ARGUMENT:: selector
+(describe argument here)
+
+ARGUMENT::  ... args
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: movieView
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: freqScope
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: speech
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: levelIndicator
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: freqScopeView
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: mouseButton
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: scopeView
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: slider
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: textField
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: vLayoutView
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: put
+(describe method here)
+
+ARGUMENT:: key
+(describe argument here)
+
+ARGUMENT:: object
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: knob
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: mouseY
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: pen
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: ezScroller
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: textView
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: dialog
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: scrollView
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: initClass
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: id
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: tabletSlider2D
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: multiSliderView
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: tabletView
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: ezSlider
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: view
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: popUpMenu
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: image
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: slider2D
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: staticText
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: numberBox
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: stringBounds
+(describe method here)
+
+ARGUMENT:: string
+(describe argument here)
+
+ARGUMENT:: font
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: button
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: font
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: ezPopUpMenu
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: listView
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: quartzComposerView
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: ezRanger
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: dragSink
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: keyState
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+
+INSTANCEMETHODS::
+
+
+EXAMPLES::
+
+code::
+(some example code)
+::
+</pre>
+<div class='doclink'>link::Classes/CocoaGUI::<br>sc version: 3.6dev</div></div></body></html>

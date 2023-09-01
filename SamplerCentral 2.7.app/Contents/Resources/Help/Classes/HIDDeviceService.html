@@ -1,0 +1,139 @@
+<html><head><title>HIDDeviceService</title>
+<link rel='stylesheet' href='./../scdoc.css' type='text/css' />
+<link rel='stylesheet' href='./../frontend.css' type='text/css' />
+<link rel='stylesheet' href='./../custom.css' type='text/css' />
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<script src='./../scdoc.js' type='text/javascript'></script>
+<script src='./../docmap.js' type='text/javascript'></script>
+<script src='./../prettify.js' type='text/javascript'></script>
+<script src='./../lang-sc.js' type='text/javascript'></script>
+<script src='./../MathJax/MathJax.js?config=TeX-AMS_HTML,scmathjax' type='text/javascript'></script>
+<script type='text/javascript'>var helpRoot='./..';</script>
+</head>
+<ul id='menubar'></ul>
+<body onload='fixTOC();prettyPrint()'>
+<div class='contents'>
+<div class='header'>
+<div id='label'>SuperCollider CLASSES</div>
+<div id='categories'><a href='./../Browse.html#External Control>HID'>External Control>HID</a></div>
+<h1>HIDDeviceService</h1>
+<div id='summary'>provides access to Human Interface Devices like joysticks and gamepads</div>
+</div>
+<div class='subheader'>
+<div id='filename'>Source: /Applications/SamplerCentral 2.6.app/Contents/Resources/SCClassLibrary/Common/Control/<a href='file:///Applications/SamplerCentral 2.6.app/Contents/Resources/SCClassLibrary/Common/Control/HIDDeviceService.sc'>HIDDeviceService.sc</a></div><div id='superclasses'>Inherits from: <a href="../Classes/Object.html">Object</a></div>
+<div id='related'>See also: <a href="./../Classes/LID.html">LID</a>, <a href="./../Classes/GeneralHID.html">GeneralHID</a>, <a href="./../Classes/HIDDevice.html">HIDDevice</a></div>
+</div>
+<div id='toc'>
+<ul class='toc'><li class='toc1'><a href='#description'>Description</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#classmethods'>Class methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#*buildDeviceList'>buildDeviceList</a> </li>
+<li class='toc3'><a href='#*deviceSpecs'>deviceSpecs</a> </li>
+<li class='toc2'><a href='#Inherited class methods'>Inherited class methods</a></li>
+<li class='toc2'><a href='#Undocumented class methods'>Undocumented class methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#*action'>action</a> </li>
+<li class='toc3'><a href='#*closeAction'>closeAction</a> </li>
+<li class='toc3'><a href='#*dequeueDevice'>dequeueDevice</a> </li>
+<li class='toc3'><a href='#*dequeueElement'>dequeueElement</a> </li>
+<li class='toc3'><a href='#*devices'>devices</a> </li>
+<li class='toc3'><a href='#*eventLoopIsRunning'>eventLoopIsRunning</a> </li>
+<li class='toc3'><a href='#*initialized'>initialized</a> </li>
+<li class='toc3'><a href='#*keyToIndex'>keyToIndex</a> </li>
+<li class='toc3'><a href='#*queueDevice'>queueDevice</a> </li>
+<li class='toc3'><a href='#*queueElement'>queueElement</a> </li>
+<li class='toc3'><a href='#*releaseDeviceList'>releaseDeviceList</a> </li>
+<li class='toc3'><a href='#*runEventLoop'>runEventLoop</a> </li>
+<li class='toc3'><a href='#*setValue'>setValue</a> </li>
+<li class='toc3'><a href='#*stopEventLoop'>stopEventLoop</a> </li>
+<li class='toc3'><a href='#*value'>value</a> </li>
+</ul></ul><li class='toc1'><a href='#instancemethods'>Instance methods</a></li>
+<ul class='toc'><li class='toc2'><a href='#Inherited instance methods'>Inherited instance methods</a></li>
+</ul><li class='toc1'><a href='#examples'>Examples</a></li>
+<ul class='toc'></ul></ul></div><h2><a class='anchor' name='description'>Description</a></h2>
+
+<p>It is advised to use <a href="./../Classes/GeneralHID.html">GeneralHID</a> instead, which wraps the HIDDeviceService functionality, and produces crossplatform compatible code.
+<p>This service was mainly designed to use gamepads as control input. The name is derived from the mac osx specifications.
+<p>The HIDDeviceService handles all the primitive calls. <a href="./../Classes/HIDDevice.html">HIDDevice</a> only stores information about a device and holds an array of HIDElements, which store information about the controllers of the device.
+<p>A <a href="./../Classes/HIDDevice.html">HIDDevice</a>'s information consists out of: the manufacturer, the product, the usage, the vendorID, the productID and the locID. The last three are used to identify the device. The vendorID and the productID are static for each device, the locID depends on the (usb) port the device is connected to.
+<p>A <a href="./../Classes/HIDDeviceElement.html">HIDDeviceElement</a>'s information consists out of: the type, the usage, the cookie, the minimum and the maximum value. The cookie is a number that can be used to identify an element of a device.<h2><a class='anchor' name='classmethods'>Class Methods</a></h2>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*buildDeviceList' href='./../Overviews/Methods.html#buildDeviceList'>buildDeviceList</a> (<span class='argstr'>usagePage: 1</span>, <span class='argstr'>usage: 4</span>)</h3>
+<div class='method'>
+<p>It is also possible to search for devices in other usage pages (look in the class file). The default is: page: GenericDesktop usage: Joystick. If a nil is passed in all devices are listed.</div><h3 class='cmethodname'><span class='methprefix'>*</span><a name='*deviceSpecs' href='./../Overviews/Methods.html#deviceSpecs'>deviceSpecs</a> </h3>
+<div class='method'>
+<p>You can add to the classvar deviceSpecs the specs of your device. The key used has to be the product name derived from the device info. Here is a collection of specs:<pre class='code prettyprint lang-sc'>//wingman
+(
+HIDDeviceService.deviceSpecs.put('WingMan Action Pad',
+    IdentityDictionary[
+        \a -&gt; 0, \b-&gt; 1, \c-&gt; 2,
+        \x-&gt; 3, \y-&gt; 4, \z-&gt; 5,
+        \l-&gt; 6, //front left
+        \r-&gt; 7, //front right
+        \s-&gt; 8,
+        \mode-&gt; 9,
+        \xx-&gt; 10,
+        \yy-&gt; 11,
+        \slider-&gt; 12,
+        \hat-&gt; 13
+    ]);
+)
+//cyborg
+(
+HIDDeviceService.deviceSpecs.put(\cyborg,  //not the right product name yet, so this doesn't work.
+    IdentityDictionary[
+        \trig -&gt; 0, \a-&gt; 1, \b -&gt; 2, \c -&gt; 3,
+        \f1-&gt; 4, \f2-&gt; 5, \f3-&gt; 6, \f4 -&gt; 7,
+        \l -&gt; 8, \r -&gt; 9, // arrow buttons
+        \hu -&gt; 10, \hl -&gt; 11, \hr -&gt; 12, \hd -&gt; 13, // hat positions
+        \x -&gt; 14, \y -&gt; 15, \z -&gt; 16, // axes
+        \slider-&gt; 17,
+        \hat-&gt; 18
+    ]);
+)</pre>
+</div><h3><a class='anchor' name='Inherited class methods'>Inherited class methods</a></h3>
+<div id='inheritedclassmets'></div><h3><a class='anchor' name='Undocumented class methods'>Undocumented class methods</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*action' href='./../Overviews/Methods.html#action'>action</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*action' href='./../Overviews/Methods.html#action'>action</a> = value</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*closeAction' href='./../Overviews/Methods.html#closeAction'>closeAction</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*closeAction' href='./../Overviews/Methods.html#closeAction'>closeAction</a> = value</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*dequeueDevice' href='./../Overviews/Methods.html#dequeueDevice'>dequeueDevice</a> (<span class='argstr'>locID</span>)</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*dequeueElement' href='./../Overviews/Methods.html#dequeueElement'>dequeueElement</a> (<span class='argstr'>locID</span>, <span class='argstr'>cookie</span>)</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*devices' href='./../Overviews/Methods.html#devices'>devices</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*eventLoopIsRunning' href='./../Overviews/Methods.html#eventLoopIsRunning'>eventLoopIsRunning</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*initialized' href='./../Overviews/Methods.html#initialized'>initialized</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*keyToIndex' href='./../Overviews/Methods.html#keyToIndex'>keyToIndex</a> (<span class='argstr'>key</span>, <span class='argstr'>locID: 0</span>)</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*queueDevice' href='./../Overviews/Methods.html#queueDevice'>queueDevice</a> (<span class='argstr'>locID</span>)</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*queueElement' href='./../Overviews/Methods.html#queueElement'>queueElement</a> (<span class='argstr'>locID</span>, <span class='argstr'>cookie</span>)</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*releaseDeviceList' href='./../Overviews/Methods.html#releaseDeviceList'>releaseDeviceList</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*runEventLoop' href='./../Overviews/Methods.html#runEventLoop'>runEventLoop</a> (<span class='argstr'>rate: 0.002</span>)</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*setValue' href='./../Overviews/Methods.html#setValue'>setValue</a> (<span class='argstr'>locID</span>, <span class='argstr'>cookie</span>, <span class='argstr'>value</span>)</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*stopEventLoop' href='./../Overviews/Methods.html#stopEventLoop'>stopEventLoop</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*value' href='./../Overviews/Methods.html#value'>value</a> (<span class='argstr'>locID</span>, <span class='argstr'>cookie</span>)</h3>
+<h2><a class='anchor' name='instancemethods'>Instance Methods</a></h2>
+<h3><a class='anchor' name='Inherited instance methods'>Inherited instance methods</a></h3>
+<div id='inheritedinstmets'></div><h2><a class='anchor' name='examples'>Examples</a></h2>
+
+<p>There are two ways of getting values from the device: One is to poll a value, the other one is to start an eventloop that pushes every new value into the language and calls an action (like <a href="./../Classes/MIDIIn.html">MIDIIn</a>). To set up an eventloop follow these steps:<ol>
+<li>initialize the service by calling:<pre class='code prettyprint lang-sc'>HIDDeviceService.buildDeviceList;</pre>
+
+<p><li>now the information about the devices can be found:<pre class='code prettyprint lang-sc'>(
+HIDDeviceService.devices.do({arg dev;
+    [dev.manufacturer, dev.product, dev.vendorID, dev.productID, dev.locID].postln;
+    dev.elements.do({arg ele;
+        [ele.type, ele.usage, ele.cookie, ele.min, ele.max].postln;
+    });
+});
+)</pre>
+
+<p><li>the device needs to be queued, that means that the eventloop actually uses this device to push values.<pre class='code prettyprint lang-sc'>HIDDeviceService.devices.at(0).queueDevice;</pre>
+
+<p><li>set an action that is called by the incoming events. In addition to the value the events also deliver the productID, the vendorID and the locID of the device and the cookie of the element.<pre class='code prettyprint lang-sc'>(
+HIDDeviceService.action_({arg productID, vendorID, locID, cookie, val;
+    [productID, vendorID, locID, cookie, val].postln;
+});
+)</pre>
+
+<p><li>start the eventloop:<pre class='code prettyprint lang-sc'>HIDDeviceService.runEventLoop;</pre>
+
+<p><li>stop the eventloop:<pre class='code prettyprint lang-sc'>HIDDeviceService.stopEventLoop;</pre>
+</ol>
+
+<p><div class='doclink'>source: <a href='file:///Applications/SamplerCentral 2.6.app/Contents/Resources/HelpSource/Classes/HIDDeviceService.schelp'>/Applications/SamplerCentral 2.6.app/Contents/Resources/HelpSource/Classes/HIDDeviceService.schelp</a><br>link::Classes/HIDDeviceService::<br>sc version: 3.6dev</div></div></body></html>

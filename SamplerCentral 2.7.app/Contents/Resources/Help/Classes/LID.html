@@ -1,0 +1,155 @@
+<html><head><title>LID</title>
+<link rel='stylesheet' href='./../scdoc.css' type='text/css' />
+<link rel='stylesheet' href='./../frontend.css' type='text/css' />
+<link rel='stylesheet' href='./../custom.css' type='text/css' />
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<script src='./../scdoc.js' type='text/javascript'></script>
+<script src='./../docmap.js' type='text/javascript'></script>
+<script src='./../prettify.js' type='text/javascript'></script>
+<script src='./../lang-sc.js' type='text/javascript'></script>
+<script src='./../MathJax/MathJax.js?config=TeX-AMS_HTML,scmathjax' type='text/javascript'></script>
+<script type='text/javascript'>var helpRoot='./..';</script>
+</head>
+<ul id='menubar'></ul>
+<body onload='fixTOC();prettyPrint()'>
+<div class='contents'>
+<div class='header'>
+<div id='label'>SuperCollider CLASSES</div>
+<div id='categories'><a href='./../Browse.html#Platform>Linux'>Platform>Linux</a>, <a href='./../Browse.html#External Control>HID'>External Control>HID</a></div>
+<h1>LID</h1>
+<div id='summary'>Linux Input Device</div>
+</div>
+<div class='subheader'>
+<div id='filename'>Location: <b>NOT INSTALLED!</b></div>
+<div id='related'>See also: <a href="./../Classes/GeneralHID.html">GeneralHID</a>, <a href="./../Classes/HIDDeviceService.html">HIDDeviceService</a></div>
+</div>
+<div id='toc'>
+<ul class='toc'><li class='toc1'><a href='#description'>Description</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#classmethods'>Class methods</a></li>
+<ul class='toc'><li class='toc2'><a href='#Inherited class methods'>Inherited class methods</a></li>
+</ul><li class='toc1'><a href='#instancemethods'>Instance methods</a></li>
+<ul class='toc'><li class='toc2'><a href='#Inherited instance methods'>Inherited instance methods</a></li>
+</ul><li class='toc1'><a href='#examples'>Examples</a></li>
+<ul class='toc'><li class='toc2'><a href='#Opening a device'>Opening a device</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#Querying device information'>Querying device information</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#Querying device capabilities'>Querying device capabilities</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#Event actions (raw events)'>Event actions (raw events)</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#Event actions (raw slot events)'>Event actions (raw slot events)</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#Device specs'>Device specs</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#Event actions (symbolic slot events)'>Event actions (symbolic slot events)</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#LED's'>LED's</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#Grabbing devices'>Grabbing devices</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#Closing devices'>Closing devices</a></li>
+<ul class='toc'></ul></ul></ul></div><h2><a class='anchor' name='description'>Description</a></h2>
+
+<p>This class provides a way to access devices in the linux input layer, which supports many input devices (mouse, keyboard, joystick, gamepad, tablet) and busses (serial, PS/2, USB).
+<p>See <a href="#examples">examples</a> below for documentation-by-example.<div class='note'><span class='notelabel'>NOTE:</span> It is advised to use <a href="./../Classes/GeneralHID.html">GeneralHID</a> instead, which wraps the <a href="./../Classes/HIDDeviceService.html">HIDDeviceService</a> functionality, and produces crossplatform compatible code.</div><h2><a class='anchor' name='classmethods'>Class Methods</a></h2>
+<h3><a class='anchor' name='Inherited class methods'>Inherited class methods</a></h3>
+<div id='inheritedclassmets'></div><h2><a class='anchor' name='instancemethods'>Instance Methods</a></h2>
+<h3><a class='anchor' name='Inherited instance methods'>Inherited instance methods</a></h3>
+<div id='inheritedinstmets'></div><h2><a class='anchor' name='examples'>Examples</a></h2>
+<h3><a class='anchor' name='Opening a device'>Opening a device</a></h3>
+
+<p>Input devices are accessed through device nodes, typically /dev/input/event[0-9]. When using a userspace daemon like udev, meaningful names can be assigned to devices.
+<p>raw device name:<pre class='code prettyprint lang-sc'>d = LID("/dev/input/event4");</pre>
+
+<p>symbolic device name<pre class='code prettyprint lang-sc'>d = LID("/dev/input/trackball");</pre>
+
+<p>device name relative to LID.deviceRoot<pre class='code prettyprint lang-sc'>d = LID("gamepad");</pre>
+
+<p>build a list of the available devices:<pre class='code prettyprint lang-sc'>LID.buildDeviceList</pre>
+
+<p>buildDeviceList builds a table of the devices found in LID.deviceRoot+"/event", trying to open all that it finds, looking up its name and closing them again. The result is returned and can later be accessed by LID.deviceList. You can query another name than "/event" by passing an argument. (the search will be: LID.deviceRoot++"/"++name++"*")<pre class='code prettyprint lang-sc'>LID.buildDeviceList( "mouse" );</pre>
+
+<p><div class='note'><span class='notelabel'>NOTE:</span> this is likely to give the info that the devices could not be opened, as "mouse" uses another interface (you can of course access mice via the "event" interface)</div><div class='note'><span class='notelabel'>NOTE:</span> if you cannot open the devices at all, please look in the helpfile for: Linux_udev_setup</div><h3><a class='anchor' name='Querying device information'>Querying device information</a></h3>
+<pre class='code prettyprint lang-sc'>d.info;
+d.info.name;
+d.info.vendor.asHexString(4);
+d.info.product.asHexString(4);</pre>
+<h3><a class='anchor' name='Querying device capabilities'>Querying device capabilities</a></h3>
+
+<p>Device capabilities are reported as event type and event code mappings. Event type and event code constants can be found in /usr/include/linux/input.h<pre class='code prettyprint lang-sc'>d.caps;
+d.dumpCaps;</pre>
+<h3><a class='anchor' name='Event actions (raw events)'>Event actions (raw events)</a></h3>
+
+<p>The device's 'action' instance variable can be used for event notifications. it is passed the event type, code and current value.<pre class='code prettyprint lang-sc'>(
+d.action = { | evtType, evtCode, evtValue |
+    [evtType.asHexString(4), evtCode.asHexString(4), evtValue].postln
+}
+)
+
+d.action = nil;</pre>
+
+<p>If a device is detached LID will detect this, and close the device. It will execute a closeAction, which can be defined by the user:<pre class='code prettyprint lang-sc'>d.closeAction = { "device was detached".postln; };</pre>
+<h3><a class='anchor' name='Event actions (raw slot events)'>Event actions (raw slot events)</a></h3>
+
+<p>When 'action' is nil, actions can be bound to specific events.<pre class='code prettyprint lang-sc'>(
+d.slot(0x0001, 0x0120).action = { | slot |
+    [slot.type.asHexString(4), slot.code.asHexString(4), slot.rawValue].postln;
+}
+)</pre>
+
+<p>Relative slots can have deltaActions:<pre class='code prettyprint lang-sc'>d.slot(0x0002, 0x0001).deltaAction = { | slot |
+    [slot.type.asHexString(4), slot.code.asHexString(4), slot.delta].postln;
+}
+)</pre>
+<h3><a class='anchor' name='Device specs'>Device specs</a></h3>
+
+<p>Device specs are mappings between event codes and symbolic control names. New specs can be added to LID.specs via LID&gt;&gt;*register.<pre class='code prettyprint lang-sc'>// Add a mouse device spec for a Logitech trackball
+LID.register('Logitech Trackball', LID.mouseDeviceSpec);
+
+// Add a custom device spec for a Logitech gamepad
+(
+LID.register('Logitech WingMan RumblePad', (
+    // key
+    rumble: #[0x0001, 0x0102],    // rumble (toggles ff)
+    mode: #[0x0001, 0x0103],    // mode (switches h and l)
+    a: #[0x0001, 0x0120],        // button a
+    b: #[0x0001, 0x0121],        // button b
+    c: #[0x0001, 0x0122],        // button c
+    x: #[0x0001, 0x0123],        // button x
+    y: #[0x0001, 0x0124],        // button y
+    z: #[0x0001, 0x0125],        // button z
+    l: #[0x0001, 0x0126],        // left front button
+    r: #[0x0001, 0x0127],        // right front button
+    s: #[0x0001, 0x0128],        // button s
+    // abs
+    lx: #[0x0003, 0x0000],        // left joystick x
+    ly: #[0x0003, 0x0001],        // left joystick y
+    rx: #[0x0003, 0x0005],        // right joystick x
+    ry: #[0x0003, 0x0006],        // right joystick y
+    hx: #[0x0003, 0x0010],        // hat x
+    hy: #[0x0003, 0x0011],        // hat y
+    slider: #[0x0003, 0x0002]    // slider
+));
+)</pre>
+<h3><a class='anchor' name='Event actions (symbolic slot events)'>Event actions (symbolic slot events)</a></h3>
+
+<p>When a device spec was registered for a given device name, slot actions can be assigned by using the symbolic control name.<pre class='code prettyprint lang-sc'>d[\a].action = { | slot | [\a, slot.value].postln };</pre>
+
+<p>There is also a default keyboard device spec.<pre class='code prettyprint lang-sc'>(
+LID.keyboardDeviceSpec.keys.do { | key |
+    d[key].action = { | slot | [key, slot.value].postln }
+}
+)</pre>
+<h3><a class='anchor' name='LED's'>LED's</a></h3>
+
+<p>some devices have LEDs which can be turned on and off. These show up with d.caps as events of type 0x0011<pre class='code prettyprint lang-sc'>d = LID("/dev/input/event0");
+// LED's can be turned on:
+d.setLEDState( 0x0, 1 )
+// (LED 0x0 should be available on any keyboard)
+// and off:
+d.setLEDState( 0x0, 0 )
+d.close;
+
+// setLEDState( evtCode, evtValue ): value should be 1 or 0</pre>
+<h3><a class='anchor' name='Grabbing devices'>Grabbing devices</a></h3>
+
+<p>Given proper permissions, devices can be grabbed to prevent use in other applications (including X). Be careful when grabbing mouse or keyboard!<pre class='code prettyprint lang-sc'>d[\b].action = { d.ungrab };
+d.grab;
+
+d.isGrabbed;</pre>
+<h3><a class='anchor' name='Closing devices'>Closing devices</a></h3>
+<pre class='code prettyprint lang-sc'>d.close;
+LID.closeAll;</pre>
+<div class='doclink'>source: <a href='file:///Applications/SamplerCentral 2.6.app/Contents/Resources/HelpSource/Classes/LID.schelp'>/Applications/SamplerCentral 2.6.app/Contents/Resources/HelpSource/Classes/LID.schelp</a><br>link::Classes/LID::<br>sc version: 3.6dev</div></div></body></html>

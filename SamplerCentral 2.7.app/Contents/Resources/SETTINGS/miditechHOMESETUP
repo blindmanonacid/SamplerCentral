@@ -1,0 +1,28 @@
+var o, p;
+o = [
+	Array.prNew(8),  Array.prNew(8),  Array.prNew(9),  "miditechHOME",  
+	Array.prNew(3),  Array.prNew(2),  "Origin37",  "Origin37",  
+	Array.prNew(3),  Color.prNew
+];
+p = [
+	// Array
+	0, [ 37.000000,  48.000000,  o[1],  o[2],  
+		o[3],  o[4],  o[8],  o[9] ],  
+	// Array
+	1, [ 73,  9,  10,  72,  
+		14,  15,  16,  17 ],  
+	// Array
+	2, [ 74,  71,  18,  107,  
+		79,  78,  26,  27,  
+		28 ],  
+	// Array
+	4, [ o[5],  nil,  nil ],  
+	// Array
+	5, [ o[6],  o[7] ],  
+	// Array
+	8, [ nil,  nil,  nil ],  
+	// Color
+	9, [ red: 0.403922,  green: 0.572549,  
+		blue: 0.658824,  alpha: 1.000000 ]
+];
+prUnarchive(o,p);

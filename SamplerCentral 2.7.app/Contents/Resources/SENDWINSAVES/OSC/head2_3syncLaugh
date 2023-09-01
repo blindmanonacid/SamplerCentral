@@ -1,0 +1,30 @@
+var o, p;
+o = [
+	Array.prNew(2),  Dictionary.prNew,  Array.prNew(32),  Array.prNew(4),  
+	Array.prNew(2),  "/Users/martin/Desktop/OSCRecordings/oscLaughH3sync3_140630_200805",  Array.prNew(4),  Array.prNew(2),  
+	"/Users/martin/Desktop/OSCRecordings/oscLaughH2sync3_140630_200805"
+];
+p = [
+	// Array
+	0, [ 1,  o[1] ],  
+	// Dictionary
+	1, [ array: o[2],  size: 2 ],  
+	// Array
+	2, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  'head3Mouth',  o[3],  
+		nil,  nil,  nil,  nil,  
+		'head2Mouth',  o[6],  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Array
+	3, [ o[4],  2,  90,  95 ],  
+	// Array
+	4, [ o[5],  130 ],  
+	// Array
+	6, [ o[7],  2,  90,  95 ],  
+	// Array
+	7, [ o[8],  130 ]
+];
+prUnarchive(o,p);

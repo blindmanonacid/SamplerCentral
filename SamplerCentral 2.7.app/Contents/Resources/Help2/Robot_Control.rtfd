@@ -1,0 +1,314 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\deftab560
+\pard\pardeftab560
+
+\f0\b\fs60 \cf0 \expnd0\expndtw0\kerning0
+Robot Control
+\f1\b0 \
+\pard\pardeftab560\partightenfactor0
+
+\f0\b\fs44 \cf0 \
+\pard\pardeftab560\partightenfactor0
+
+\fs34 \cf0 Manual control with Xbox 360 gamepad
+\fs44 \
+\pard\pardeftab560\partightenfactor0
+
+\f1\b0\fs24 \cf0 \
+This should be plug and play. Click either 
+\f0\b RobotHeadWiFi
+\f1\b0  or 
+\f0\b RobotHILDE
+\f1\b0  and make sure everything is connected and powered on, click/move around on the gamepad and stuff should move.\
+\
+If you have plugged in the xbox 360 gamepad and still get a message saying it's not connected you need to install a driver for it: {\field{\*\fldinst{HYPERLINK "https://github.com/360Controller/360Controller/releases"}}{\fldrslt https://github.com/360Controller/360Controller/releases}} The driver should also be in the "stuff" folder next to the sampler.\
+\
+\pard\pardeftab560\partightenfactor0
+
+\f0\b\fs44 \cf0 \
+Recording and playing back movement
+\f1\b0\fs40 \
+\pard\pardeftab560\partightenfactor0
+
+\fs24 \cf0 \
+\
+\pard\pardeftab560\partightenfactor0
+
+\fs40 \cf0 Ajajaj this is complicated!\
+\pard\pardeftab560\partightenfactor0
+
+\fs24 \cf0 \
+This gets kinda hairy and requires a lot of things prepared and set up correctly. But when it is, then afterwards it should be as easy as dragging a soundfile to a key and if there is robot movement it should automagically load as well. These soundfiles are usually named "robot" somewhere in the title and have a .mid file with the same name as the soundfile.\
+\
+\pard\pardeftab560\partightenfactor0
+
+\f0\b\fs34 \cf0 RobotTESTER
+\f1\b0\fs24 \
+\
+There are a couple of robot controls in the SamplerCentral menu, some for specific robots and then there is 
+\f0\b RobotTESTER
+\f1\b0  which can control anything. Open 
+\f0\b RobotTESTER
+\f1\b0 .\
+\
+\
+Move joysticks and click around and things should move on the display at the top. Check the preset menu at the bottom. Maybe there's already a preset made for the robot you want to control. Anyways, it's a good idea to read on about what is what in this thing.\
+\
+Here is what all the strange words and numbers mean:\
+\
+\pard\pardeftab560\partightenfactor0
+
+\f0\b \cf0 joyLX, joyLY, LT, A, B
+\f1\b0  etc - corresponds to the controls i.e. 
+\f0\b joyRX
+\f1\b0  is 
+\f0\b R
+\f1\b0 ight joystick 
+\f0\b X
+\f1\b0  (horizontal) axis. Push around on the gamepad to see what moves.\
+\
+
+\f0\b Min and Max
+\f1\b0  - this is the minimum and maximum value that will be sent and you need to set this, and find out what works with which robot. For example, the mouth of the wireless head robot (sparkBot) is closed when it has a value of 90 and wide open with a value of 67 so I would use 
+\f0\b RT
+\f1\b0  to control that and put 90 as 
+\f0\b min 
+\f1\b0 and 67 as 
+\f0\b max
+\f1\b0 . For the buttons 
+\f0\b min
+\f1\b0  and 
+\f0\b max
+\f1\b0  work as 
+\f0\b off
+\f1\b0  and 
+\f0\b on
+\f1\b0 .\
+\
+
+\f0\b Control
+\f1\b0  - This is what parameter is to be controlled. SR1 is usually the eyes, SR2 is usually the mouth, SR3 if there is another movement like head rotation. On the clock and conductor SR1 and SR2 are direct speed control but I don't recommend using gamepad to control it. ST is step for the clock, RL is for relays that I don't know where are anymore.\
+\
+
+\f0\b Send
+\f1\b0  - This needs to be green in order so send the values from that button/joystick etc.\
+\
+
+\f0\b Value
+\f1\b0  - This displays the last sent value. Can also be used to directly send value, even without 
+\f0\b S
+\f1\b0  being green, by typing in a number or dragging it with the mouse. This can be good to find out what values to set min and max to.\
+\
+
+\f0\b Robot menu
+\f1\b0  - Choose which robot to send to. The top menu sets all inputs to send to the same robot. Some of the names are a bit cryptic I know, here's a kind of description:\
+	
+\f0\b circleBot
+\f1\b0 : The one that goes in circles, only one input SR1 controls the speed\
+	
+\f0\b clock
+\f1\b0 : that's the clock. SR1 is minute are direct speed, SR2 hour arm direct speed, ST1 steps (33 is one minute), ST2 steps (66 is one hour), PS1 minute arm go to position (0-2000), PS2 same for hour arm.\
+	
+\f0\b conductor
+\f1\b0 : SR1 is speed\
+	
+\f0\b fatBot
+\f1\b0 : \
+	
+\f0\b head2
+\f1\b0 : this and head3 are together as "audience" in suits.\
+	
+\f0\b head3
+\f1\b0 :\
+	
+\f0\b headBot
+\f1\b0 : Ophelia/Hilde with spinning head. SR1 is eyes, SR2 mouth, SR3 head spin\
+	
+\f0\b sparkHead
+\f1\b0 : The wireless head. SR1 is eyes, SR2 is mouth\
+\
+
+\f0\b CC
+\f1\b0  - is for setting a Midi CC number for sending midi to Ableton to record movement. More on this later below.\
+\
+\
+Sooooo.... In order to control a robot: \
+\
+1. Choose a robot from the robot menu. \
+2. Find out what buttons you'd like to use. I like using 
+\f0\b RT
+\f1\b0  for the mouth, 
+\f0\b joyRX
+\f1\b0  for the eyes and maybe some of the buttons (
+\f0\b A
+\f1\b0 , 
+\f0\b B
+\f1\b0 , 
+\f0\b X
+\f1\b0 , 
+\f0\b Y
+\f1\b0 ) also for the mouth. So in that case set 
+\f0\b Control
+\f1\b0  on 
+\f0\b RT
+\f1\b0  to SR2, 
+\f0\b Control
+\f1\b0  on 
+\f0\b joyRX
+\f1\b0  to SR1. \
+3. Find what values are good to have as 
+\f0\b min
+\f1\b0  and 
+\f0\b max
+\f1\b0  by putting in a number in 
+\f0\b Value
+\f1\b0  for 
+\f0\b RT
+\f1\b0 , 95 is often a good inbetween for eyes and mouth, then drag the value up and down to find the end positions and put those numbers in 
+\f0\b min
+\f1\b0  and 
+\f0\b max
+\f1\b0 . \
+4. Now you should be good to push the 
+\f0\b Send S
+\f1\b0  and use the gamepad to control.\
+\
+Phiu!!\
+\
+If it works fine it's a good idea to save it as a preset so it can be loaded agian later.\
+\
+\
+\pard\pardeftab560\partightenfactor0
+
+\f0\b\fs34 \cf0 Recording robot movement
+\f1\b0\fs24 \
+\
+Here it gets complicated so hang on.\
+\
+\pard\pardeftab560\partightenfactor0
+
+\f0\b \cf0 Preparation:
+\f1\b0 \
+Go into 
+\f0\b Audio MIDI Setup
+\f1\b0  in MacOs and in the menu bar click 
+\f0\b Window
+\f1\b0  and then 
+\f0\b Show MIDI Studio
+\f1\b0 .\
+In the MIDI Studio window there should be an icon called 
+\f0\b IAC Driver
+\f1\b0 , double click on that.\
+Make sure that the checkbox that says 
+\f0\b Device is online
+\f1\b0  is checked\
+Make sure 
+\f0\b Device Name
+\f1\b0  is "IAC Driver"\
+Make sure that under 
+\f0\b ports
+\f1\b0  it says "IAC Bus 1", if it says something else click it and change the name.\
+It should looks something like this:\
+(image)\
+\
+There's an Ableton file called 
+\f0\b RobotRecordingTemplate
+\f1\b0 , open this.\
+Open 
+\f0\b preferences
+\f1\b0  in Ableton, click the 
+\f0\b MIDI
+\f1\b0  tab and look for 
+\f0\b Input: IAC Driver (IAC Bus 1)
+\f1\b0 , click so that 
+\f0\b remote
+\f1\b0  on this is on/yellow.\
+Go into arragement view, there are 2 tracks, one for audio and one for midi. It's the midi track that will be used to record robot.\
+There should already be a sound clip and a midi clip in there to show how things will look eventually.\
+Click on the MIDI track to bring up the effects panel below, there should be 
+\f0\b VoidGrabberMIDIRange
+\f1\b0  there.\
+This voidgrabber thing is what we're gonna map midi input to from SamplerCentral, so hang on...\
+\
+Open 
+\f0\b RobotTESTER
+\f1\b0  in SamplerCentral, set it up for the robot to control (you will want to have the robot connected and controlled through this) and push the 
+\f0\b Rec with Ableton
+\f1\b0  button at the bottom. This makes it send midi to Ableton.\
+\
+Go back to Ableton and move/push on the gamepad to control the robot. You should see the small square next to 
+\f0\b MIDI
+\f1\b0  in the top right corner light up to say that it is receiving midi. Now we want to map what we are pushing on the gamepad to the parameters on 
+\f0\b VoidGrabberMIDIRange
+\f1\b0 . On 
+\f0\b VoidGrabberMIDIRange 
+\f1\b0 it says "Send Adress" and to the left of it is a tiny slider with a number over it. The "Send Adress" is what we want to control, so say we want to control SR1 then push 
+\f0\b cmd-m
+\f1\b0  to edit midi mapping, click the tiny slider to the left of /SR1 and then IMPORTANT - look at the very bottom of the screen there's a text that says something like "Mapped to Channel/CC bla bla" and then Mode and a menu. MAKE SURE THIS "Mode" MENU IS SET TO 
+\f0\b Absolute
+\f1\b0 .  And then click 
+\f0\b cmd-m
+\f1\b0  again to turn off midi mapping. Do this again for SR2, SR3 etc if you need more controls.\
+\
+Tempo in Ableton must be set to 120.\
+\
+When midi-mapping to Ableton, sometimes the joysticks can spit out values a bit randomly. If they do and you want to map something else just make sure their send 
+\f0\b S
+\f1\b0  is off while you do so.\
+\
+
+\f0\b Actually Recording:
+\f1\b0 \
+\
+Ajajaj now we can record! Drag the soundfile you'd like to record with to the audio track, arm the midi track to record, and record. The gamepad input should become automation lines on the MIDI track under 
+\f0\b VoidGrabberMIDIRange "
+\f1\b0 Param 1", "Param 2" etc. As long as the 
+\f0\b Rec with Ableton
+\f1\b0  button is on in 
+\f0\b RobotTESTER
+\f1\b0  you can play back from Ableton and it will send to the robot. Edit and adjust the automation until it is good. Also just pause for a second and see how fucking cool it is to edit robot movements in Ableton!!! WOW!!!11!\
+\
+Also just a tip: you can adjust the size of the automation lanes for finer control.\
+\
+
+\f0\b Export Recording:
+\f1\b0 \
+\
+Then there are some very specific quirky things we need to do to export this into something that SamplerCentral can play back easily.... \
+\
+1. When you're happy with how the robot moves to the sound, make it so that the midi clip in the midi track is exactly the same length as the audio clip. \
+\
+2. Then select all the automation in one of the automation tracks - exactly from the beginning where the soundfile starts to the end where the soundfile ends, and copy it. \
+\
+3. Then double click the midi clip so it shows up in the clip-view below. In the clip-view, right under where it says "clip", change the name of the clip to the name of the robot to control - this needs to be exactly the same as the name in the menus in 
+\f0\b RobotTESTER
+\f1\b0 . \
+\
+4. Then in clip-view open the 
+\f0\b envelopes box
+\f1\b0 , this is a small yellow button at the bottom of the view in Ableton 10, maybe different in different versions. In the envelopes box there should be a menu that says 
+\f0\b MIDI Ctrl
+\f1\b0 , if it doesn't say MIDI Ctrl change it so it does. \
+\
+5. Under that menu you can choose what ctrl number to edit. Choose 21 for SR1, 22 for SR2, 23 for SR3 (I need to expand this but should do for now). And then click at the beginning of the clip inside the clip-view and paste the automation you copied earlier. \
+\
+6. IMPORTANT - the very first and last automation dot is usually 0 or something - delete this or drag it so it's the same as the next/previous automation dot! Very very important to do this, it can set of a robot to hell. If it's unclear then have a look at how it looks like in the midi clip that is already recorded called sparkBot. \
+\
+7. But ok, now this should be good - do it again if you have more than one parameter, just be careful to follow the steps.\
+\
+8. Now we can export the midi by clicking the midi clip, going to File in the menu bar and then 
+\f0\b Export Midi Clip
+\f1\b0 . Name it something that makes sense, probably with "robot" in the name and then make a copy of the soundfile that you used and give it the same name as the midi file.\
+\
+9. This is where it gets comfortable - drag the soundfile onto a key on a sampler in SamplerCentral, then drag the midifile onto the same key. Make sure the 
+\f0\b [OSC] 
+\f1\b0 button (not MIDI) on the sampler is on/green and then it should play together. Even better - the next time you drag that soundfile onto a key (keys only!) the midi file with the robot movement will automagically load to. Ah!\
+\
+\
+\
+\
+\
+}

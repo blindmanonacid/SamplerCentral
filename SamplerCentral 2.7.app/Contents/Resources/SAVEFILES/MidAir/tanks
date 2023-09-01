@@ -1,0 +1,264 @@
+var o, p;
+o = [
+	Array.prNew(5),  Array.prNew(37),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits Eng/tankAim2.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits Eng/tanksAim.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits Eng/tanksShoot.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits Eng/explosion1.wav",  List.prNew,  Array.prNew(37),  
+	Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  
+	Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  
+	Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  
+	Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  
+	Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  
+	Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  
+	Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  
+	Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  
+	Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  
+	Array.prNew(11),  Array.prNew(8),  Array.prNew(4),  "gpLooper",  
+	Array.prNew(4),  Array.prNew(4),  Array.prNew(4),  Array.prNew(4),  
+	Array.prNew(4),  Array.prNew(4),  Array.prNew(4),  Array.prNew(9),  
+	Array.prNew(4),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops Eng/warDistant.wav",  "diskin",  Array.prNew(4),  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops Eng/warLoop.wav",  Array.prNew(4),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops Eng/tanksAnim.wav",  "gpLooper",  
+	Array.prNew(4),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops Eng/tanksIdle.wav",  Array.prNew(4),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops Eng/tanksDrive2.wav",  
+	Array.prNew(4),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops Eng/march5 machin gun.wav",  Array.prNew(4),  "gpLooper",  
+	Array.prNew(4),  Array.prNew(4),  List.prNew,  Array.prNew(37),  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew
+];
+p = [
+	// Array
+	0, [ o[1],  o[6],  o[45],  o[55],  
+		o[74] ],  
+	// Array
+	1, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  o[2],  
+		o[3],  o[4],  o[5],  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil ],  
+	// List
+	6, [ array: o[7] ],  
+	// Array
+	7, [ o[8],  o[9],  o[10],  o[11],  
+		o[12],  o[13],  o[14],  o[15],  
+		o[16],  o[17],  o[18],  o[19],  
+		o[20],  o[21],  o[22],  o[23],  
+		o[24],  o[25],  o[26],  o[27],  
+		o[28],  o[29],  o[30],  o[31],  
+		o[32],  o[33],  o[34],  o[35],  
+		o[36],  o[37],  o[38],  o[39],  
+		o[40],  o[41],  o[42],  o[43],  
+		o[44] ],  
+	// Array
+	8, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	9, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	10, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	11, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	12, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	13, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	14, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	15, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	16, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	17, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	18, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	19, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	20, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	21, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	22, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	23, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	24, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	25, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	26, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	27, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	28, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	29, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	30, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	31, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	32, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	33, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	34, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	35, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	36, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	37, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	38, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	39, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	40, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	41, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	42, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	43, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	44, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	45, [ o[46],  o[48],  o[49],  o[50],  
+		o[51],  o[52],  o[53],  o[54] ],  
+	// Array
+	46, [ nil,  o[47],  1,  nil ],  
+	// Array
+	48, [ nil,  o[47],  1,  nil ],  
+	// Array
+	49, [ nil,  o[47],  1,  nil ],  
+	// Array
+	50, [ nil,  o[47],  1,  nil ],  
+	// Array
+	51, [ nil,  o[47],  1,  nil ],  
+	// Array
+	52, [ nil,  o[47],  1,  nil ],  
+	// Array
+	53, [ nil,  o[47],  1,  nil ],  
+	// Array
+	54, [ nil,  o[47],  1,  nil ],  
+	// Array
+	55, [ o[56],  o[59],  o[61],  o[64],  
+		o[66],  o[68],  o[70],  o[72],  
+		o[73] ],  
+	// Array
+	56, [ o[57],  o[58],  1,  nil ],  
+	// Array
+	59, [ o[60],  o[58],  1,  nil ],  
+	// Array
+	61, [ o[62],  o[63],  1,  nil ],  
+	// Array
+	64, [ o[65],  o[63],  1,  nil ],  
+	// Array
+	66, [ o[67],  o[63],  1,  nil ],  
+	// Array
+	68, [ o[69],  o[63],  1,  nil ],  
+	// Array
+	70, [ nil,  o[71],  1,  nil ],  
+	// Array
+	72, [ nil,  o[71],  1,  nil ],  
+	// Array
+	73, [ nil,  o[71],  1,  nil ],  
+	// List
+	74, [ array: o[75] ],  
+	// Array
+	75, [ o[76],  o[77],  o[78],  o[79],  
+		o[80],  o[81],  o[82],  o[83],  
+		o[84],  o[85],  o[86],  o[87],  
+		o[88],  o[89],  o[90],  o[91],  
+		o[92],  o[93],  o[94],  o[95],  
+		o[96],  o[97],  o[98],  o[99],  
+		o[100],  o[101],  o[102],  o[103],  
+		o[104],  o[105],  o[106],  o[107],  
+		o[108],  o[109],  o[110],  o[111],  
+		o[112] ]
+];
+prUnarchive(o,p);

@@ -1,0 +1,88 @@
+<html><head><title>HIDDevice</title>
+<link rel='stylesheet' href='./../scdoc.css' type='text/css' />
+<link rel='stylesheet' href='./../frontend.css' type='text/css' />
+<link rel='stylesheet' href='./../custom.css' type='text/css' />
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<script src='./../scdoc.js' type='text/javascript'></script>
+<script src='./../docmap.js' type='text/javascript'></script>
+<script src='./../prettify.js' type='text/javascript'></script>
+<script src='./../lang-sc.js' type='text/javascript'></script>
+<script src='./../MathJax/MathJax.js?config=TeX-AMS_HTML,scmathjax' type='text/javascript'></script>
+<script type='text/javascript'>var helpRoot='./..';</script>
+</head>
+<ul id='menubar'></ul>
+<body onload='fixTOC();prettyPrint()'>
+<div class='contents'>
+<div class='header'>
+<div id='label'>SuperCollider CLASSES</div>
+<div id='categories'><a href='./../Browse.html#External Control>HID'>External Control>HID</a></div>
+<h1>HIDDevice</h1>
+<div id='summary'>stores information about a device and holds an array of HIDElements</div>
+</div>
+<div class='subheader'>
+<div id='filename'>Source: /Applications/SamplerCentral 2.6.app/Contents/Resources/SCClassLibrary/Common/Control/<a href='file:///Applications/SamplerCentral 2.6.app/Contents/Resources/SCClassLibrary/Common/Control/HIDDeviceService.sc'>HIDDeviceService.sc</a></div><div id='superclasses'>Inherits from: <a href="../Classes/Object.html">Object</a></div>
+<div id='related'>See also: <a href="./../Classes/HIDDeviceService.html">HIDDeviceService</a>, <a href="./../Classes/LID.html">LID</a>, <a href="./../Classes/GeneralHID.html">GeneralHID</a></div>
+</div>
+<div id='toc'>
+<ul class='toc'><li class='toc1'><a href='#description'>Description</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#classmethods'>Class methods</a></li>
+<ul class='toc'><li class='toc2'><a href='#Inherited class methods'>Inherited class methods</a></li>
+<li class='toc2'><a href='#Undocumented class methods'>Undocumented class methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#*new'>new</a> </li>
+</ul></ul><li class='toc1'><a href='#instancemethods'>Instance methods</a></li>
+<ul class='toc'><li class='toc2'><a href='#Inherited instance methods'>Inherited instance methods</a></li>
+<li class='toc2'><a href='#Undocumented instance methods'>Undocumented instance methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#-closeAction'>closeAction</a> </li>
+<li class='toc3'><a href='#-dequeueDevice'>dequeueDevice</a> </li>
+<li class='toc3'><a href='#-dequeueElement'>dequeueElement</a> </li>
+<li class='toc3'><a href='#-elements'>elements</a> </li>
+<li class='toc3'><a href='#-info'>info</a> </li>
+<li class='toc3'><a href='#-isQueued'>isQueued</a> </li>
+<li class='toc3'><a href='#-locID'>locID</a> </li>
+<li class='toc3'><a href='#-manufacturer'>manufacturer</a> </li>
+<li class='toc3'><a href='#-product'>product</a> </li>
+<li class='toc3'><a href='#-productID'>productID</a> </li>
+<li class='toc3'><a href='#-queueDevice'>queueDevice</a> </li>
+<li class='toc3'><a href='#-queueElement'>queueElement</a> </li>
+<li class='toc3'><a href='#-serial'>serial</a> </li>
+<li class='toc3'><a href='#-setValue'>setValue</a> </li>
+<li class='toc3'><a href='#-setValueByCookie'>setValueByCookie</a> </li>
+<li class='toc3'><a href='#-usage'>usage</a> </li>
+<li class='toc3'><a href='#-value'>value</a> </li>
+<li class='toc3'><a href='#-valueByCookie'>valueByCookie</a> </li>
+<li class='toc3'><a href='#-vendorID'>vendorID</a> </li>
+<li class='toc3'><a href='#-version'>version</a> </li>
+<li class='toc3'><a href='#-wasClosed'>wasClosed</a> </li>
+</ul></ul></ul></div><h2><a class='anchor' name='description'>Description</a></h2>
+
+<p>Helper class for <a href="./../Classes/HIDDeviceService.html">HIDDeviceService</a>.
+<p>A HIDDevice's information consists out of: the manufacturer, the product, the usage, the vendorID, the productID and the locID. The last three are used to identify the device. The vendorID and the productID are static for each device, the locID depends on the (usb) port the device is connected to.<h2><a class='anchor' name='classmethods'>Class Methods</a></h2>
+<h3><a class='anchor' name='Inherited class methods'>Inherited class methods</a></h3>
+<div id='inheritedclassmets'></div><h3><a class='anchor' name='Undocumented class methods'>Undocumented class methods</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*new' href='./../Overviews/Methods.html#new'>new</a> (<span class='argstr'>manufacturer</span>, <span class='argstr'>product</span>, <span class='argstr'>usage</span>, <span class='argstr'>vendorID</span>, <span class='argstr'>productID</span>, <span class='argstr'>locID</span>, <span class='argstr'>version</span>, <span class='argstr'>serial</span>)</h3>
+<h2><a class='anchor' name='instancemethods'>Instance Methods</a></h2>
+<h3><a class='anchor' name='Inherited instance methods'>Inherited instance methods</a></h3>
+<div id='inheritedinstmets'></div><h3><a class='anchor' name='Undocumented instance methods'>Undocumented instance methods</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-closeAction' href='./../Overviews/Methods.html#closeAction'>closeAction</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-closeAction' href='./../Overviews/Methods.html#closeAction'>closeAction</a> = value</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-dequeueDevice' href='./../Overviews/Methods.html#dequeueDevice'>dequeueDevice</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-dequeueElement' href='./../Overviews/Methods.html#dequeueElement'>dequeueElement</a> (<span class='argstr'>elementNum: 0</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-elements' href='./../Overviews/Methods.html#elements'>elements</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-info' href='./../Overviews/Methods.html#info'>info</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-isQueued' href='./../Overviews/Methods.html#isQueued'>isQueued</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-locID' href='./../Overviews/Methods.html#locID'>locID</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-manufacturer' href='./../Overviews/Methods.html#manufacturer'>manufacturer</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-product' href='./../Overviews/Methods.html#product'>product</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-productID' href='./../Overviews/Methods.html#productID'>productID</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-queueDevice' href='./../Overviews/Methods.html#queueDevice'>queueDevice</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-queueElement' href='./../Overviews/Methods.html#queueElement'>queueElement</a> (<span class='argstr'>elementNum: 0</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-serial' href='./../Overviews/Methods.html#serial'>serial</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setValue' href='./../Overviews/Methods.html#setValue'>setValue</a> (<span class='argstr'>elementNum</span>, <span class='argstr'>val</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setValueByCookie' href='./../Overviews/Methods.html#setValueByCookie'>setValueByCookie</a> (<span class='argstr'>cookie</span>, <span class='argstr'>val</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-usage' href='./../Overviews/Methods.html#usage'>usage</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-value' href='./../Overviews/Methods.html#value'>value</a> (<span class='argstr'>elementNum: 0</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-valueByCookie' href='./../Overviews/Methods.html#valueByCookie'>valueByCookie</a> (<span class='argstr'>cookie</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-vendorID' href='./../Overviews/Methods.html#vendorID'>vendorID</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-version' href='./../Overviews/Methods.html#version'>version</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-wasClosed' href='./../Overviews/Methods.html#wasClosed'>wasClosed</a> </h3>
+<div class='doclink'>source: <a href='file:///Applications/SamplerCentral 2.6.app/Contents/Resources/HelpSource/Classes/HIDDevice.schelp'>/Applications/SamplerCentral 2.6.app/Contents/Resources/HelpSource/Classes/HIDDevice.schelp</a><br>link::Classes/HIDDevice::<br>sc version: 3.6dev</div></div></body></html>

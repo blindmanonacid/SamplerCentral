@@ -1,0 +1,1077 @@
+<html><head><title>VSTPluginController</title>
+<link rel='stylesheet' href='./../scdoc.css' type='text/css' />
+<link rel='stylesheet' href='./../frontend.css' type='text/css' />
+<link rel='stylesheet' href='./../custom.css' type='text/css' />
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<script src='./../scdoc.js' type='text/javascript'></script>
+<script src='./../docmap.js' type='text/javascript'></script>
+<script src='./../prettify.js' type='text/javascript'></script>
+<script src='./../lang-sc.js' type='text/javascript'></script>
+<script src='./../MathJax/MathJax.js?config=TeX-AMS_HTML,scmathjax' type='text/javascript'></script>
+<script type='text/javascript'>var helpRoot='./..';</script>
+</head>
+<ul id='menubar'></ul>
+<body onload='fixTOC();prettyPrint()'>
+<div class='contents'>
+<div class='header'>
+<div id='label'>SuperCollider CLASSES (extension)</div>
+<div id='categories'><a href='./../Browse.html#Server>Abstractions'>Server>Abstractions</a></div>
+<h1>VSTPluginController</h1>
+<div id='summary'>Client-side representation of a VSTPlugin UGen instance</div>
+</div>
+<div class='subheader'>
+<div id='filename'>Source: /Applications/SamplerCentral 2.6.app/Contents/Resources/SCClassLibrary/Extensions/VSTPlugin/classes/<a href='file:///Applications/SamplerCentral 2.6.app/Contents/Resources/SCClassLibrary/Extensions/VSTPlugin/classes/VSTPluginController.sc'>VSTPluginController.sc</a></div><div id='superclasses'>Inherits from: <a href="../Classes/Object.html">Object</a></div>
+<div id='subclasses'>Subclasses: <a href="../Classes/VSTPluginNodeProxyController.html">VSTPluginNodeProxyController</a></div>
+<div id='related'>See also: <a href="./../Classes/VSTPlugin.html">VSTPlugin</a>, <a href="./../Classes/VSTPluginDesc.html">VSTPluginDesc</a>, <a href="./../Classes/VSTPluginGui.html">VSTPluginGui</a>, <a href="./../Classes/VSTPluginMIDIProxy.html">VSTPluginMIDIProxy</a>, <a href="./../Guides/HOA_IEM.html">High order ambisonics using IEM Plugins</a></div>
+</div>
+<div id='toc'>
+<ul class='toc'><li class='toc1'><a href='#description'>Description</a></li>
+<ul class='toc'><li class='toc2'><a href='#Introduction'>Introduction</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#Parameter Automation'>Parameter Automation</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#Preset Management'>Preset Management</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#GUI'>GUI</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#Scheduling'>Scheduling</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#Sequencing'>Sequencing</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#Realtime Safety'>Realtime Safety</a></li>
+<ul class='toc'></ul></ul><li class='toc1'><a href='#classmethods'>Class methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#*new'>new</a> </li>
+<li class='toc3'><a href='#*collect'>collect</a> </li>
+<li class='toc2'><a href='#Inherited class methods'>Inherited class methods</a></li>
+<li class='toc2'><a href='#Undocumented class methods'>Undocumented class methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#*prCollect'>prCollect</a> </li>
+</ul></ul><li class='toc1'><a href='#instancemethods'>Instance methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#-open'>open</a> </li>
+<li class='toc3'><a href='#-openMsg'>openMsg</a> </li>
+<li class='toc3'><a href='#-close'>close</a> </li>
+<li class='toc3'><a href='#-closeMsg'>closeMsg</a> </li>
+<li class='toc3'><a href='#-pluginCrashed'>pluginCrashed</a> </li>
+<li class='toc3'><a href='#-browse'>browse</a> </li>
+<li class='toc3'><a href='#-editor'>editor</a> </li>
+<li class='toc3'><a href='#-editorMsg'>editorMsg</a> </li>
+<li class='toc3'><a href='#-moveEditor'>moveEditor</a> </li>
+<li class='toc3'><a href='#-moveEditorMsg'>moveEditorMsg</a> </li>
+<li class='toc3'><a href='#-resizeEditor'>resizeEditor</a> </li>
+<li class='toc3'><a href='#-resizeEditorMsg'>resizeEditorMsg</a> </li>
+<li class='toc3'><a href='#-gui'>gui</a> </li>
+<li class='toc3'><a href='#-info'>info</a> </li>
+<li class='toc3'><a href='#-loaded'>loaded</a> </li>
+<li class='toc3'><a href='#-latency'>latency</a> </li>
+<li class='toc3'><a href='#-latencyChanged'>latencyChanged</a> </li>
+<li class='toc3'><a href='#-reset'>reset</a> </li>
+<li class='toc3'><a href='#-resetMsg'>resetMsg</a> </li>
+<li class='toc3'><a href='#-setOffline'>setOffline</a> </li>
+<li class='toc3'><a href='#-setOfflineMsg'>setOfflineMsg</a> </li>
+<li class='toc3'><a href='#-synth'>synth</a> </li>
+<li class='toc3'><a href='#-synthIndex'>synthIndex</a> </li>
+<li class='toc3'><a href='#-wait'>wait</a> </li>
+<li class='toc2'><a href='#Parameters'>Parameters</a></li>
+<ul class='toc'><li class='toc3'><a href='#-numParameters'>numParameters</a> </li>
+<li class='toc3'><a href='#-set'>set</a> </li>
+<li class='toc3'><a href='#-setMsg'>setMsg</a> </li>
+<li class='toc3'><a href='#-setn'>setn</a> </li>
+<li class='toc3'><a href='#-setnMsg'>setnMsg</a> </li>
+<li class='toc3'><a href='#-map'>map</a> </li>
+<li class='toc3'><a href='#-mapMsg'>mapMsg</a> </li>
+<li class='toc3'><a href='#-mapn'>mapn</a> </li>
+<li class='toc3'><a href='#-mapnMsg'>mapnMsg</a> </li>
+<li class='toc3'><a href='#-mapan'>mapan</a> </li>
+<li class='toc3'><a href='#-mapanMsg'>mapanMsg</a> </li>
+<li class='toc3'><a href='#-unmap'>unmap</a> </li>
+<li class='toc3'><a href='#-unmapMsg'>unmapMsg</a> </li>
+<li class='toc3'><a href='#-get'>get</a> </li>
+<li class='toc3'><a href='#-getn'>getn</a> </li>
+<li class='toc3'><a href='#-parameterAutomated'>parameterAutomated</a> </li>
+<li class='toc3'><a href='#-parameterCache'>parameterCache</a> </li>
+</ul><li class='toc2'><a href='#Programs'>Programs</a></li>
+<ul class='toc'><li class='toc3'><a href='#-numPrograms'>numPrograms</a> </li>
+<li class='toc3'><a href='#-program'>program</a> </li>
+<li class='toc3'><a href='#-programMsg'>programMsg</a> </li>
+<li class='toc3'><a href='#-programName'>programName</a> </li>
+<li class='toc3'><a href='#-programNameMsg'>programNameMsg</a> </li>
+<li class='toc3'><a href='#-programCache'>programCache</a> </li>
+</ul><li class='toc2'><a href='#Presets'>Presets</a></li>
+<ul class='toc'><li class='toc3'><a href='#-loadPreset'>loadPreset</a> </li>
+<li class='toc3'><a href='#-savePreset'>savePreset</a> </li>
+<li class='toc3'><a href='#-loadPresetMsg'>loadPresetMsg</a> </li>
+<li class='toc3'><a href='#-deletePreset'>deletePreset</a> </li>
+<li class='toc3'><a href='#-renamePreset'>renamePreset</a> </li>
+<li class='toc3'><a href='#-preset'>preset</a> </li>
+</ul><li class='toc2'><a href='#Preset Files'>Preset Files</a></li>
+<ul class='toc'><li class='toc3'><a href='#-readProgram'>readProgram</a> </li>
+<li class='toc3'><a href='#-writeProgram'>writeProgram</a> </li>
+<li class='toc3'><a href='#-writeBank'>writeBank</a> </li>
+<li class='toc3'><a href='#-readBank'>readBank</a> </li>
+<li class='toc3'><a href='#-readProgramMsg'>readProgramMsg</a> </li>
+<li class='toc3'><a href='#-writeProgramMsg'>writeProgramMsg</a> </li>
+<li class='toc3'><a href='#-readBankMsg'>readBankMsg</a> </li>
+<li class='toc3'><a href='#-writeBankMsg'>writeBankMsg</a> </li>
+</ul><li class='toc2'><a href='#Preset Data'>Preset Data</a></li>
+<ul class='toc'><li class='toc3'><a href='#-setProgramData'>setProgramData</a> </li>
+<li class='toc3'><a href='#-setBankData'>setBankData</a> </li>
+<li class='toc3'><a href='#-getProgramData'>getProgramData</a> </li>
+<li class='toc3'><a href='#-getBankData'>getBankData</a> </li>
+<li class='toc3'><a href='#-sendProgramData'>sendProgramData</a> </li>
+<li class='toc3'><a href='#-sendBankData'>sendBankData</a> </li>
+<li class='toc3'><a href='#-receiveProgramData'>receiveProgramData</a> </li>
+<li class='toc3'><a href='#-receiveBankData'>receiveBankData</a> </li>
+</ul><li class='toc2'><a href='#MIDI'>MIDI</a></li>
+<ul class='toc'><li class='toc3'><a href='#-midi'>midi</a> </li>
+<li class='toc3'><a href='#-sendMidi'>sendMidi</a> </li>
+<li class='toc3'><a href='#-sendMidiMsg'>sendMidiMsg</a> </li>
+<li class='toc3'><a href='#-sendSysex'>sendSysex</a> </li>
+<li class='toc3'><a href='#-sendSysexMsg'>sendSysexMsg</a> </li>
+<li class='toc3'><a href='#-midiReceived'>midiReceived</a> </li>
+<li class='toc3'><a href='#-sysexReceived'>sysexReceived</a> </li>
+</ul><li class='toc2'><a href='#Transport'>Transport</a></li>
+<ul class='toc'><li class='toc3'><a href='#-setPlaying'>setPlaying</a> </li>
+<li class='toc3'><a href='#-setPlayingMsg'>setPlayingMsg</a> </li>
+<li class='toc3'><a href='#-setTempo'>setTempo</a> </li>
+<li class='toc3'><a href='#-setTempoMsg'>setTempoMsg</a> </li>
+<li class='toc3'><a href='#-setTimeSignature'>setTimeSignature</a> </li>
+<li class='toc3'><a href='#-setTimeSignatureMsg'>setTimeSignatureMsg</a> </li>
+<li class='toc3'><a href='#-setTransportPos'>setTransportPos</a> </li>
+<li class='toc3'><a href='#-setTransportPosMsg'>setTransportPosMsg</a> </li>
+<li class='toc3'><a href='#-getTransportPos'>getTransportPos</a> </li>
+</ul><li class='toc2'><a href='#VST2 only'>VST2 only</a></li>
+<ul class='toc'><li class='toc3'><a href='#-canDo'>canDo</a> </li>
+<li class='toc3'><a href='#-vendorMethod'>vendorMethod</a> </li>
+<li class='toc3'><a href='#-vendorMethodMsg'>vendorMethodMsg</a> </li>
+</ul><li class='toc2'><a href='#Inherited instance methods'>Inherited instance methods</a></li>
+<li class='toc2'><a href='#Undocumented instance methods'>Undocumented instance methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#-addDependant'>addDependant</a> </li>
+<li class='toc3'><a href='#-haveEditor'>haveEditor</a> </li>
+<li class='toc3'><a href='#-makeMsg'>makeMsg</a> </li>
+<li class='toc3'><a href='#-sendMsg'>sendMsg</a> </li>
+<li class='toc3'><a href='#-update'>update</a> </li>
+</ul></ul><li class='toc1'><a href='#examples'>Examples</a></li>
+<ul class='toc'><li class='toc2'><a href='#Serial FX chains'>Serial FX chains</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#Master FX section'>Master FX section</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#Automation'>Automation</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#VST Instruments'>VST Instruments</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#Non-Realtime Synthesis'>Non-Realtime Synthesis</a></li>
+<ul class='toc'></ul></ul></ul></div><h2><a class='anchor' name='description'>Description</a></h2>
+
+<p>This class is used to control a specific <a href="./../Classes/VSTPlugin.html">VSTPlugin</a> instance in a <a href="./../Classes/Synth.html">Synth</a>, so you can open plugins, automate parameters, change programs, send MIDI messages, etc.
+<p>Have a look at the examples at the bottom!<h3><a class='anchor' name='Introduction'>Introduction</a></h3>
+
+<p>Here's a quick example showing a simple insert effect on a 2-channel audio bus:<pre class='code prettyprint lang-sc'>(
+SynthDef(\insert, { arg bus;
+    ReplaceOut.ar(bus, VSTPlugin.ar(In.ar(bus, 2), 2));
+}).add;
+)
+
+// search of available VST plugins in the default VST search paths
+VSTPlugin.search;
+
+// create the synth:
+~synth = Synth(\insert, [\bus, 0]);
+// get a handle to the VSTPlugin:
+~fx = VSTPluginController(~synth);
+// open a plugin by name/key (might require VSTPlugin.search!)
+~fx.open("myplugin", verbose: true);
+// alternatively, you can open a plugin by its file path
+// (this only works if the file contains a single plugin, like most VST2.x plugins)
+~fx.open("/path/to/plugin", verbose: true);
+
+// you can do all of the above in a single line:
+~fx = VSTPluginController(Synth(\insert, [\bus, 0])).open("myplugin");
+
+// open the plugin browser:
+~fx.browse;
+
+// show the generic plugin GUI:
+~fx.gui;
+
+// show the VST editor:
+~fx.editor;
+
+// etc.</pre>
+
+<p>If you have more than one instance of VSTPlugin in your SynthDef, you need to give them unique IDs so that VSTPluginController can find the right instance:<pre class='code prettyprint lang-sc'>(
+// two VST plugins in series:
+SynthDef(\insert2, { arg bus;
+    var sig;
+    sig = In.ar(bus, 2);
+    sig = VSTPlugin.ar(sig, 2, id: \eq);
+    sig = VSTPlugin.ar(sig, 2, id: \chorus);
+    ReplaceOut.ar(bus, sig);
+}).add;
+)
+// create the synth:
+~synth = Synth(\insert2, [\bus, 0]);
+
+// get handles to the VSTPlugins:
+(
+~eq = VSTPluginController(~synth, \eq).open("myEQ");
+~chorus = VSTPluginController(~synth, \chorus).open("myChorus");
+)
+// or:
+(
+~fx = VSTPluginController.collect(~synth); // creates a VSTPluginController for each VSTPlugin ID
+~fx.eq.open("myEq");
+~fx.chorus.open("myChorus");
+)
+
+// etc.</pre>
+
+<p>With JITLib you have to use <a href="./../Classes/VSTPluginNodeProxyController.html">VSTPluginNodeProxyController</a>:<pre class='code prettyprint lang-sc'>(
+Ndef(\foo, \vst -&gt; { VSTPlugin.ar(WhiteNoise.ar(0.1) ! 2, 2) }).play;
+~fx = VSTPluginNodeProxyController(Ndef(\foo)).open("myFX");
+)</pre>
+<h3><a class='anchor' name='Parameter Automation'>Parameter Automation</a></h3>
+
+<p>There are three different ways to automate plugin parameters (listed with increasing precedence):<ul>
+<li>with the <a href="#-set">-set</a> and <a href="#-setn">-setn</a> methods<pre class='code prettyprint lang-sc'>// set parameter 1 to 0.5
+~fx.set(1, 0.5);</pre>
+
+<p><li>with the <code class='code prettyprint lang-sc'>params</code> argument of <a href="./../Classes/VSTPlugin.html#*ar">VSTPlugin: *ar</a><pre class='code prettyprint lang-sc'>(
+SynthDef(\insert, { arg bus, f;
+    var lfo = LFSaw.kr(0.1);
+    // set parameter 0 with Synth argument 'f'
+    // and modulate parameter 1 with LFO
+    var sig = VSTPlugin.ar(In.ar(bus, 2), 2, params: [0, f, 1, lfo]);
+    ReplaceOut.ar(bus, sig);
+}).add;
+)
+// create a VSTPlugin instance with parameter 0 set to 0.5
+~fx = VSTPluginController(Synth(\insert, [\bus, 0, \f, 0.5])).open("someFX");
+// now set it to 0.7
+~fx.synth.set(\f, 0.7);</pre>
+
+<p><li>map them to control or audio busses with <a href="#-map">-map</a><pre class='code prettyprint lang-sc'>// map parameter 2 to a control bus
+~c = Bus.control;
+~fx.map(2, ~c);
+~c.set(0.5);</pre>
+</ul>
+
+<p>Use <a href="#-get">-get</a> and <a href="#-getn">-getn</a> to obtain current parameter values:<pre class='code prettyprint lang-sc'>// get the current value of parameter 3 and post it to the console:
+~fx.get(3, {arg f; f.postln;});</pre>
+
+<p><a href="#-set">-set</a>, <a href="#-map">-map</a> and <a href="#-get">-get</a> also accept parameter names instead of indices:<pre class='code prettyprint lang-sc'>// with the GChorus (GVST) plugin:
+~fx.set(\Depth, 0.5);
+~fx.get(\Depth, {arg f; f.postln;});</pre>
+<h3><a class='anchor' name='Preset Management'>Preset Management</a></h3>
+
+<p>Select built-in FX programs with <a href="#-program">-program</a>:<pre class='code prettyprint lang-sc'>// list available programs:
+~fx.info.printPrograms;
+// get current program number
+~fx.program;
+// switch to program 4:
+~fx.program_(4);</pre>
+
+<p>The easiest way to manage user presets are the <a href="#-savePreset">-savePreset</a> and <a href="#-loadPreset">-loadPreset</a> methods. Because they use standardized preset folder locations, presets can be simply referred to by name:<pre class='code prettyprint lang-sc'>// list available presets
+~fx.info.printPresets;
+
+// save (new) preset
+~fx.savePreset("my_preset");
+// do something
+~fx.gui;
+// save again
+~fx.savePreset;
+// do something
+~fx.gui;
+// load preset
+~fx.loadPreset("my_preset");</pre>
+
+<p>Internally, preset files use the standard <code class='code prettyprint lang-sc'>.fxp/.fxp</code> (VST2) or <code class='code prettyprint lang-sc'>.vstpreset</code> (VST3) format, recognized by most DAWs and VST hosts. You can save presets to your own folders with the following methods:<pre class='code prettyprint lang-sc'>// write current plugin state to a preset file.
+~fx.writeProgram("mypresetfolder/test.fxp");
+
+// ... mess around with the plugin ...
+~fx.gui;
+
+// restore previous state:
+~fx.readProgram("mypresetfolder/text.fxp");</pre>
+
+<p>It's also possible to get/set the raw plugin state as an <a href="./../Classes/Int8Array.html">Int8Array</a>:<pre class='code prettyprint lang-sc'>// get plugin state as Int8Array:
+~fx.getProgramData({ arg data; d = data;});
+
+// do something
+~fx.gui;
+
+// restore previous state:
+~fx.setProgramData(d);</pre>
+
+<p>The data has the same binary format as the preset files. You can use these methods to build your own preset management!<h3><a class='anchor' name='GUI'>GUI</a></h3>
+
+<p>Generally, there are two kind of GUIs:<ul>
+<li>the native VST editor, which must be explicitly requested when opening a plugin:<pre class='code prettyprint lang-sc'>// load a plugin
+~fx.open("/path/to/plugin");
+// open the VST editor window
+~fx.editor;</pre>
+
+<p>This will run a native window on the Server (in a seperate thread).<div class='note'><span class='notelabel'>NOTE:</span> On macOS this only works in SuperCollider 3.11 or above!</div><li>a generic Qt GUI which can be opened in a new Window or embedded into existing views:<pre class='code prettyprint lang-sc'>// load a plugin
+~fx.open("/path/to/plugin", editor: false);
+// open the plugin GUI in a Window
+~fx.gui;</pre>
+
+<p>You can change parameters by moving the sliders or entering values into the text fields (don't supported by all plugins). Additionally, you can browse for plugins, select programs and read/write preset files. See <a href="#-gui">-gui</a> and <a href="./../Classes/VSTPluginGui.html">VSTPluginGui</a> for more information.</ul>
+<h3><a class='anchor' name='Scheduling'>Scheduling</a></h3>
+
+<p>Generally, <em>synchronous</em> methods, like <a href="#-set">-set</a> or <a href="#-map">-map</a>, simply send an OSC message to the Server. This is fine for interactive use, but if you need accurate timing, commands have to be scheduled as OSC bundles (see also <a href="./../Guides/ServerTiming.html">Server OSC timing</a>).
+<p>Here are two basic ways how to schedule methods with Server latency:<pre class='code prettyprint lang-sc'>// asking the object for the message
+~fx = VSTPluginController(Synth(\foo));
+s.sendBundle(s.latency, ~fx.setMsg(0, 0.5));
+s.sendBundle(s.latency, ~fx.midi.noteOn(0, 60, 100));
+
+// using automatic bundling
+s.bind {
+    ~fx.set(0, 0.5);
+    ~fx.midi.noteOn(0, 60, 100);
+};</pre>
+<h3><a class='anchor' name='Sequencing'>Sequencing</a></h3>
+
+<p>VSTPlugin defines two custom Event types which can be used in <a href="./../Classes/Pbind.html">Pbind</a>, for example. Like with (most) other Event types, commands are scheduled as OSC bundles with Server latency.<dl>
+<dt><code class='code prettyprint lang-sc'>\vst_set</code><dd>sets one or more plugin parameters to the specified values; the interface is similar to <code class='code prettyprint lang-sc'>\set</code>.<table>
+<tr><td><code class='code prettyprint lang-sc'>\vst</code><td>the VSTPluginController instance<tr><td><code class='code prettyprint lang-sc'>\params</code><td>an Array of parameter names and/or indices which will be looked up in the Event</table>
+
+<p><pre class='code prettyprint lang-sc'>Pbind(
+    \type, \vst_set,
+    \vst, ~fx,
+    \params, [1, \Mix], // look up parameter 1 and 'Mix'
+    1, Pwhite(0.1, 0.9), // value for parameter 1
+    \Mix, Pseq([0.1, 0.2, 0.5, 0.9], inf), // value for parameter 'Mix'
+    \dur, Prand([0.25, 0.5, 1], inf)
+)</pre>
+
+<p>If you omit the <code class='code prettyprint lang-sc'>\params</code> argument, the play method will automatically try to look up parameters by name:<pre class='code prettyprint lang-sc'>Pbind(
+    \type, \vst_set,
+    \vst, ~fx,
+    \Mix, Pseq([0.1, 0.2, 0.5, 0.9], inf), // value for parameter 'Mix'
+    \dur, Prand([0.25, 0.5, 1], inf)
+)</pre>
+
+<p><div class='warning'><span class='warninglabel'>WARNING:</span> This can be very inefficient for plugins with a large number of parameters! It is always better to explicitly specify the parameters you need with the <code class='code prettyprint lang-sc'>\params</code> argument</div>
+<p>See <a href="#Automation">Automation</a> for more examples.<dt><code class='code prettyprint lang-sc'>\vst_midi</code><dd>send MIDI messages; the interface is very similar to <code class='code prettyprint lang-sc'>\midi</code>.<table>
+<tr><td><code class='code prettyprint lang-sc'>\vst</code><td>the VSTPluginController instance<tr><td><code class='code prettyprint lang-sc'>\midicmd</code><td>the MIDI method (see below)<tr><td><code class='code prettyprint lang-sc'>\chan</code><td>the MIDI channel; the default is 0<tr><td><code class='code prettyprint lang-sc'>\midinote</code><td>MIDI pitch for <code class='code prettyprint lang-sc'>\noteOn</code>, <code class='code prettyprint lang-sc'>\noteOff</code> and <code class='code prettyprint lang-sc'>\polyTouch</code><tr><td><code class='code prettyprint lang-sc'>\amp</code><td>amplitude (0.0 - 1.0) for <code class='code prettyprint lang-sc'>\noteOn</code> and <code class='code prettyprint lang-sc'>\noteOff</code><tr><td><code class='code prettyprint lang-sc'>\ctlNum</code><td>CC number for <code class='code prettyprint lang-sc'>\control</code><tr><td><code class='code prettyprint lang-sc'>\control</code><td>CC value for <code class='code prettyprint lang-sc'>\control</code><tr><td><code class='code prettyprint lang-sc'>\val</code><td>value argument for <code class='code prettyprint lang-sc'>\touch</code> and <code class='code prettyprint lang-sc'>\bend</code><tr><td><code class='code prettyprint lang-sc'>\polyTouch</code><td>touch value for <code class='code prettyprint lang-sc'>\polyTouch</code><tr><td><code class='code prettyprint lang-sc'>\progNum</code><td>program number for <code class='code prettyprint lang-sc'>\program</code><tr><td><code class='code prettyprint lang-sc'>\array</code><td>UInt8Array for <code class='code prettyprint lang-sc'>\sysex</code></table>
+
+<p>The default value for <code class='code prettyprint lang-sc'>\midicmd</code> is <code class='code prettyprint lang-sc'>\noteOn</code>, with <code class='code prettyprint lang-sc'>\noteOff</code> commands being scheduled automatically. Other possible values are <code class='code prettyprint lang-sc'>\noteOff</code>, <code class='code prettyprint lang-sc'>\control</code>, <code class='code prettyprint lang-sc'>\bend</code>, <code class='code prettyprint lang-sc'>\touch</code>, <code class='code prettyprint lang-sc'>\polyTouch</code>, <code class='code prettyprint lang-sc'>\program</code>, <code class='code prettyprint lang-sc'>\allNotesOff</code> and <code class='code prettyprint lang-sc'>\sysex</code>. The commands correspond to the methods listed in <a href="./../Classes/VSTPluginMIDIProxy.html">VSTPluginMIDIProxy</a>.<div class='note'><span class='notelabel'>NOTE:</span> Always prefer <code class='code prettyprint lang-sc'>\vst_midi</code> over <code class='code prettyprint lang-sc'>\midi</code> because the latter doesn't schedule OSC bundles!</div>
+<p>See <a href="#VST Instruments">VST Instruments</a> for examples.</dl>
+
+<p><strong>Tip</strong>: You can play Pbinds of type <code class='code prettyprint lang-sc'>\vst_midi</code> and <code class='code prettyprint lang-sc'>\vst_set</code> in parallel with <a href="./../Classes/Ppar.html">Ppar</a>.<h3><a class='anchor' name='Realtime Safety'>Realtime Safety</a></h3>
+
+<p>VSTPlugin tries its best to be as realtime safe as possible. Plugins are always opened/closed asynchronously in the NRT thread. Some methods, like <a href="#-loadPreset">-loadPreset</a> and <a href="#-savePreset">-savePreset</a>, offer two options via the <code class='code prettyprint lang-sc'>async</code> parameter:<ol>
+<li><code class='code prettyprint lang-sc'>async: true</code> means that the plugin method is called on the NRT resp. UI thread and will never block the Server. However, plugin processing is temporarily suspended and you can't call other methods until the command has finished.<li><code class='code prettyprint lang-sc'>async: false</code> means that the plugin method is simply called on the RT thread. The advantage is that the command is performed synchronously and plugin processing doesn't have to be suspended. Depending on the plugin, this might be just fine - or block the Server. You have to test yourself!</ol>
+<div class='note'><span class='notelabel'>NOTE:</span> If the plugin is opened with the VST GUI editor, the <code class='code prettyprint lang-sc'>async</code> option is automatically set to <code class='code prettyprint lang-sc'>true</code> because of thread safety concerns.</div><h2><a class='anchor' name='classmethods'>Class Methods</a></h2>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*new' href='./../Overviews/Methods.html#new'>new</a> (<span class='argstr'>synth</span>, <span class='argstr'>id</span>, <span class='argstr'>synthDef</span>, <span class='argstr'>wait: -1</span>)</h3>
+<div class='method'>
+<p>Create a new VSTPluginController for a given Synth.<h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>synth<td class='argumentdesc'>
+<p>the <a href="./../Classes/Synth.html">Synth</a> containing the <a href="./../Classes/VSTPlugin.html">VSTPlugin</a> you want to control.<tr><td class='argumentname'>id<td class='argumentdesc'>
+<p>a Symbol which uniquely identifies the <a href="./../Classes/VSTPlugin.html">VSTPlugin</a> in the <a href="./../Classes/SynthDef.html">SynthDef</a>.<div class='note'><span class='notelabel'>NOTE:</span> If this is the only VSTPlugin instance in the SynthDef, the <code class='code prettyprint lang-sc'>id</code> argument can be omitted.</div><tr><td class='argumentname'>synthDef<td class='argumentdesc'>
+<p>the synth's <a href="./../Classes/SynthDef.html">SynthDef</a>. You can omit this argument if the SynthDef has been added to the global <a href="./../Classes/SynthDescLib.html">SynthDescLib</a>, e.g. with <a href="./../Classes/SynthDef.html#-add">SynthDef: -add</a> or <a href="./../Classes/SynthDef.html#-store">SynthDef: -store</a>. In this case, the SynthDef will be automatically deduced from the <em>synth</em> argument.<tr><td class='argumentname'>wait<td class='argumentdesc'>
+<p>the default wait time, see <a href="#-wait">-wait</a>.</table><h4>Discussion:</h4>
+
+<p>Initially, no VST plugin is loaded and the UGen is automatically bypassed (i.e. the input is just passed through).</div><h3 class='cmethodname'><span class='methprefix'>*</span><a name='*collect' href='./../Overviews/Methods.html#collect'>collect</a> (<span class='argstr'>synth</span>, <span class='argstr'>ids</span>, <span class='argstr'>synthDef</span>, <span class='argstr'>wait: -1</span>)</h3>
+<div class='method'>
+<p>Same as <a href="#-new">-new</a>, but returns an <a href="./../Classes/Event.html">Event</a> of VSTPluginControllers, with their IDs used as keys. This is useful if you have a SynthDef containing several VSTPlugin instances.<h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>synth<td class='argumentdesc'>
+<p>the Synth, see <a href="#-new">-new</a><tr><td class='argumentname'>ids<td class='argumentdesc'>
+<p>an Array of IDs referring to <a href="./../Classes/VSTPlugin.html">VSTPlugin</a> instances in the <a href="./../Classes/SynthDef.html">SynthDef</a>, or <code class='code prettyprint lang-sc'>nil</code> (= collect all).<tr><td class='argumentname'>synthDef<td class='argumentdesc'>
+<p>the SynthDef (optional), see <a href="#-new">-new</a><tr><td class='argumentname'>wait<td class='argumentdesc'>
+<p>the default wait time, see <a href="#-wait">-wait</a>.</table><h4>Discussion:</h4>
+<pre class='code prettyprint lang-sc'>(
+SynthDef.new(\test, { arg bus = 0;
+    var sig = VSTPlugin.ar(nil, 2, id: \vsti);
+    sig = VSTPlugin.ar(sig, 2, id: \fx);
+    Out.ar(bus, sig);
+}).add;
+)
+
+~fx = VSTPluginController.collect(Synth(\test), [\vsti, \fx]);
+// or
+~fx = VSTPluginController.collect(Synth(\test));
+
+(
+~fx.vsti.open("myVSTi");
+~fx.fx.open("myFX");
+)</pre>
+</div><h3><a class='anchor' name='Inherited class methods'>Inherited class methods</a></h3>
+<div id='inheritedclassmets'></div><h3><a class='anchor' name='Undocumented class methods'>Undocumented class methods</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*prCollect' href='./../Overviews/Methods.html#prCollect'>prCollect</a> (<span class='argstr'>plugins</span>, <span class='argstr'>ids</span>, <span class='argstr'>fn</span>)</h3>
+<h2><a class='anchor' name='instancemethods'>Instance Methods</a></h2>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-open' href='./../Overviews/Methods.html#open'>open</a> (<span class='argstr'>path</span>, <span class='argstr'>editor: true</span>, <span class='argstr'>verbose: false</span>, <span class='argstr'>action</span>, <span class='argstr'>multiThreading: false</span>, <span class='argstr'>mode</span>)</h3>
+<div class='method'>
+<p>open a VST plugin.<h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>path<td class='argumentdesc'>
+<p>the plugin key or file path.
+<p>- Opening plugins by <strong>key</strong> requires that the plugin has already been probed (e.g. as a result of <a href="./../Classes/VSTPlugin.html#*search">VSTPlugin: *search</a>).<pre class='code prettyprint lang-sc'>~fx.open("GChorus"); // assuming 'GChorus' is in the Server's plugin dictionary.
+~fx.open("mda Delay.vst3"); // VST3 plugins always need a '.vst3' extensions</pre>
+
+<p>- Alternatively, you can use a <strong>file path</strong> (with or without extension). Relative paths are resolved to the standard VST directories (see <a href="./../Classes/VSTPlugin.html#*search">VSTPlugin: *search</a>); this is done recursively, which means you don't necessarily have to specify any subfolders.<pre class='code prettyprint lang-sc'>// absolute file path:
+~fx.open("C:/Program Files/VSTPlugins/GVST/GChorus");
+
+// since C:/Program Files/VSTPlugins/ is one of the standard VST directories,
+// the plugin can also be opened like this:
+~fx.open("GVST/GChorus");
+~fx.open("GChorus"); // even without subfolder</pre>
+<div class='note'><span class='notelabel'>NOTE:</span> This method only works for files which contain a single plugin (all VST 2.x plugins - except for shell plugins - and many VST 3 plugins).</div>
+<p>- If the VSTPlugin UGen holds a plugin description (see <a href="./../Classes/VSTPlugin.html#*ar">VSTPlugin: *ar</a>), the <code class='code prettyprint lang-sc'>path</code> argument can be deduced and therefore omitted.<pre class='code prettyprint lang-sc'>VSTPlugin.search;
+(
+SynthDef(\chorus, { arg bus=0;
+    var plugin = VSTPlugin.plugins[\GChorus];
+    ReplaceOut.ar(bus, VSTPlugin.ar(In.ar(bus, 2), 2, info: plugin));
+}).add;
+)
+~fx = VSTPluginController(Synth(\chorus)).open; // will open 'GChorus'</pre>
+<tr><td class='argumentname'>editor<td class='argumentdesc'>
+<p>enable/disable the VST plugin editor.<div class='note'><span class='notelabel'>NOTE:</span> On macOS this only works with SuperCollider 3.11 and above!</div><div class='note'><span class='notelabel'>NOTE:</span> Some (buggy) plugins don't work correctly without the VST editor.</div><tr><td class='argumentname'>verbose<td class='argumentdesc'>
+<p>post the plugin info to the console if loaded successfully.<tr><td class='argumentname'>action<td class='argumentdesc'>
+<p>an action to be called with <code class='code prettyprint lang-sc'>this</code> and a Boolean (success/fail).<tr><td class='argumentname'>multiThreading<td class='argumentdesc'>
+<p>process the plugin in a seperate worker thread to utilize more CPU cores.<div class='note'><span class='notelabel'>NOTE:</span> This option is ignored for Supernova, which already offers multithreading with ParGroup.</div>
+<p><div class='note'><span class='notelabel'>NOTE:</span> Multithreading introduces a delay of 1 block!</div><tr><td class='argumentname'>mode<td class='argumentdesc'>
+<p>select a run mode.<table>
+<tr><td>\auto<td>normal mode (default).<tr><td>\sandbox<td>run the plugin in a dedicated subprocess. This means that the plugin can safely crash without taking down the whole Server! This is useful for buggy plugins or safe experimentation.<tr><td>\bridge<td>run the plugin in a shared subprocess. This uses less memory and possibly less CPU, but if one plugin crashes, it will inevitably take down all other plugins in the same process.</table>
+
+<p><div class='note'><span class='notelabel'>NOTE:</span> All run modes except for <code class='code prettyprint lang-sc'>\auto</code> incur some fixed CPU overhead, which is less significant for larger blocksizes (see <a href="./../Classes/ServerOptions.html#-blockSize">ServerOptions: -blockSize</a> or the <code class='code prettyprint lang-sc'>blockSize</code> argument in <a href="./../Classes/VSTPlugin.html#-ar">VSTPlugin: -ar</a>).</div>
+<p>See also <a href="./../Classes/VSTPlugin.html#Bridging and Sandboxing">VSTPlugin: Bridging and Sandboxing</a>.</table><h4>Discussion:</h4>
+
+<p>This method is realtime-safe because the VST plugin is opened asynchronously (in the NRT thread).</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-openMsg' href='./../Overviews/Methods.html#openMsg'>openMsg</a> (<span class='argstr'>path</span>, <span class='argstr'>editor: false</span>, <span class='argstr'>multiThreading: false</span>, <span class='argstr'>mode</span>)</h3>
+<div class='method'>
+<p><h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>path<td class='argumentdesc'>
+<p>the plugin name/key or file path. Relative paths are resolved to the standard VST directories.
+<p>If the VSTPlugin UGen holds a plugin description (see <a href="./../Classes/VSTPlugin.html#*ar">VSTPlugin: *ar</a>), the <code class='code prettyprint lang-sc'>path</code> argument can be deduced and therefor ommitted.<tr><td class='argumentname'>editor<td class='argumentdesc'>
+<p>request the VST editor.<tr><td class='argumentname'>multiThreading<td class='argumentdesc'>
+<p>enable multithreading.<tr><td class='argumentname'>mode<td class='argumentdesc'>
+<p>select a run mode.</table><h4>Returns:</h4>
+<div class='returnvalue'>
+<p>the message for an <em>open</em> command (see <a href="#-open">-open</a>).</div></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-close' href='./../Overviews/Methods.html#close'>close</a> </h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-closeMsg' href='./../Overviews/Methods.html#closeMsg'>closeMsg</a> </h3>
+<div class='method'>
+<p>close the current plugin (but don't free the Synth!). You can open another plugin later.<h4>Discussion:</h4>
+
+<p>This will automatically bypass the plugin (i.e. the input is just passed through).
+<p>Just like <a href="#-open">-open</a>, this method is realtime-safe.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-pluginCrashed' href='./../Overviews/Methods.html#pluginCrashed'>pluginCrashed</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-pluginCrashed' href='./../Overviews/Methods.html#pluginCrashed'>pluginCrashed</a> = value</h3>
+<div class='method'>
+<p>a <a href="./../Classes/Function.html">Function</a> or <a href="./../Classes/FunctionList.html">FunctionList</a> to be called when the plugin subprocess crashes.<h4>Discussion:</h4>
+
+<p>You could use this callback to automatically reopen the plugin, for example.<div class='note'><span class='notelabel'>NOTE:</span> This is only meant for bridged or sandboxed plugins, because a normal plugin would simply crash the server.</div></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-browse' href='./../Overviews/Methods.html#browse'>browse</a> </h3>
+<div class='method'>
+<p>open the plugin browser dialog.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-editor' href='./../Overviews/Methods.html#editor'>editor</a> (<span class='argstr'>show: true</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-editorMsg' href='./../Overviews/Methods.html#editorMsg'>editorMsg</a> (<span class='argstr'>show: true</span>)</h3>
+<div class='method'>
+<p>show/hide the VST editor window.<h4>Discussion:</h4>
+
+<p>The plugin has to be opened with <code class='code prettyprint lang-sc'>editor: true</code>.<div class='note'><span class='notelabel'>NOTE:</span> On macOS this only works on SuperCollider 3.11 and above!</div></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-moveEditor' href='./../Overviews/Methods.html#moveEditor'>moveEditor</a> (<span class='argstr'>x</span>, <span class='argstr'>y</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-moveEditorMsg' href='./../Overviews/Methods.html#moveEditorMsg'>moveEditorMsg</a> (<span class='argstr'>x</span>, <span class='argstr'>y</span>)</h3>
+<div class='method'>
+<p>move the editor window to the given position.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-resizeEditor' href='./../Overviews/Methods.html#resizeEditor'>resizeEditor</a> (<span class='argstr'>w</span>, <span class='argstr'>h</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-resizeEditorMsg' href='./../Overviews/Methods.html#resizeEditorMsg'>resizeEditorMsg</a> (<span class='argstr'>w</span>, <span class='argstr'>h</span>)</h3>
+<div class='method'>
+<p>resize the editor window to the given width and height.<div class='note'><span class='notelabel'>NOTE:</span> This only works for VST3 plugins with a resizable editor.</div></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-gui' href='./../Overviews/Methods.html#gui'>gui</a> (<span class='argstr'>parent</span>, <span class='argstr'>bounds</span>, <span class='argstr'>params: true</span>)</h3>
+<div class='method'>
+<p>creates a generic Qt GUI (see <a href="./../Classes/VSTPluginGui.html">VSTPluginGui</a>).<h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>parent<td class='argumentdesc'>
+<p>the parent. If <code class='code prettyprint lang-sc'>nil</code>, the GUI is created in a new toplevel window.<tr><td class='argumentname'>bounds<td class='argumentdesc'>
+<p>the bounds.<tr><td class='argumentname'>params<td class='argumentdesc'>
+<p>show/hide parameters. Set to <code class='code prettyprint lang-sc'>false</code>, if you only need to show the preset manager!</table><h4>Returns:</h4>
+<div class='returnvalue'>
+<p>a new <a href="./../Classes/VSTPluginGui.html">VSTPluginGui</a> instance.</div></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-info' href='./../Overviews/Methods.html#info'>info</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-info' href='./../Overviews/Methods.html#info'>info</a> = value</h3>
+<div class='method'><h4>Returns:</h4>
+<div class='returnvalue'>
+<p>the (static) plugin description (see <a href="./../Classes/VSTPluginDesc.html">VSTPluginDesc</a>).</div></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-loaded' href='./../Overviews/Methods.html#loaded'>loaded</a> </h3>
+<div class='method'><h4>Returns:</h4>
+<div class='returnvalue'>
+<p>whether a plugin is currently loaded.</div></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-latency' href='./../Overviews/Methods.html#latency'>latency</a> </h3>
+<div class='method'><h4>Returns:</h4>
+<div class='returnvalue'>
+<p>the current processing latency in samples.<div class='note'><span class='notelabel'>NOTE:</span> The reported value includes the additional latency caused by multithreading and reblocking (see the <code class='code prettyprint lang-sc'>multiThreading</code> and <code class='code prettyprint lang-sc'>blockSize</code> arguments for <a href="#-open">-open</a>).</div></div></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-latencyChanged' href='./../Overviews/Methods.html#latencyChanged'>latencyChanged</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-latencyChanged' href='./../Overviews/Methods.html#latencyChanged'>latencyChanged</a> = value</h3>
+<div class='method'>
+<p>a <a href="./../Classes/Function.html">Function</a> or <a href="./../Classes/FunctionList.html">FunctionList</a> to be called when the plugin's processing latency changes. The function receives the new latency as its only argument. See also <a href="#-latency">-latency</a>.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-reset' href='./../Overviews/Methods.html#reset'>reset</a> (<span class='argstr'>async: false</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-resetMsg' href='./../Overviews/Methods.html#resetMsg'>resetMsg</a> (<span class='argstr'>async: false</span>)</h3>
+<div class='method'>
+<p>reset the plugin state.<h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>async<td class='argumentdesc'>
+<p>see <a href="#Realtime Safety">Realtime Safety</a>.</table><h4>Discussion:</h4>
+
+<p>Depending on the plugin, <em>reset</em> can involve expensive operations, like clearing a large delay line, and might not be realtime-safe, so be careful with setting <code class='code prettyprint lang-sc'>async</code> to <code class='code prettyprint lang-sc'>false</code>.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-setOffline' href='./../Overviews/Methods.html#setOffline'>setOffline</a> (<span class='argstr'>bool</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-setOfflineMsg' href='./../Overviews/Methods.html#setOfflineMsg'>setOfflineMsg</a> (<span class='argstr'>bool</span>)</h3>
+<div class='method'>
+<p>enable/disable offline processing.<h4>Discussion:</h4>
+
+<p>In non-realtime (NRT) synthesis, some VST plugins don't render correctly unless you explicitly put them into offline processing mode. Some plugins also render at a higher quality in offline mode than in realtime mode.
+<p>On the other hand, with a few buggy plugins, certain plugin methods only work correctly in realtime mode, so you have to switch modes accordingly.
+<p>For an example, see <a href="./../Classes/VSTPluginController.html#Non-Realtime Synthesis">VSTPluginController: Non-Realtime Synthesis</a>.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-synth' href='./../Overviews/Methods.html#synth'>synth</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-synth' href='./../Overviews/Methods.html#synth'>synth</a> = value</h3>
+<div class='method'><h4>Returns:</h4>
+<div class='returnvalue'>
+<p>the <a href="./../Classes/Synth.html">Synth</a> containing the currently controlled <a href="./../Classes/VSTPlugin.html">VSTPlugin</a> instance.</div></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-synthIndex' href='./../Overviews/Methods.html#synthIndex'>synthIndex</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-synthIndex' href='./../Overviews/Methods.html#synthIndex'>synthIndex</a> = value</h3>
+<div class='method'><h4>Returns:</h4>
+<div class='returnvalue'>
+<p>the index of the <a href="./../Classes/VSTPlugin.html">VSTPlugin</a> instance within the <a href="./../Classes/Synth.html">Synth</a>.</div></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-wait' href='./../Overviews/Methods.html#wait'>wait</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-wait' href='./../Overviews/Methods.html#wait'>wait</a> = value</h3>
+<div class='method'>
+<p>the wait time between OSC messages (in seconds).<h4>Discussion:</h4>
+
+<p>-1 allows an OSC roundtrip between packets.
+<p>0 is not safe with UDP, but is probably ok with TCP.
+<p>Some methods may require lots of OSC messages (e.g. when changing programs, the UGen has to send the new state of all parameters). VSTPluginController waits for the given time after a certain number of bytes to avoid messages getting dropped. This is mostly relevant for UDP connections, especially for remote Servers, high network traffic and plugins with a large number of parameters.
+<p>The wait time can be changed anytime.</div><h3><a class='anchor' name='Parameters'>Parameters</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-numParameters' href='./../Overviews/Methods.html#numParameters'>numParameters</a> </h3>
+<div class='method'><h4>Returns:</h4>
+<div class='returnvalue'>
+<p>the number of parameters.</div></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-set' href='./../Overviews/Methods.html#set'>set</a> ( <span class='argstr'>... args</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-setMsg' href='./../Overviews/Methods.html#setMsg'>setMsg</a> ( <span class='argstr'>... args</span>)</h3>
+<div class='method'>
+<p>Set plugin parameters.<h4>Discussion:</h4>
+
+<p>This method expects pairs of parameter index/name and value. Each value should be either a number between 0.0 and 1.0 or a string/symbol.<div class='note'><span class='notelabel'>NOTE:</span> Some plugins don't support setting parameters by strings, others only allow it for certain parameters.</div><pre class='code prettyprint lang-sc'>// set parameter 3 to value 0.9:
+~fx.set(3, 0.9);
+// set parameter 'Mix' to 0.5:
+~fx.set(\Mix, 0.5);
+// set parameters 1 and 3:
+~fx.set(1, 0.5, 3, 0.75);
+// GChorus (GVST):
+~fx.set(\Freq, "3.16"); // set frequency in Hz as string</pre>
+
+<p><div class='note'><span class='notelabel'>NOTE:</span> The parameter(s) will be automatically unmapped from any control bus, see <a href="#-map">-map</a>.</div>
+<p>With <code class='code prettyprint lang-sc'>setMsg</code> you can schedule <em>sample accurate</em> parameter changes for plugins which support this (some, but not all VST3 plugins).</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-setn' href='./../Overviews/Methods.html#setn'>setn</a> ( <span class='argstr'>... args</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-setnMsg' href='./../Overviews/Methods.html#setnMsg'>setnMsg</a> ( <span class='argstr'>... args</span>)</h3>
+<div class='method'>
+<p>set sequential ranges of parameters.<h4>Discussion:</h4>
+
+<p>This method expects pairs of parameter index and Array of values (numbers or strings/symbols), see <a href="#-set">-set</a>.<pre class='code prettyprint lang-sc'>// this will set parameters 3, 4, 8, 9 and 10.
+~fx.setn(3, [0.5, 0.75], 8, [0.1, "300", 0.3]);</pre>
+</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-map' href='./../Overviews/Methods.html#map'>map</a> ( <span class='argstr'>... args</span>)</h3>
+<div class='method'>
+<p>map parameters to control or audio busses.<h4>Discussion:</h4>
+
+<p>This methods expects pairs of parameter index/name and bus. In case of multi-channel busses the channels are mapped to a sequential range of parameters starting at the given index/name.
+<p>The bus argument can be simply an integer referring to a <em>control</em> bus. If you want to map an audio bus, you have to explicitly pass an audio Bus object.
+<p>Parameters are updated whenever the data in the bus changes.<div class='note'><span class='notelabel'>NOTE:</span> Only map to an audio bus if you need sample accurate automation and the plugin actually supports it (some, but not all VST3 plugins).</div>
+<p><pre class='code prettyprint lang-sc'>~bus1 = Bus.control;
+~bus2 = Bus.control(numChannels: 2);
+~fx.map(\Mix, ~bus1, 5, ~bus2);
+~bus1.set(0.5); // set parameter 'Mix'
+~bus2.set(0.75, 0.9); // set parameters 5 and 6 (because of 2-channel control bus)
+
+~bus3 = Bus.audio;
+~fx.map(\Delay, ~bus3); // audio rate automation (assuming the 'Delay' parameter supports this)</pre>
+
+<p>Each parameter can only be mapped to one control bus channel at the time.<div class='note'><span class='notelabel'>NOTE:</span> setting a parameter with <a href="#-set">-set</a> or <a href="#-setn">-setn</a> will automatically unmap it from any control bus.</div><div class='note'><span class='notelabel'>NOTE:</span> <code class='code prettyprint lang-sc'>map</code> will override automation via UGen arguments.</div></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-mapMsg' href='./../Overviews/Methods.html#mapMsg'>mapMsg</a> ( <span class='argstr'>... args</span>)</h3>
+<div class='method'>
+<p>returns a <em>bundle</em> containing control and/or audio bus mapping messages. Takes the same arguments as <code class='code prettyprint lang-sc'>map</code>.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-mapn' href='./../Overviews/Methods.html#mapn'>mapn</a> ( <span class='argstr'>... args</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-mapnMsg' href='./../Overviews/Methods.html#mapnMsg'>mapnMsg</a> ( <span class='argstr'>... args</span>)</h3>
+<div class='method'>
+<p>map parameters to control busses. The arguments are triples of parameter index/name, control bus index and number of channels. See <a href="#map">map</a>.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-mapan' href='./../Overviews/Methods.html#mapan'>mapan</a> ( <span class='argstr'>... args</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-mapanMsg' href='./../Overviews/Methods.html#mapanMsg'>mapanMsg</a> ( <span class='argstr'>... args</span>)</h3>
+<div class='method'>
+<p>map parameters to audio busses. The arguments are triples of parameter index/name, audio bus index and number of channels. See <a href="#map">map</a>.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-unmap' href='./../Overviews/Methods.html#unmap'>unmap</a> ( <span class='argstr'>... args</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-unmapMsg' href='./../Overviews/Methods.html#unmapMsg'>unmapMsg</a> ( <span class='argstr'>... args</span>)</h3>
+<div class='method'>
+<p>Unmap parameters from a control bus.<h4>Discussion:</h4>
+
+<p>Pass all the parameters you want to unmap. Calling the method without arguments will unmap all parameters.<pre class='code prettyprint lang-sc'>// unmap parameters 4, 5, and 7
+~fx.unmap(4, 5, 7);</pre>
+</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-get' href='./../Overviews/Methods.html#get'>get</a> (<span class='argstr'>index</span>, <span class='argstr'>action</span>)</h3>
+<div class='method'>
+<p>get the current value of a plugin parameter.<h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>index<td class='argumentdesc'>
+<p>the index/name of the parameter.<tr><td class='argumentname'>action<td class='argumentdesc'>
+<p>an action to be evaluated with the value passed as an argument.</table><h4>Discussion:</h4>
+<pre class='code prettyprint lang-sc'>// get the value of parameter 4 and post it to the console:
+~fx.get(4, {arg f: f.postln;});
+// get the value of parameter 'Mix':
+~fx.get(\Mix, {arg f: f.postln;});</pre>
+</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-getn' href='./../Overviews/Methods.html#getn'>getn</a> (<span class='argstr'>index: 0</span>, <span class='argstr'>count: -1</span>, <span class='argstr'>action</span>)</h3>
+<div class='method'>
+<p>get a sequential range of parameter values.<h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>index<td class='argumentdesc'>
+<p>the starting index/name.<tr><td class='argumentname'>count<td class='argumentdesc'>
+<p>the number of sequential parameter values. -1 will return all parameters starting from <em>index</em>.<tr><td class='argumentname'>action<td class='argumentdesc'>
+<p>an action be evaluated with the values passed as an Array.</table><h4>Discussion:</h4>
+<pre class='code prettyprint lang-sc'>// get the values of parameters 2, 3 an 4 and post them to console:
+~fx.getn(2, 3, {arg v; v.postln;});
+
+// get all parameter values:
+~fx.getn(action: {arg v; v.postln;});</pre>
+</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-parameterAutomated' href='./../Overviews/Methods.html#parameterAutomated'>parameterAutomated</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-parameterAutomated' href='./../Overviews/Methods.html#parameterAutomated'>parameterAutomated</a> = value</h3>
+<div class='method'>
+<p>a <a href="./../Classes/Function.html">Function</a> or <a href="./../Classes/FunctionList.html">FunctionList</a> to be called when parameters are automated in the VST editor.<h4>Discussion:</h4>
+
+<p>The action receives the parameter index and value. This can be helpful if you want to know the index of a parameter in the editor.<div class='note'><span class='notelabel'>NOTE:</span> Some plugins link parameters, so that changing one parameter will lead to several other parameters being "automated". In that case it is not possible to determine which parameter has been automated manually.</div></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-parameterCache' href='./../Overviews/Methods.html#parameterCache'>parameterCache</a> </h3>
+<div class='method'>
+<p>An Array containing the current state (<code class='code prettyprint lang-sc'>[value, display]</code>) of each parameter. Only valid if a plugin is currently loaded!</div><h3><a class='anchor' name='Programs'>Programs</a></h3>
+
+<p>VST plugins often contain factory presets which are called <em>programs</em>.<div class='note'><span class='notelabel'>NOTE:</span> Some VST2 plugins allow to change the name and state of the built-in programs and save all programs as a <em>bank</em> file (see <a href="#-writeBank">-writeBank</a>).</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-numPrograms' href='./../Overviews/Methods.html#numPrograms'>numPrograms</a> </h3>
+<div class='method'><h4>Returns:</h4>
+<div class='returnvalue'>
+<p>the number of available built-in plugin programs.</div></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-program' href='./../Overviews/Methods.html#program'>program</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-program' href='./../Overviews/Methods.html#program'>program</a> = <span class='argstr'>number</span></h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-programMsg' href='./../Overviews/Methods.html#programMsg'>programMsg</a> (<span class='argstr'>number</span>)</h3>
+<div class='method'>
+<p>select a built-in program or get the current program number.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-programName' href='./../Overviews/Methods.html#programName'>programName</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-programName' href='./../Overviews/Methods.html#programName'>programName</a> = <span class='argstr'>name</span></h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-programNameMsg' href='./../Overviews/Methods.html#programNameMsg'>programNameMsg</a> (<span class='argstr'>name</span>)</h3>
+<div class='method'>
+<p>get/set the name of the current program (VST2 only).</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-programCache' href='./../Overviews/Methods.html#programCache'>programCache</a> </h3>
+<div class='method'>
+<p>An Array containing the current name of each program. Only valid if a plugin is currently loaded!</div><h3><a class='anchor' name='Presets'>Presets</a></h3>
+
+<p>Simple preset management.
+<p>Presets are stored at pre-defined file system locations, so they can be simply referred to by name or index (see <a href="./../Classes/VSTPluginDesc.html#-presets">VSTPluginDesc: -presets</a>).<div class='note'><span class='notelabel'>NOTE:</span> Since the VST3 preset locations are actually standardized, any VST3 presets created with VSTPlugin should be available in other applications and vice versa.</div><div class='warning'><span class='warninglabel'>WARNING:</span> This only works with local Servers (for now)!</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-loadPreset' href='./../Overviews/Methods.html#loadPreset'>loadPreset</a> (<span class='argstr'>preset</span>, <span class='argstr'>action</span>, <span class='argstr'>async: true</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-savePreset' href='./../Overviews/Methods.html#savePreset'>savePreset</a> (<span class='argstr'>preset</span>, <span class='argstr'>action</span>, <span class='argstr'>async: true</span>)</h3>
+<div class='method'>
+<p>load/save VST presets.<h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>preset<td class='argumentdesc'>
+<p>a preset Event, name or index (see <a href="./../Classes/VSTPluginDesc.html#-presets">VSTPluginDesc: -presets</a>).
+<p>You can create a new preset by passing a non-existing preset name to <code class='code prettyprint lang-sc'>savePreset</code>.<tr><td class='argumentname'>action<td class='argumentdesc'>
+<p>an action which is called with <code class='code prettyprint lang-sc'>this</code> and a Boolean (success/fail).<tr><td class='argumentname'>async<td class='argumentdesc'>
+<p>where to perform the plugin method, see <a href="#Realtime Safety">Realtime Safety</a>.<div class='note'><span class='notelabel'>NOTE:</span> The file IO itself is always performed asynchronously!</div></table></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-loadPresetMsg' href='./../Overviews/Methods.html#loadPresetMsg'>loadPresetMsg</a> (<span class='argstr'>preset</span>, <span class='argstr'>async: true</span>)</h3>
+<div class='method'>
+<p>Create an OSC message for loading a preset. See also <a href="#-readProgramMsg">-readProgramMsg</a>.<div class='note'><span class='notelabel'>NOTE:</span> There is no equivalent <code class='code prettyprint lang-sc'>savePresetMsg</code> method because we wouldn't be able to update the preset list.</div><h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>preset<td class='argumentdesc'>
+<p>a preset Event, name or index (see <a href="./../Classes/VSTPluginDesc.html#-presets">VSTPluginDesc: -presets</a>).<tr><td class='argumentname'>async<td class='argumentdesc'>
+<p>see above.</table></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-deletePreset' href='./../Overviews/Methods.html#deletePreset'>deletePreset</a> (<span class='argstr'>preset</span>)</h3>
+<div class='method'>
+<p>delete a VST preset.<h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>preset<td class='argumentdesc'>
+<p>the preset Event, name or index.</table><h4>Returns:</h4>
+<div class='returnvalue'>
+<p><code class='code prettyprint lang-sc'>true</code> on success or <code class='code prettyprint lang-sc'>false</code> on failure.</div></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-renamePreset' href='./../Overviews/Methods.html#renamePreset'>renamePreset</a> (<span class='argstr'>preset</span>, <span class='argstr'>name</span>)</h3>
+<div class='method'>
+<p>delete a VST preset.<h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>preset<td class='argumentdesc'>
+<p>the old preset Event, name or index<tr><td class='argumentname'>name<td class='argumentdesc'>
+<p>the new preset name.</table><h4>Returns:</h4>
+<div class='returnvalue'>
+<p><code class='code prettyprint lang-sc'>true</code> on success or <code class='code prettyprint lang-sc'>false</code> on failure.</div></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-preset' href='./../Overviews/Methods.html#preset'>preset</a> </h3>
+<div class='method'>
+<p><h4>Returns:</h4>
+<div class='returnvalue'>
+<p>the current preset (Event) or <code class='code prettyprint lang-sc'>nil</code> (= no preset).</div></div><h3><a class='anchor' name='Preset Files'>Preset Files</a></h3>
+
+<p>Read/write VST2 <code class='code prettyprint lang-sc'>.fxp/.fxb</code> files or VST3 <code class='code prettyprint lang-sc'>.vstpreset</code> files.
+<p>This is useful if you want to save your presets to a non-standard location, e.g. relative to your project.
+<p>The preset files are in a standard format which is recogized by every decent DAW or VST host. This means you can freely exchange presets between different applications!<h3 class='imethodname'><span class='methprefix'>-</span><a name='-readProgram' href='./../Overviews/Methods.html#readProgram'>readProgram</a> (<span class='argstr'>path</span>, <span class='argstr'>action</span>, <span class='argstr'>async: true</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-writeProgram' href='./../Overviews/Methods.html#writeProgram'>writeProgram</a> (<span class='argstr'>path</span>, <span class='argstr'>action</span>, <span class='argstr'>async: true</span>)</h3>
+<div class='method'>
+<p>read/write program files.<h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>path<td class='argumentdesc'>
+<p>an absolute file path.
+<p>The file extension is arbitrary but it is good practice to use <em>.fxp</em> for VST2 program files and <em>.vstpreset</em> for VST3 preset files.<tr><td class='argumentname'>action<td class='argumentdesc'>
+<p>an action to be called with <code class='code prettyprint lang-sc'>this</code> and a Boolean (success/fail).<tr><td class='argumentname'>async<td class='argumentdesc'>
+<p>where to perform the plugin method, see <a href="#Realtime Safety">Realtime Safety</a>.<div class='note'><span class='notelabel'>NOTE:</span> The file/buffer IO itself is always performed asynchronously!</div></table></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-writeBank' href='./../Overviews/Methods.html#writeBank'>writeBank</a> (<span class='argstr'>path</span>, <span class='argstr'>action</span>, <span class='argstr'>async: true</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-readBank' href='./../Overviews/Methods.html#readBank'>readBank</a> (<span class='argstr'>path</span>, <span class='argstr'>action</span>, <span class='argstr'>async: true</span>)</h3>
+<div class='method'>
+<p>same as above, but for VST2 <em>.fxb</em> bank files.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-readProgramMsg' href='./../Overviews/Methods.html#readProgramMsg'>readProgramMsg</a> (<span class='argstr'>dest</span>, <span class='argstr'>async: true</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-writeProgramMsg' href='./../Overviews/Methods.html#writeProgramMsg'>writeProgramMsg</a> (<span class='argstr'>dest</span>, <span class='argstr'>async: true</span>)</h3>
+<div class='method'>
+<p>Create an OSC message for reading/writing a program file, or exchanging program data via a Buffer.<h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>dest<td class='argumentdesc'><table>
+<tr><td>String<td>preset file to be read or written.<tr><td><a href="./../Classes/Buffer.html">Buffer</a> or Integer<td>exchange program data between a Client and a (remote) Server via a Buffer.
+<p><code class='code prettyprint lang-sc'>readProgramMsg</code>: the Buffer should contain the preset data with each float representing a single byte; it has to be allocated and freed by the Client.
+<p><code class='code prettyprint lang-sc'>writeProgramMsg</code>: the Buffer should be initially empty. The UGen will fill the Buffer on the Server, the Client can then read the data and free the Buffer.</table>
+<tr><td class='argumentname'>async<td class='argumentdesc'>
+<p>see above.</table><h4>Returns:</h4>
+<div class='returnvalue'>
+<p>the OSC message.</div></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-readBankMsg' href='./../Overviews/Methods.html#readBankMsg'>readBankMsg</a> (<span class='argstr'>dest</span>, <span class='argstr'>async: true</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-writeBankMsg' href='./../Overviews/Methods.html#writeBankMsg'>writeBankMsg</a> (<span class='argstr'>dest</span>, <span class='argstr'>async: true</span>)</h3>
+<div class='method'>
+<p>same as above, but for VST2 <em>.fxb</em> bank files.</div><h3><a class='anchor' name='Preset Data'>Preset Data</a></h3>
+
+<p>Set/get the raw plugin state. This is useful if you want to build your own custom preset system.<div class='note'><span class='notelabel'>NOTE:</span> The <em>Bank</em> methods only work with VST2 plugins.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-setProgramData' href='./../Overviews/Methods.html#setProgramData'>setProgramData</a> (<span class='argstr'>data</span>, <span class='argstr'>action</span>, <span class='argstr'>async: true</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-setBankData' href='./../Overviews/Methods.html#setBankData'>setBankData</a> (<span class='argstr'>data</span>, <span class='argstr'>action</span>, <span class='argstr'>async: true</span>)</h3>
+<div class='method'>
+<p>set the new program/bank state as an <a href="./../Classes/Int8Array.html">Int8Array</a>.<h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>data<td class='argumentdesc'>
+<p>the raw plugin data.<tr><td class='argumentname'>action<td class='argumentdesc'>
+<p>an action to be called with <code class='code prettyprint lang-sc'>this</code> and a Boolean (success/fail).<tr><td class='argumentname'>async<td class='argumentdesc'>
+<p>where to perform the plugin method, see <a href="#Realtime Safety">Realtime Safety</a>.<div class='note'><span class='notelabel'>NOTE:</span> The data transfer itself is always performed asynchronously!</div></table></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-getProgramData' href='./../Overviews/Methods.html#getProgramData'>getProgramData</a> (<span class='argstr'>action</span>, <span class='argstr'>async: true</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-getBankData' href='./../Overviews/Methods.html#getBankData'>getBankData</a> (<span class='argstr'>action</span>, <span class='argstr'>async: true</span>)</h3>
+<div class='method'>
+<p>get the current program/bank state as an <a href="./../Classes/Int8Array.html">Int8Array</a>.<h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>action<td class='argumentdesc'>
+<p>an action to pass the data - or <code class='code prettyprint lang-sc'>nil</code> if the method failed.<tr><td class='argumentname'>async<td class='argumentdesc'>
+<p>see above.</table><h4>Discussion:</h4>
+
+<p>Internally, the program data is exchanged via temp files.<div class='warning'><span class='warninglabel'>WARNING:</span> This only works with a local Server!</div></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-sendProgramData' href='./../Overviews/Methods.html#sendProgramData'>sendProgramData</a> (<span class='argstr'>data</span>, <span class='argstr'>wait</span>, <span class='argstr'>action</span>, <span class='argstr'>async: true</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-sendBankData' href='./../Overviews/Methods.html#sendBankData'>sendBankData</a> (<span class='argstr'>data</span>, <span class='argstr'>wait</span>, <span class='argstr'>action</span>, <span class='argstr'>async: true</span>)</h3>
+<div class='method'>
+<p>send the new program/bank state as an <a href="./../Classes/Int8Array.html">Int8Array</a>.<h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>data<td class='argumentdesc'>
+<p>the raw plugin data.<tr><td class='argumentname'>wait<td class='argumentdesc'>
+<p>temporarily overwrites <a href="#-wait">-wait</a> if not <code class='code prettyprint lang-sc'>nil</code>.<tr><td class='argumentname'>action<td class='argumentdesc'>
+<p>an action to be called with <code class='code prettyprint lang-sc'>this</code> and a Boolean (success/fail).<tr><td class='argumentname'>async<td class='argumentdesc'>
+<p>where to perform the plugin method, see <a href="#Realtime Safety">Realtime Safety</a>.<div class='note'><span class='notelabel'>NOTE:</span> The data transfer itself is always performed asynchronously!</div></table></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-receiveProgramData' href='./../Overviews/Methods.html#receiveProgramData'>receiveProgramData</a> (<span class='argstr'>wait</span>, <span class='argstr'>timeout: 3</span>, <span class='argstr'>action</span>, <span class='argstr'>async: true</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-receiveBankData' href='./../Overviews/Methods.html#receiveBankData'>receiveBankData</a> (<span class='argstr'>wait</span>, <span class='argstr'>timeout: 3</span>, <span class='argstr'>action</span>, <span class='argstr'>async: true</span>)</h3>
+<div class='method'>
+<p>receive the current program/bank state as an <a href="./../Classes/Int8Array.html">Int8Array</a>.<h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>wait<td class='argumentdesc'>
+<p>temporarily overwrites <a href="#-wait">-wait</a> if not <code class='code prettyprint lang-sc'>nil</code>.<tr><td class='argumentname'>timeout<td class='argumentdesc'>
+<p>the number of seconds to wait before giving up.<tr><td class='argumentname'>action<td class='argumentdesc'>
+<p>an action to pass the data.<tr><td class='argumentname'>async<td class='argumentdesc'>
+<p>see above.</table><h4>Discussion:</h4>
+
+<p>Contrary to <a href="#-setProgramData">-setProgramData</a>, <a href="#-getProgramData">-getProgramData</a> etc., the methods above also work with remote Servers because the data is streamed via OSC messages. This means it is not 100% reliable when using UDP.</div><h3><a class='anchor' name='MIDI'>MIDI</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-midi' href='./../Overviews/Methods.html#midi'>midi</a> </h3>
+<div class='method'>
+<p>MIDI interface for VSTPluginController.<h4>Returns:</h4>
+<div class='returnvalue'>
+<p>an instance of <a href="./../Classes/VSTPluginMIDIProxy.html">VSTPluginMIDIProxy</a>.</div></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-sendMidi' href='./../Overviews/Methods.html#sendMidi'>sendMidi</a> (<span class='argstr'>status</span>, <span class='argstr'>data1: 0</span>, <span class='argstr'>data2: 0</span>, <span class='argstr'>detune</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-sendMidiMsg' href='./../Overviews/Methods.html#sendMidiMsg'>sendMidiMsg</a> (<span class='argstr'>status</span>, <span class='argstr'>data1: 0</span>, <span class='argstr'>data2: 0</span>, <span class='argstr'>detune</span>)</h3>
+<div class='method'>
+<p>send a raw MIDI message with 2-3 bytes (status, data1, data2) and an optional detune argument in cent (not supported by all VST instruments!). MIDI messages can be scheduled sample accurately when sent as bundles!</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-sendSysex' href='./../Overviews/Methods.html#sendSysex'>sendSysex</a> (<span class='argstr'>msg</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-sendSysexMsg' href='./../Overviews/Methods.html#sendSysexMsg'>sendSysexMsg</a> (<span class='argstr'>msg</span>)</h3>
+<div class='method'>
+<p>send a system exclusive message as an <a href="./../Classes/Int8Array.html">Int8Array</a>.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-midiReceived' href='./../Overviews/Methods.html#midiReceived'>midiReceived</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-midiReceived' href='./../Overviews/Methods.html#midiReceived'>midiReceived</a> = value</h3>
+<div class='method'>
+<p>a <a href="./../Classes/Function.html">Function</a> or <a href="./../Classes/FunctionList.html">FunctionList</a> to be called when receiving MIDI messages from the plugin.<h4>Discussion:</h4>
+
+<p>The 3 bytes of the MIDI message are passed as invidual arguments:<pre class='code prettyprint lang-sc'>~fx.midiReceived = {arg ...msg; "got MIDI message %".format(msg)};</pre>
+</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-sysexReceived' href='./../Overviews/Methods.html#sysexReceived'>sysexReceived</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-sysexReceived' href='./../Overviews/Methods.html#sysexReceived'>sysexReceived</a> = value</h3>
+<div class='method'>
+<p>a <a href="./../Classes/Function.html">Function</a> or <a href="./../Classes/FunctionList.html">FunctionList</a> to be called when receiving SysEx messages from the plugin.<h4>Discussion:</h4>
+
+<p>The SysEx data is passed to the action as an <a href="./../Classes/Int8Array.html">Int8Array</a>.</div><h3><a class='anchor' name='Transport'>Transport</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setPlaying' href='./../Overviews/Methods.html#setPlaying'>setPlaying</a> (<span class='argstr'>b</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-setPlayingMsg' href='./../Overviews/Methods.html#setPlayingMsg'>setPlayingMsg</a> (<span class='argstr'>b</span>)</h3>
+<div class='method'>
+<p>set the transport playing state to true or false. Only necessary for VST plugins which do some kind of sequencing.<div class='warning'><span class='warninglabel'>WARNING:</span> Transport playback is <em>disabled</em> by default!</div></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-setTempo' href='./../Overviews/Methods.html#setTempo'>setTempo</a> (<span class='argstr'>bpm: 120</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-setTempoMsg' href='./../Overviews/Methods.html#setTempoMsg'>setTempoMsg</a> (<span class='argstr'>bpm: 120</span>)</h3>
+<div class='method'>
+<p>set the tempo in BPM (beats per minute).</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-setTimeSignature' href='./../Overviews/Methods.html#setTimeSignature'>setTimeSignature</a> (<span class='argstr'>num: 4</span>, <span class='argstr'>denom: 4</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-setTimeSignatureMsg' href='./../Overviews/Methods.html#setTimeSignatureMsg'>setTimeSignatureMsg</a> (<span class='argstr'>num: 4</span>, <span class='argstr'>denom: 4</span>)</h3>
+<div class='method'>
+<p>set the time signature, e.g. 3/4 -&gt; num = 3, denom = 4.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-setTransportPos' href='./../Overviews/Methods.html#setTransportPos'>setTransportPos</a> (<span class='argstr'>pos</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-setTransportPosMsg' href='./../Overviews/Methods.html#setTransportPosMsg'>setTransportPosMsg</a> (<span class='argstr'>pos</span>)</h3>
+<div class='method'>
+<p>set the current transport position (in quarter notes).</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-getTransportPos' href='./../Overviews/Methods.html#getTransportPos'>getTransportPos</a> (<span class='argstr'>action</span>)</h3>
+<div class='method'>
+<p>get the current transport position (in quarter notes).<h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>action<td class='argumentdesc'>
+<p>will be called with current transport position.</table></div><h3><a class='anchor' name='VST2 only'>VST2 only</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-canDo' href='./../Overviews/Methods.html#canDo'>canDo</a> (<span class='argstr'>what</span>, <span class='argstr'>action</span>)</h3>
+<div class='method'>
+<p>query the plugin for special capabilities.<h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>what<td class='argumentdesc'>
+<p>a string describing the capability. Some of these are documented in the VST SDK, but others are not.<tr><td class='argumentname'>action<td class='argumentdesc'>
+<p>will be called with an Integer result.<table>
+<tr><td>1<td>yes<tr><td>-1<td>no<tr><td>0<td>don't know</table>
+</table></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-vendorMethod' href='./../Overviews/Methods.html#vendorMethod'>vendorMethod</a> (<span class='argstr'>index: 0</span>, <span class='argstr'>value: 0</span>, <span class='argstr'>ptr</span>, <span class='argstr'>opt: 0</span>, <span class='argstr'>action</span>, <span class='argstr'>async: true</span>)</h3>
+<div class='method'></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-vendorMethodMsg' href='./../Overviews/Methods.html#vendorMethodMsg'>vendorMethodMsg</a> (<span class='argstr'>index: 0</span>, <span class='argstr'>value: 0</span>, <span class='argstr'>ptr</span>, <span class='argstr'>opt: 0</span>, <span class='argstr'>action</span>, <span class='argstr'>async: true</span>)</h3>
+<div class='method'>
+<p>Access special functionality of a plugin which is not available via the standard parameter interface. Check the documentation of the plugin to see what kind of data it expects.<h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>index<td class='argumentdesc'>
+<p>an Integer.<tr><td class='argumentname'>value<td class='argumentdesc'>
+<p>an Integer.<tr><td class='argumentname'>ptr<td class='argumentdesc'>
+<p>some arbitrary data as an <a href="./../Classes/Int8Array.html">Int8Array</a>.<tr><td class='argumentname'>opt<td class='argumentdesc'>
+<p>a Float.<tr><td class='argumentname'>action<td class='argumentdesc'>
+<p>will be called with an Integer result. The meaning depends on the VST plugin.<tr><td class='argumentname'>async<td class='argumentdesc'>
+<p>see <a href="#Realtime Safety">Realtime Safety</a>.</table></div><h3><a class='anchor' name='Inherited instance methods'>Inherited instance methods</a></h3>
+<div id='inheritedinstmets'></div><h3><a class='anchor' name='Undocumented instance methods'>Undocumented instance methods</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-addDependant' href='./../Overviews/Methods.html#addDependant'>addDependant</a> (<span class='argstr'>dependant</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-haveEditor' href='./../Overviews/Methods.html#haveEditor'>haveEditor</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-makeMsg' href='./../Overviews/Methods.html#makeMsg'>makeMsg</a> (<span class='argstr'>cmd</span> <span class='argstr'>... args</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-sendMsg' href='./../Overviews/Methods.html#sendMsg'>sendMsg</a> (<span class='argstr'>cmd</span> <span class='argstr'>... args</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-update' href='./../Overviews/Methods.html#update'>update</a> (<span class='argstr'>who</span>, <span class='argstr'>what</span> <span class='argstr'>... args</span>)</h3>
+<h2><a class='anchor' name='examples'>Examples</a></h2>
+
+<p>The following code is needed for most examples:<pre class='code prettyprint lang-sc'>(
+// a simple stereo insert FX which reads from an audio bus
+// and replaces the content with the processed output:
+SynthDef.new(\insert, {arg bus;
+    ReplaceOut.ar(bus, VSTPlugin.ar(In.ar(bus, 2), 2));
+}).add;
+
+// load sound file
+~buf = Buffer.read(s, Platform.resourceDir +/+ "sounds/a11wlk01.wav");
+// soundfile player
+SynthDef(\test, {arg out = 0;
+    Out.ar(out,
+        PlayBuf.ar(1, ~buf, BufRateScale.kr(~buf), loop: 1).dup * 0.5;
+    )
+}).add;
+)</pre>
+<h3><a class='anchor' name='Serial FX chains'>Serial FX chains</a></h3>
+
+<p>How to build a serial FX chain on an audio bus:<pre class='code prettyprint lang-sc'>(
+// allocate an FX bus
+~fxBus = Bus.audio(s, 2);
+// play test signal on FX bus
+~test = Synth(\test, [\out, ~fxBus]);
+// send FX bus to output
+SynthDef(\output, { arg in = 0, out = 0;
+    Out.ar(out, In.ar(in, 2))
+}).play(~test, [\in, ~fxBus, \out, 0], addAction: \addAfter);
+)
+
+// add an insert FX to the bus (after the test signal)
+~fx1 = VSTPluginController(Synth(\insert, [\bus, ~fxBus], ~test, addAction: \addAfter));
+// open a plugin from the GUI and play with the parameters
+~fx1.gui;
+
+// add another insert FX (after '~fx1'):
+~fx2 = VSTPluginController(Synth(\insert, [\bus, ~fxBus], ~fx1.synth, addAction: \addAfter));
+// open plugin
+~fx2.gui;
+
+// change the FX order dynamically, e.g. move '~fx2' before '~fx1':
+~fx2.synth.moveBefore(~fx1.synth);
+
+~fx1.synth.free; // remove from FX chain
+~fx2.synth.free; // remove from FX chain</pre>
+
+<p>You can also create fixed FX chains by using several VSTPlugins inside a SynthDef:<pre class='code prettyprint lang-sc'>(
+// an insert FX with two plugins hardcoded in series:
+SynthDef.new(\insert2, { arg bus, bypass1=0, bypass2=0;
+    var sig = In.ar(bus, 2);
+    sig = VSTPlugin.ar(sig, 2, bypass1, id: \fx1);
+    sig = VSTPlugin.ar(sig, 2, bypass2, id: \fx2);
+    ReplaceOut.ar(bus, sig);
+}).add;
+)
+
+(
+// insert into the FX bus
+~synth = Synth(\insert2, [\bus, ~fxBus], ~test, addAction: \addAfter);
+// get handles to the individual VST plugins:
+~fx = VSTPluginController.collect(~synth);
+)
+
+// open plugins
+~fx.fx1.browse;
+~fx.fx2.browse;
+
+// bypass FX
+~synth.set(\bypass1, 1);
+~synth.set(\bypass2, 1);
+
+~synth.free; // remove FX</pre>
+<h3><a class='anchor' name='Master FX section'>Master FX section</a></h3>
+
+<p>This is how you would create a simple master FX section:<pre class='code prettyprint lang-sc'>// Cmd + .
+// add a group *after* the default group
+~fxGroup = Group.after(1);
+// add two stereo insert effects to the FX group (in series)
+~fx1 = VSTPluginController(Synth(\insert, [\bus, 0], ~fxGroup, addAction: \addToTail));
+~fx2 = VSTPluginController(Synth(\insert, [\bus, 0], ~fxGroup, addAction: \addToTail));
+
+// open plugins
+~fx1.browse;
+~fx2.browse;
+
+// play test sound
+Synth(\test, [\out, 0]);</pre>
+<h3><a class='anchor' name='Automation'>Automation</a></h3>
+
+<p>Automate parameters via control busses<div class='note'><span class='notelabel'>NOTE:</span> Parameter automation will <em>not</em> be visible in the Qt GUI (due to performance reasons)</div><pre class='code prettyprint lang-sc'>// Cmd + .
+// play test signal
+~test = Synth(\test, [\out, 0]);
+
+// insert FX (after ~test)
+~fx = VSTPluginController(Synth.new(\insert, [\bus, 0], ~test, addAction: \addAfter));
+// open plugin
+~fx.browse;
+// create control bus
+~ctl = Bus.control;
+// create an LFO
+~lfo = {Out.kr(~ctl, SinOsc.kr(0.25, 0, 0.5, 0.5))}.play;
+// modulate the first parameter of ~fx by mapping it to ~ctl
+~fx.map(0, ~ctl); // (don't move the slider of the mapped parameter in the Qt GUI or you will unmap it!)
+// unmap it
+~fx.unmap(0);
+
+~fx.synth.free; // remove FX
+~lfo.free;</pre>
+
+<p>Automate parameters inside the SynthDef:<pre class='code prettyprint lang-sc'>(
+SynthDef.new(\mod, {arg bus, rate=0.25, bypass=0;
+    var lfo, sig;
+    lfo = SinOsc.kr(rate, 0, 0.5, 0.5);
+    // parameter 0 will be modulated by a SinOsc
+    sig = VSTPlugin.ar(In.ar(bus, 2), 2, bypass, params: [0, lfo]);
+    ReplaceOut.ar(bus, sig);
+}).add;
+)
+
+~fx = VSTPluginController(Synth.new(\mod, [\bus, 0], ~test, addAction: \addAfter));
+// open plugin
+~fx.browse;
+
+~fx.synth.set(\rate, 0.9); // change modulation rate
+~fx.synth.set(\bypass, 1); // bypass
+~fx.synth.free; // release FX</pre>
+
+<p>Automate parameters with a Pbind of type <code class='code prettyprint lang-sc'>\vst_set</code>:<pre class='code prettyprint lang-sc'>~fx = VSTPluginController(Synth.new(\insert, [\bus, 0], ~test, addAction: \addAfter));
+// open plugin (the example uses 'GChorus' from GVST plugins)
+~fx.open("GChorus");
+
+(
+p = Pbind(
+    \type, \vst_set,
+    \vst, ~fx, // the VSTPluginController instance
+    \params, [1, 3, \Mix], // parameter indices/names (looked up below)
+    1, Pwhite(0.1, 0.9), // value for parameter 1
+    3, Pwhite(0.3, 0.7), // value for parameter 3
+    \Mix, Pseq([0.1, 0.2, 0.5, 0.9], inf), // value for parameter 'Mix'
+    \dur, Prand([0.25, 0.5, 1], inf)
+).play;
+)
+
+p.stop;</pre>
+<h3><a class='anchor' name='VST Instruments'>VST Instruments</a></h3>
+
+<p>You can easily play VST instruments with a <a href="./../Classes/Pbind.html">Pbind</a> of event type <code class='code prettyprint lang-sc'>\vst_midi</code>:<pre class='code prettyprint lang-sc'>// Cmd + .
+(
+SynthDef.new(\vsti, { arg out = 0;
+    // VST instruments usually don't have inputs
+    Out.ar(out, VSTPlugin.ar(nil, 2));
+}).add;
+)
+
+// create Synth with VST instrument
+~vsti = VSTPluginController(Synth(\vsti));
+// open plugin
+~vsti.browse;
+
+// play the instrument with a \vst_midi Pbind
+(
+p = Pbind(
+    \type, \vst_midi,
+    \vst, ~vsti, // the VSTPluginController instance
+    \midicmd, \noteOn, // the default, can be omitted
+    \chan, 0, // MIDI channel (default: 0)
+    \midinote, Pseq(#[0, 2, 4, 7], inf) + Pwhite(-12, 12).stutter(Pwhite(4, 16)) + 60,
+    \dur, Prand(#[0.125, 0.25, 0.5], inf),
+    \legato, Pexprand(0.5, 1.0, inf),
+    \amp, Pexprand(0.5, 1.0, inf)
+).play(quant: 1);
+)
+
+// change programs
+~vsti.program_(1);
+
+p.stop;
+
+// play the instrument with your MIDI keyboard:
+(
+MIDIClient.init;
+MIDIIn.connectAll;
+MIDIFunc.noteOn({ |vel, pitch|
+    ~vsti.midi.noteOn(0, pitch, vel);
+});
+MIDIFunc.noteOff({ |vel, pitch|
+    ~vsti.midi.noteOff(0, pitch, vel);
+});
+)</pre>
+<h3><a class='anchor' name='Non-Realtime Synthesis'>Non-Realtime Synthesis</a></h3>
+
+<p>Many methods of VSTPluginController have a corresponding <em>*Msg</em> version, returning a Server message which can be added to a <a href="./../Classes/Score.html">Score</a> for non-realtime synthesis.
+<p>The following code snippet will create a short soundfile with two random melodies played by VST instruments and processed with VST effects; it can be executed in a single block.<pre class='code prettyprint lang-sc'>(
+// 1) temporary Server (for Node ID allocation)
+~server = Server(\nrt,
+    options: ServerOptions.new
+    .numOutputBusChannels_(2)
+);
+
+// 2) SynthDef for playing the VSTi
+SynthDef.new(\my_instrument, { arg out;
+    var sig = VSTPlugin.ar(nil, 2, id: \vsti);
+    sig = VSTPlugin.ar(sig, 2, id: \fx);
+    Out.ar(out, sig);
+}).store; // so that the subprocess can find the SynthDef!
+
+// 3) create the VSTi Synths (in the language)
+
+~synth = { Synth.basicNew(\my_instrument, ~server) } ! 2;
+
+// get handles to the plugin controllers
+~vst = ~synth.collect { |x| VSTPluginController.collect(x) };
+
+// 4) create the Score:
+
+~score = Score.new;
+
+// search for plugins in default search paths (only needed the first time)
+~score.add([0.0, VSTPlugin.searchMsg(verbose: false)]);
+
+// create the synths:
+~score.add([0.0, ~synth[0].newMsg]);
+~score.add([0.0, ~synth[1].newMsg]);
+
+// open VSTi plugins
+~score.add([0.0, ~vst[0].vsti.openMsg("Dexed", editor: false)]);
+~score.add([0.0, ~vst[1].vsti.openMsg("Dexed", editor: false)]);
+
+// choose programs
+~score.add([0.0, ~vst[0].vsti.programMsg(0)]);
+~score.add([0.0, ~vst[1].vsti.programMsg(1)]);
+
+// open FX plugins
+~score.add([0.0, ~vst[0].fx.openMsg("GDelay", editor: false)]);
+~score.add([0.0, ~vst[1].fx.openMsg("GChorus", editor: false)]);
+
+// set some FX params
+~score.add([0.0, ~vst[0].fx.setMsg(0, 0.2)]); // delay time
+~score.add([0.0, ~vst[0].fx.setMsg(1, 0.5)]); // delay feedback
+~score.add([0.0, ~vst[1].fx.setMsg(0, 0.9)]); // chorus depth
+
+// (optionally) put plugins into offline processing mode (might yield better results)
+~score.add([0.0, ~vst[0].vsti.setOfflineMsg(true)]);
+~score.add([0.0, ~vst[0].fx.setOfflineMsg(true)]);
+~score.add([0.0, ~vst[1].vsti.setOfflineMsg(true)]);
+~score.add([0.0, ~vst[1].fx.setOfflineMsg(true)]);
+
+// make a random melody
+~melody = Pbind(
+    \type, \vst_midi,
+    \dur, Prand(#[0.125, 0.25, 0.5, 1], inf),
+    \legato, 1,
+    \amp, Pexprand(0.5, 1.0, inf),
+    \midinote, Pwhite(48, 72, inf)
+);
+
+// helper function for recording a Pbind to a Score
+~render = { arg vsti, pbind, start, dur;
+    var list = pbind.asScore(dur, start, (vst: vsti)).score;
+    ~score.score = ~score.score.addAll(list[1..(list.size-2)]); // we have to remove the first and last bundle (/g_new + /c_set)!
+};
+
+~render.(~vst[0].vsti, ~melody, 1, 8); // render 8 beats of the first voice, starting at beat 1
+~render.(~vst[1].vsti, ~melody, 4, 7); // render 7 beats of the second voice, starting at beat 4
+
+// finally sort the score!
+~score.sort;
+
+// 5) render as stereo aiff file
+
+~score.recordNRT("~/nrt_test".standardizePath, "~/nrt_test.aiff".standardizePath,
+    options: ~server.options, duration: 15);
+
+// or save the Score to a file
+~score.saveToFile("~/nrt_test.txt".standardizePath);
+
+// remove temporary Server
+~server.remove;
+)</pre>
+
+<p><div class='doclink'>source: <a href='file:///Applications/SamplerCentral 2.6.app/Contents/Resources/SCClassLibrary/Extensions/VSTPlugin/HelpSource/Classes/VSTPluginController.schelp'>/Applications/SamplerCentral 2.6.app/Contents/Resources/SCClassLibrary/Extensions/VSTPlugin/HelpSource/Classes/VSTPluginController.schelp</a><br>link::Classes/VSTPluginController::<br>sc version: 3.6dev</div></div></body></html>

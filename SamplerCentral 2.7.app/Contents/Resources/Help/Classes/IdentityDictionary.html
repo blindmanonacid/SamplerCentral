@@ -1,0 +1,90 @@
+<html><head><title>IdentityDictionary</title>
+<link rel='stylesheet' href='./../scdoc.css' type='text/css' />
+<link rel='stylesheet' href='./../frontend.css' type='text/css' />
+<link rel='stylesheet' href='./../custom.css' type='text/css' />
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<script src='./../scdoc.js' type='text/javascript'></script>
+<script src='./../docmap.js' type='text/javascript'></script>
+<script src='./../prettify.js' type='text/javascript'></script>
+<script src='./../lang-sc.js' type='text/javascript'></script>
+<script src='./../MathJax/MathJax.js?config=TeX-AMS_HTML,scmathjax' type='text/javascript'></script>
+<script type='text/javascript'>var helpRoot='./..';</script>
+</head>
+<ul id='menubar'></ul>
+<body onload='fixTOC();prettyPrint()'>
+<div class='contents'>
+<div class='header'>
+<div id='label'>SuperCollider CLASSES</div>
+<div id='categories'><a href='./../Browse.html#Collections>Unordered'>Collections>Unordered</a></div>
+<h1>IdentityDictionary</h1>
+<div id='summary'>associative collection mapping keys to values</div>
+</div>
+<div class='subheader'>
+<div id='filename'>Source: /Applications/SamplerCentral 2.7/SamplerCentral 2.7.app/Contents/Resources/SCClassLibrary/Common/Collections/<a href='file:///Applications/SamplerCentral 2.7/SamplerCentral 2.7.app/Contents/Resources/SCClassLibrary/Common/Collections/Dictionary.sc'>Dictionary.sc</a></div><div id='superclasses'>Inherits from: <a href="../Classes/Dictionary.html">Dictionary</a> : <a href="../Classes/Set.html">Set</a> : <a href="../Classes/Collection.html">Collection</a> : <a href="../Classes/Object.html">Object</a></div>
+<div id='subclasses'>Subclasses: <a href="../Classes/Environment.html">Environment</a>, <a href="../Classes/FuzzyDictionary.html">FuzzyDictionary</a></div>
+<div id='related'>See also: <a href="./../Classes/Environment.html">Environment</a>, <a href="./../Classes/Event.html">Event</a></div>
+</div>
+<div id='toc'>
+<ul class='toc'><li class='toc1'><a href='#description'>Description</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#classmethods'>Class methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#*new'>new</a> </li>
+<li class='toc2'><a href='#Inherited class methods'>Inherited class methods</a></li>
+</ul><li class='toc1'><a href='#instancemethods'>Instance methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#-putGet'>putGet</a> </li>
+<li class='toc2'><a href='#Accessing Instance Variables'>Accessing Instance Variables</a></li>
+<ul class='toc'><li class='toc3'><a href='#-proto'>proto</a>  <a href='#-parent'>parent</a>  <a href='#-know'>know</a> </li>
+</ul><li class='toc2'><a href='#IdentityDictionary reimplements the following methods of Dictionary'>IdentityDictionary reimplements the following methods of Dictionary</a></li>
+<ul class='toc'><li class='toc3'><a href='#-at'>at</a>  <a href='#-put'>put</a>  <a href='#-includesKey'>includesKey</a>  <a href='#-findKeyForValue'>findKeyForValue</a>  <a href='#-scanFor'>scanFor</a> </li>
+</ul><li class='toc2'><a href='#The following three methods provide support for Quant'>The following three methods provide support for Quant</a></li>
+<ul class='toc'><li class='toc3'><a href='#-nextTimeOnGrid'>nextTimeOnGrid</a>  <a href='#-asQuant'>asQuant</a>  <a href='#-timingOffset'>timingOffset</a> </li>
+</ul><li class='toc2'><a href='#Inherited instance methods'>Inherited instance methods</a></li>
+<li class='toc2'><a href='#Undocumented instance methods'>Undocumented instance methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#-doesNotUnderstand'>doesNotUnderstand</a> </li>
+<li class='toc3'><a href='#-shallowCopyItems'>shallowCopyItems</a> </li>
+</ul></ul><li class='toc1'><a href='#examples'>Examples</a></li>
+<ul class='toc'></ul></ul></div><h2><a class='anchor' name='description'>Description</a></h2>
+
+<p>An IdentityDictionary is an associative collection mapping keys to values. Keys match only if they are <strong>identical objects</strong>. (i.e. === returns true.)
+<p>(In Dictionary, keys match if they are equal valued. This makes IdentityDictionary faster than <a href="./../Classes/Dictionary.html">Dictionary</a>)
+<p>The contents of a Dictionary are <strong>unordered</strong>. You must not depend on the order of items in a Dictionary.
+<p>Often, the subclass Event is used as an IdentityDictionary, because there is a syntactical shortcut:<pre class='code prettyprint lang-sc'>a = (); // return a new Event.
+a.put(\foo, 2.718);
+a.at(\foo);</pre>
+<h2><a class='anchor' name='classmethods'>Class Methods</a></h2>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*new' href='./../Overviews/Methods.html#new'>new</a> (<span class='argstr'>n: 8</span>, <span class='argstr'>proto</span>, <span class='argstr'>parent</span>, <span class='argstr'>know: false</span>)</h3>
+<div class='method'>
+<p>The <a href="#-parent">-parent</a> and <a href="#-proto">-proto</a> instance variables allow additional IdentityDictionary's to provide default values. The precedence order for determining the value of a key is the IdentityDictionary, its prototype, its parent.
+<p>When the instance variable <a href="#-know">-know</a> is <a href="./../Classes/True.html">True</a>, the IdentityDictionary responds to unknown messages by looking up the selector and evaluating the result with the dictionary as an argument. For example:<pre class='code prettyprint lang-sc'>a = IdentityDictionary(know: true);
+a.put(\foo, { | x | ("the argument is:" + x).postln });
+a.foo;</pre>
+</div><h3><a class='anchor' name='Inherited class methods'>Inherited class methods</a></h3>
+<div id='inheritedclassmets'></div><h2><a class='anchor' name='instancemethods'>Instance Methods</a></h2>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-putGet' href='./../Overviews/Methods.html#putGet'>putGet</a> (<span class='argstr'>key</span>, <span class='argstr'>value</span>)</h3>
+<div class='method'>
+<p>Sets key to newValue, returns the previous value of key.</div><h3><a class='anchor' name='Accessing Instance Variables'>Accessing Instance Variables</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-proto' href='./../Overviews/Methods.html#proto'>proto</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-proto' href='./../Overviews/Methods.html#proto'>proto</a> = value</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-parent' href='./../Overviews/Methods.html#parent'>parent</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-parent' href='./../Overviews/Methods.html#parent'>parent</a> = value</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-know' href='./../Overviews/Methods.html#know'>know</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-know' href='./../Overviews/Methods.html#know'>know</a> = value</h3>
+<div class='method'>
+<p></div><h3><a class='anchor' name='IdentityDictionary reimplements the following methods of Dictionary'>IdentityDictionary reimplements the following methods of Dictionary</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-at' href='./../Overviews/Methods.html#at'>at</a> (<span class='argstr'>key</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-put' href='./../Overviews/Methods.html#put'>put</a> (<span class='argstr'>key</span>, <span class='argstr'>value</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-includesKey' href='./../Overviews/Methods.html#includesKey'>includesKey</a> (<span class='argstr'>key</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-findKeyForValue' href='./../Overviews/Methods.html#findKeyForValue'>findKeyForValue</a> (<span class='argstr'>argValue</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-scanFor' href='./../Overviews/Methods.html#scanFor'>scanFor</a> (<span class='argstr'>argKey</span>)</h3>
+<div class='method'>
+<p></div><h3><a class='anchor' name='The following three methods provide support for Quant'>The following three methods provide support for Quant</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-nextTimeOnGrid' href='./../Overviews/Methods.html#nextTimeOnGrid'>nextTimeOnGrid</a> (<span class='argstr'>clock</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asQuant' href='./../Overviews/Methods.html#asQuant'>asQuant</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-timingOffset' href='./../Overviews/Methods.html#timingOffset'>timingOffset</a> </h3>
+<div class='method'></div><h3><a class='anchor' name='Inherited instance methods'>Inherited instance methods</a></h3>
+<div id='inheritedinstmets'></div><h3><a class='anchor' name='Undocumented instance methods'>Undocumented instance methods</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-doesNotUnderstand' href='./../Overviews/Methods.html#doesNotUnderstand'>doesNotUnderstand</a> (<span class='argstr'>selector</span> <span class='argstr'>... args</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-shallowCopyItems' href='./../Overviews/Methods.html#shallowCopyItems'>shallowCopyItems</a> </h3>
+<div class='extmethod'>From extension in <a href='/Applications/SamplerCentral 2.7/SamplerCentral 2.7.app/Contents/Resources/SCClassLibrary/QUARKS/dewdrop_lib/ddwCommon/Misc/Collection-extensions.sc'>/Applications/SamplerCentral 2.7/SamplerCentral 2.7.app/Contents/Resources/SCClassLibrary/QUARKS/dewdrop_lib/ddwCommon/Misc/Collection-extensions.sc</a></div>
+<h2><a class='anchor' name='examples'>Examples</a></h2>
+
+<p>IdentityDictionary is often used to assign names to instances of a particular class. For example, the proxy classes ( <a href="./../Classes/Pdef.html">Pdef</a>, <a href="./../Classes/Pdefn.html">Pdefn</a>, <a href="./../Classes/Tdef.html">Tdef</a>, <a href="./../Classes/Ndef.html">Ndef</a> ), and <a href="./../Classes/NodeWatcher.html">NodeWatcher</a> all have class variables named all implemented as IdentityDictionaries.<div class='doclink'>source: <a href='file:///Applications/SamplerCentral 2.7/SamplerCentral 2.7.app/Contents/Resources/HelpSource/Classes/IdentityDictionary.schelp'>/Applications/SamplerCentral 2.7/SamplerCentral 2.7.app/Contents/Resources/HelpSource/Classes/IdentityDictionary.schelp</a><br>link::Classes/IdentityDictionary::<br>sc version: 3.6dev</div></div></body></html>

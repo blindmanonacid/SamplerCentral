@@ -1,0 +1,309 @@
+var o, p;
+o = [
+	Array.prNew(5),  Array.prNew(37),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops Eng/kingkong.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits Eng/sex/moanF3.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits Eng/sex/moanM.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops Eng/musikk/TotentanzPace1.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops Eng/musikk/TotentanzPace2.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops Eng/musikk/Totentanz1.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits Eng/cymbal.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits Eng/waterDropPlopp.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits Eng/stocksUp.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Tale/Gina/Gina Tralala hysteri.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/rot/trapper/knirk/deltopp/kort3.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/rot/trapper/knirk/deltopp/dvele1.wav",  List.prNew,  Array.prNew(37),  
+	Array.prNew(13),  Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  
+	Array.prNew(13),  Array.prNew(12),  Array.prNew(12),  Array.prNew(13),  
+	Array.prNew(13),  Array.prNew(12),  Array.prNew(13),  Array.prNew(13),  
+	Array.prNew(13),  Array.prNew(13),  Array.prNew(13),  Array.prNew(13),  
+	Array.prNew(13),  Array.prNew(13),  Array.prNew(11),  Array.prNew(13),  
+	Array.prNew(13),  Array.prNew(13),  Array.prNew(13),  Array.prNew(13),  
+	Array.prNew(13),  Array.prNew(12),  Array.prNew(13),  Array.prNew(12),  
+	Array.prNew(13),  Array.prNew(12),  Array.prNew(13),  Array.prNew(13),  
+	Array.prNew(13),  Array.prNew(13),  Array.prNew(13),  Array.prNew(13),  
+	Array.prNew(13),  Array.prNew(8),  Array.prNew(4),  Array.prNew(4),  
+	Array.prNew(4),  Array.prNew(4),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops Eng/snoring2deep.wav",  "diskin",  
+	Array.prNew(4),  Array.prNew(4),  Array.prNew(4),  Array.prNew(4),  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Tale/Hedvig/_x/laughHedvig.wav",  "gpLooper",  Array.prNew(9),  Array.prNew(4),  
+	Array.prNew(4),  Array.prNew(4),  Array.prNew(4),  Array.prNew(4),  
+	Array.prNew(4),  Array.prNew(4),  Array.prNew(4),  Array.prNew(4),  
+	List.prNew,  Array.prNew(37),  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew(15),  "/Volumes/MEDIA/Ableton/nedmixer/trappDown/stairs00.wav",  "/Volumes/MEDIA/Ableton/nedmixer/trappDown/stairs01.wav",  
+	"/Volumes/MEDIA/Ableton/nedmixer/trappDown/stairs2.wav",  "/Volumes/MEDIA/Ableton/nedmixer/trappDown/stairs3.wav",  "/Volumes/MEDIA/Ableton/nedmixer/trappDown/stairs4.wav",  "/Volumes/MEDIA/Ableton/nedmixer/trappDown/stairs5.wav",  
+	"/Volumes/MEDIA/Ableton/nedmixer/trappDown/stairs6.wav",  "/Volumes/MEDIA/Ableton/nedmixer/trappDown/stairs7.wav",  "/Volumes/MEDIA/Ableton/nedmixer/trappDown/stairs8.wav",  "/Volumes/MEDIA/Ableton/nedmixer/trappDown/stairs9.wav",  
+	"/Volumes/MEDIA/Ableton/nedmixer/trappDown/stairs10.wav",  "/Volumes/MEDIA/Ableton/nedmixer/trappDown/stairs11.wav",  "/Volumes/MEDIA/Ableton/nedmixer/trappDown/stairs12.wav",  "/Volumes/MEDIA/Ableton/nedmixer/trappDown/stairs13.wav",  
+	"/Volumes/MEDIA/Ableton/nedmixer/trappDown/stairs14.wav",  Array.prNew(15),  "/Volumes/MEDIA/Ableton/nedmixer/trappUp/trapp00.wav",  "/Volumes/MEDIA/Ableton/nedmixer/trappUp/trapp01.wav",  
+	"/Volumes/MEDIA/Ableton/nedmixer/trappUp/trapp2.wav",  "/Volumes/MEDIA/Ableton/nedmixer/trappUp/trapp3.wav",  "/Volumes/MEDIA/Ableton/nedmixer/trappUp/trapp4.wav",  "/Volumes/MEDIA/Ableton/nedmixer/trappUp/trapp5.wav",  
+	"/Volumes/MEDIA/Ableton/nedmixer/trappUp/trapp6.wav",  "/Volumes/MEDIA/Ableton/nedmixer/trappUp/trapp7.wav",  "/Volumes/MEDIA/Ableton/nedmixer/trappUp/trapp8.wav",  "/Volumes/MEDIA/Ableton/nedmixer/trappUp/trapp9.wav",  
+	"/Volumes/MEDIA/Ableton/nedmixer/trappUp/trapp10.wav",  "/Volumes/MEDIA/Ableton/nedmixer/trappUp/trapp11.wav",  "/Volumes/MEDIA/Ableton/nedmixer/trappUp/trapp12.wav",  "/Volumes/MEDIA/Ableton/nedmixer/trappUp/trapp13.wav",  
+	"/Volumes/MEDIA/Ableton/nedmixer/trappUp/trapp14.wav"
+];
+p = [
+	// Array
+	0, [ o[1],  o[14],  o[53],  o[66],  
+		o[76] ],  
+	// Array
+	1, [ nil,  o[2],  o[3],  o[4],  
+		nil,  o[5],  o[6],  nil,  
+		nil,  o[7],  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  o[8],  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  o[9],  nil,  o[10],  
+		nil,  o[11],  nil,  nil,  
+		nil,  nil,  nil,  o[12],  
+		o[13] ],  
+	// List
+	14, [ array: o[15] ],  
+	// Array
+	15, [ o[16],  o[17],  o[18],  o[19],  
+		o[20],  o[21],  o[22],  o[23],  
+		o[24],  o[25],  o[26],  o[27],  
+		o[28],  o[29],  o[30],  o[31],  
+		o[32],  o[33],  o[34],  o[35],  
+		o[36],  o[37],  o[38],  o[39],  
+		o[40],  o[41],  o[42],  o[43],  
+		o[44],  o[45],  o[46],  o[47],  
+		o[48],  o[49],  o[50],  o[51],  
+		o[52] ],  
+	// Array
+	16, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	17, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	18, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	19, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	20, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	21, [ 0.500000,  1,  2,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil ],  
+	// Array
+	22, [ 0.500000,  1,  2,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil ],  
+	// Array
+	23, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	24, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	25, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil ],  
+	// Array
+	26, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	27, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	28, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	29, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	30, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	31, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	32, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	33, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	34, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	35, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	36, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	37, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	38, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	39, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	40, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	41, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil ],  
+	// Array
+	42, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	43, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil ],  
+	// Array
+	44, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	45, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil ],  
+	// Array
+	46, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	47, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	48, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	49, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	50, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	51, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  10,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	52, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  2,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	53, [ o[54],  o[55],  o[56],  o[57],  
+		o[60],  o[61],  o[62],  o[63] ],  
+	// Array
+	54, [ nil,  nil,  1,  nil ],  
+	// Array
+	55, [ nil,  nil,  1,  nil ],  
+	// Array
+	56, [ nil,  nil,  1,  nil ],  
+	// Array
+	57, [ o[58],  o[59],  1,  nil ],  
+	// Array
+	60, [ nil,  nil,  1,  nil ],  
+	// Array
+	61, [ nil,  nil,  1,  nil ],  
+	// Array
+	62, [ nil,  nil,  1,  nil ],  
+	// Array
+	63, [ o[64],  o[65],  1,  nil ],  
+	// Array
+	66, [ o[67],  o[68],  o[69],  o[70],  
+		o[71],  o[72],  o[73],  o[74],  
+		o[75] ],  
+	// Array
+	67, [ nil,  nil,  1,  nil ],  
+	// Array
+	68, [ nil,  nil,  1,  nil ],  
+	// Array
+	69, [ nil,  nil,  1,  nil ],  
+	// Array
+	70, [ nil,  nil,  1,  nil ],  
+	// Array
+	71, [ nil,  nil,  1,  nil ],  
+	// Array
+	72, [ nil,  nil,  1,  nil ],  
+	// Array
+	73, [ nil,  nil,  1,  nil ],  
+	// Array
+	74, [ nil,  nil,  1,  nil ],  
+	// Array
+	75, [ nil,  nil,  1,  nil ],  
+	// List
+	76, [ array: o[77] ],  
+	// Array
+	77, [ o[78],  o[79],  o[80],  o[81],  
+		o[82],  o[83],  o[84],  o[85],  
+		o[86],  o[87],  o[88],  o[89],  
+		o[90],  o[91],  o[92],  o[93],  
+		o[94],  o[95],  o[96],  o[97],  
+		o[98],  o[99],  o[100],  o[101],  
+		o[102],  o[103],  o[104],  o[105],  
+		o[106],  o[107],  o[108],  o[109],  
+		o[110],  o[111],  o[112],  o[113],  
+		o[129] ],  
+	// Array
+	113, [ o[114],  o[115],  o[116],  o[117],  
+		o[118],  o[119],  o[120],  o[121],  
+		o[122],  o[123],  o[124],  o[125],  
+		o[126],  o[127],  o[128] ],  
+	// Array
+	129, [ o[130],  o[131],  o[132],  o[133],  
+		o[134],  o[135],  o[136],  o[137],  
+		o[138],  o[139],  o[140],  o[141],  
+		o[142],  o[143],  o[144] ]
+];
+prUnarchive(o,p);

@@ -1,0 +1,145 @@
+<html><head><title>QEnvelopeView</title>
+<link rel='stylesheet' href='./../scdoc.css' type='text/css' />
+<link rel='stylesheet' href='./../frontend.css' type='text/css' />
+<link rel='stylesheet' href='./../custom.css' type='text/css' />
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<script src='./../scdoc.js' type='text/javascript'></script>
+<script src='./../docmap.js' type='text/javascript'></script>
+<script src='./../prettify.js' type='text/javascript'></script>
+<script src='./../lang-sc.js' type='text/javascript'></script>
+<script src='./../MathJax/MathJax.js?config=TeX-AMS_HTML,scmathjax' type='text/javascript'></script>
+<script type='text/javascript'>var helpRoot='./..';</script>
+</head>
+<ul id='menubar'></ul>
+<body onload='fixTOC();prettyPrint()'>
+<div class='contents'>
+<div class='header'>
+<div id='label'>SuperCollider CLASSES</div>
+<div id='categories'><a href='./../Browse.html#Redirect Class Implementors'>Redirect Class Implementors</a></div>
+<h1>QEnvelopeView</h1>
+<div id='summary'>Implements EnvelopeView</div>
+</div>
+<div class='subheader'>
+<div id='filename'>Source: /Applications/SamplerCentral 2.3.app/Contents/Resources/SCClassLibrary/QtCollider/<a href='file:///Applications/SamplerCentral 2.3.app/Contents/Resources/SCClassLibrary/QtCollider/QEnvelopeView.sc'>QEnvelopeView.sc</a></div><div id='superclasses'>Inherits from: <a href="../Classes/QView.html">QView</a> : <a href="../Classes/QObject.html">QObject</a> : <a href="../Classes/Object.html">Object</a></div>
+</div>
+<div id='toc'>
+<ul class='toc'><li class='toc1'><a href='#description'>Description</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#classmethods'>Class methods</a></li>
+<ul class='toc'><li class='toc2'><a href='#Inherited class methods'>Inherited class methods</a></li>
+<li class='toc2'><a href='#Undocumented class methods'>Undocumented class methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#*qtClass'>qtClass</a> </li>
+</ul></ul><li class='toc1'><a href='#instancemethods'>Instance methods</a></li>
+<ul class='toc'><li class='toc2'><a href='#Inherited instance methods'>Inherited instance methods</a></li>
+<li class='toc2'><a href='#Undocumented instance methods'>Undocumented instance methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#-colors'>colors</a> </li>
+<li class='toc3'><a href='#-connect'>connect</a> </li>
+<li class='toc3'><a href='#-currentvalue'>currentvalue</a> </li>
+<li class='toc3'><a href='#-curves'>curves</a> </li>
+<li class='toc3'><a href='#-defaultCanReceiveDrag'>defaultCanReceiveDrag</a> </li>
+<li class='toc3'><a href='#-defaultGetDrag'>defaultGetDrag</a> </li>
+<li class='toc3'><a href='#-defaultReceiveDrag'>defaultReceiveDrag</a> </li>
+<li class='toc3'><a href='#-deselectIndex'>deselectIndex</a> </li>
+<li class='toc3'><a href='#-doMetaAction'>doMetaAction</a> </li>
+<li class='toc3'><a href='#-drawLines'>drawLines</a> </li>
+<li class='toc3'><a href='#-drawRects'>drawRects</a> </li>
+<li class='toc3'><a href='#-editable'>editable</a> </li>
+<li class='toc3'><a href='#-elasticSelection'>elasticSelection</a> </li>
+<li class='toc3'><a href='#-fillColor'>fillColor</a> </li>
+<li class='toc3'><a href='#-grid'>grid</a> </li>
+<li class='toc3'><a href='#-gridColor'>gridColor</a> </li>
+<li class='toc3'><a href='#-gridOn'>gridOn</a> </li>
+<li class='toc3'><a href='#-index'>index</a> </li>
+<li class='toc3'><a href='#-keepHorizontalOrder'>keepHorizontalOrder</a> </li>
+<li class='toc3'><a href='#-lastIndex'>lastIndex</a> </li>
+<li class='toc3'><a href='#-metaAction'>metaAction</a> </li>
+<li class='toc3'><a href='#-selectIndex'>selectIndex</a> </li>
+<li class='toc3'><a href='#-selectionColor'>selectionColor</a> </li>
+<li class='toc3'><a href='#-setEditable'>setEditable</a> </li>
+<li class='toc3'><a href='#-setEnv'>setEnv</a> </li>
+<li class='toc3'><a href='#-setFillColor'>setFillColor</a> </li>
+<li class='toc3'><a href='#-setString'>setString</a> </li>
+<li class='toc3'><a href='#-setThumbHeight'>setThumbHeight</a> </li>
+<li class='toc3'><a href='#-setThumbSize'>setThumbSize</a> </li>
+<li class='toc3'><a href='#-setThumbWidth'>setThumbWidth</a> </li>
+<li class='toc3'><a href='#-step'>step</a> </li>
+<li class='toc3'><a href='#-strings'>strings</a> </li>
+<li class='toc3'><a href='#-strokeColor'>strokeColor</a> </li>
+<li class='toc3'><a href='#-style'>style</a> </li>
+<li class='toc3'><a href='#-thumbHeight'>thumbHeight</a> </li>
+<li class='toc3'><a href='#-thumbSize'>thumbSize</a> </li>
+<li class='toc3'><a href='#-thumbWidth'>thumbWidth</a> </li>
+<li class='toc3'><a href='#-value'>value</a> </li>
+<li class='toc3'><a href='#-valueAction'>valueAction</a> </li>
+<li class='toc3'><a href='#-x'>x</a> </li>
+<li class='toc3'><a href='#-y'>y</a> </li>
+</ul></ul></ul></div><h2><a class='anchor' name='description'>Description</a></h2>
+
+<p>Implements <a href="./../Classes/EnvelopeView.html">EnvelopeView</a><h2><a class='anchor' name='classmethods'>Class Methods</a></h2>
+<h3><a class='anchor' name='Inherited class methods'>Inherited class methods</a></h3>
+<div id='inheritedclassmets'></div><h3><a class='anchor' name='Undocumented class methods'>Undocumented class methods</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*qtClass' href='./../Overviews/Methods.html#qtClass'>qtClass</a> </h3>
+<h2><a class='anchor' name='instancemethods'>Instance Methods</a></h2>
+<h3><a class='anchor' name='Inherited instance methods'>Inherited instance methods</a></h3>
+<div id='inheritedinstmets'></div><h3><a class='anchor' name='Undocumented instance methods'>Undocumented instance methods</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-colors' href='./../Overviews/Methods.html#colors'>colors</a><h3 class='imethodname'><span class='methprefix'>-</span><a name='-colors' href='./../Overviews/Methods.html#colors'>colors</a>_ (<span class='argstr'>strokeColor</span>, <span class='argstr'>fillColor</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-connect' href='./../Overviews/Methods.html#connect'>connect</a> (<span class='argstr'>source</span>, <span class='argstr'>targets</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-currentvalue' href='./../Overviews/Methods.html#currentvalue'>currentvalue</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-currentvalue' href='./../Overviews/Methods.html#currentvalue'>currentvalue</a> = <span class='argstr'>aFloat</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-curves' href='./../Overviews/Methods.html#curves'>curves</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-curves' href='./../Overviews/Methods.html#curves'>curves</a> = <span class='argstr'>curves</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-defaultCanReceiveDrag' href='./../Overviews/Methods.html#defaultCanReceiveDrag'>defaultCanReceiveDrag</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-defaultGetDrag' href='./../Overviews/Methods.html#defaultGetDrag'>defaultGetDrag</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-defaultReceiveDrag' href='./../Overviews/Methods.html#defaultReceiveDrag'>defaultReceiveDrag</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-deselectIndex' href='./../Overviews/Methods.html#deselectIndex'>deselectIndex</a> (<span class='argstr'>index</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-doMetaAction' href='./../Overviews/Methods.html#doMetaAction'>doMetaAction</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-drawLines' href='./../Overviews/Methods.html#drawLines'>drawLines</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-drawLines' href='./../Overviews/Methods.html#drawLines'>drawLines</a> = <span class='argstr'>aBool</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-drawRects' href='./../Overviews/Methods.html#drawRects'>drawRects</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-drawRects' href='./../Overviews/Methods.html#drawRects'>drawRects</a> = <span class='argstr'>aBool</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-editable' href='./../Overviews/Methods.html#editable'>editable</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-editable' href='./../Overviews/Methods.html#editable'>editable</a> = <span class='argstr'>aBool</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-elasticSelection' href='./../Overviews/Methods.html#elasticSelection'>elasticSelection</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-elasticSelection' href='./../Overviews/Methods.html#elasticSelection'>elasticSelection</a> = <span class='argstr'>bool</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-fillColor' href='./../Overviews/Methods.html#fillColor'>fillColor</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-fillColor' href='./../Overviews/Methods.html#fillColor'>fillColor</a> = <span class='argstr'>aColor</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-grid' href='./../Overviews/Methods.html#grid'>grid</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-grid' href='./../Overviews/Methods.html#grid'>grid</a> = <span class='argstr'>aPoint</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-gridColor' href='./../Overviews/Methods.html#gridColor'>gridColor</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-gridColor' href='./../Overviews/Methods.html#gridColor'>gridColor</a> = <span class='argstr'>color</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-gridOn' href='./../Overviews/Methods.html#gridOn'>gridOn</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-gridOn' href='./../Overviews/Methods.html#gridOn'>gridOn</a> = <span class='argstr'>aBool</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-index' href='./../Overviews/Methods.html#index'>index</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-index' href='./../Overviews/Methods.html#index'>index</a> = <span class='argstr'>index</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-keepHorizontalOrder' href='./../Overviews/Methods.html#keepHorizontalOrder'>keepHorizontalOrder</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-keepHorizontalOrder' href='./../Overviews/Methods.html#keepHorizontalOrder'>keepHorizontalOrder</a> = <span class='argstr'>bool</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-lastIndex' href='./../Overviews/Methods.html#lastIndex'>lastIndex</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-metaAction' href='./../Overviews/Methods.html#metaAction'>metaAction</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-metaAction' href='./../Overviews/Methods.html#metaAction'>metaAction</a> = <span class='argstr'>function</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-selectIndex' href='./../Overviews/Methods.html#selectIndex'>selectIndex</a> (<span class='argstr'>index</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-selectionColor' href='./../Overviews/Methods.html#selectionColor'>selectionColor</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-selectionColor' href='./../Overviews/Methods.html#selectionColor'>selectionColor</a> = <span class='argstr'>color</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setEditable' href='./../Overviews/Methods.html#setEditable'>setEditable</a> (<span class='argstr'>index</span>, <span class='argstr'>flag</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setEnv' href='./../Overviews/Methods.html#setEnv'>setEnv</a> (<span class='argstr'>env</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setFillColor' href='./../Overviews/Methods.html#setFillColor'>setFillColor</a> (<span class='argstr'>index</span>, <span class='argstr'>color</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setString' href='./../Overviews/Methods.html#setString'>setString</a> (<span class='argstr'>index</span>, <span class='argstr'>string</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setThumbHeight' href='./../Overviews/Methods.html#setThumbHeight'>setThumbHeight</a> (<span class='argstr'>index</span>, <span class='argstr'>height</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setThumbSize' href='./../Overviews/Methods.html#setThumbSize'>setThumbSize</a> (<span class='argstr'>index</span>, <span class='argstr'>size</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setThumbWidth' href='./../Overviews/Methods.html#setThumbWidth'>setThumbWidth</a> (<span class='argstr'>index</span>, <span class='argstr'>width</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-step' href='./../Overviews/Methods.html#step'>step</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-step' href='./../Overviews/Methods.html#step'>step</a> = <span class='argstr'>aFloat</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-strings' href='./../Overviews/Methods.html#strings'>strings</a><h3 class='imethodname'><span class='methprefix'>-</span><a name='-strings' href='./../Overviews/Methods.html#strings'>strings</a> = <span class='argstr'>anArray</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-strokeColor' href='./../Overviews/Methods.html#strokeColor'>strokeColor</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-strokeColor' href='./../Overviews/Methods.html#strokeColor'>strokeColor</a> = <span class='argstr'>color</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-style' href='./../Overviews/Methods.html#style'>style</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-style' href='./../Overviews/Methods.html#style'>style</a> = <span class='argstr'>style</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-thumbHeight' href='./../Overviews/Methods.html#thumbHeight'>thumbHeight</a><h3 class='imethodname'><span class='methprefix'>-</span><a name='-thumbHeight' href='./../Overviews/Methods.html#thumbHeight'>thumbHeight</a> = <span class='argstr'>height</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-thumbSize' href='./../Overviews/Methods.html#thumbSize'>thumbSize</a><h3 class='imethodname'><span class='methprefix'>-</span><a name='-thumbSize' href='./../Overviews/Methods.html#thumbSize'>thumbSize</a> = <span class='argstr'>size</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-thumbWidth' href='./../Overviews/Methods.html#thumbWidth'>thumbWidth</a><h3 class='imethodname'><span class='methprefix'>-</span><a name='-thumbWidth' href='./../Overviews/Methods.html#thumbWidth'>thumbWidth</a> = <span class='argstr'>width</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-value' href='./../Overviews/Methods.html#value'>value</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-value' href='./../Overviews/Methods.html#value'>value</a> = <span class='argstr'>anArray</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-valueAction' href='./../Overviews/Methods.html#valueAction'>valueAction</a><h3 class='imethodname'><span class='methprefix'>-</span><a name='-valueAction' href='./../Overviews/Methods.html#valueAction'>valueAction</a> = <span class='argstr'>anArray</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-x' href='./../Overviews/Methods.html#x'>x</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-x' href='./../Overviews/Methods.html#x'>x</a> = <span class='argstr'>aFloat</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-y' href='./../Overviews/Methods.html#y'>y</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-y' href='./../Overviews/Methods.html#y'>y</a> = <span class='argstr'>aFloat</span></h3>
+<div class='doclink'>link::Classes/QEnvelopeView::<br>sc version: 3.6dev</div></div></body></html>

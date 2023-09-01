@@ -1,0 +1,75 @@
+var o, p;
+o = [
+	Array.prNew(14),  Array.prNew(8),  Array.prNew(9),  "miditec MA",  
+	Array.prNew(3),  Array.prNew(2),  "Origin37",  "Origin37",  
+	Array.prNew(3),  Color.prNew,  Array.prNew(4),  List.prNew,  
+	Array.prNew(4),  Array.prNew(12),  Array.prNew(12),  Array.prNew(12),  
+	Array.prNew(12),  Array.prNew(4),  Array.prNew(12),  Array.prNew(12),  
+	Array.prNew(12),  Array.prNew(12),  Array.prNew(4)
+];
+p = [
+	// Array
+	0, [ 37.000000,  48.000000,  o[1],  o[2],  
+		o[3],  o[4],  o[8],  o[9],  
+		0,  o[10],  o[11],  o[17],  
+		o[22],  0 ],  
+	// Array
+	1, [ 82,  83,  28,  29,  
+		16,  80,  18,  19 ],  
+	// Array
+	2, [ 74,  71,  81,  91,  
+		2,  10,  5,  21,  
+		22 ],  
+	// Array
+	4, [ o[5],  nil,  nil ],  
+	// Array
+	5, [ o[6],  o[7] ],  
+	// Array
+	8, [ nil,  nil,  nil ],  
+	// Color
+	9, [ red: 0.358209,  green: 0.104478,  
+		blue: 0.402985,  alpha: 1.000000 ],  
+	// Array
+	10, [ nil,  nil,  nil,  nil ],  
+	// List
+	11, [ array: o[12] ],  
+	// Array
+	12, [ o[13],  o[14],  o[15],  o[16] ],  
+	// Array
+	13, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil ],  
+	// Array
+	14, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil ],  
+	// Array
+	15, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil ],  
+	// Array
+	16, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil ],  
+	// Array
+	17, [ o[18],  o[19],  o[20],  o[21] ],  
+	// Array
+	18, [ 0,  0,  0,  0,  
+		0,  0,  0,  0,  
+		0,  0,  0,  0 ],  
+	// Array
+	19, [ 0,  0,  0,  0,  
+		0,  0,  0,  0,  
+		0,  0,  0,  0 ],  
+	// Array
+	20, [ 0,  0,  0,  0,  
+		0,  0,  0,  0,  
+		0,  0,  0,  0 ],  
+	// Array
+	21, [ 0,  0,  0,  0,  
+		0,  0,  0,  0,  
+		0,  0,  0,  0 ],  
+	// Array
+	22, [ 0,  0,  0,  0 ]
+];
+prUnarchive(o,p);

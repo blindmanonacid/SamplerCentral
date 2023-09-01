@@ -1,0 +1,62 @@
+<html><head><title>CDSkip</title>
+<link rel='stylesheet' href='./../scdoc.css' type='text/css' />
+<link rel='stylesheet' href='./../frontend.css' type='text/css' />
+<link rel='stylesheet' href='./../custom.css' type='text/css' />
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<script src='./../scdoc.js' type='text/javascript'></script>
+<script src='./../docmap.js' type='text/javascript'></script>
+<script src='./../prettify.js' type='text/javascript'></script>
+<script src='./../lang-sc.js' type='text/javascript'></script>
+<script src='./../MathJax/MathJax.js?config=TeX-AMS_HTML,scmathjax' type='text/javascript'></script>
+<script type='text/javascript'>var helpRoot='./..';</script>
+</head>
+<ul id='menubar'></ul>
+<body onload='fixTOC();prettyPrint()'>
+<div class='contents'>
+<div class='header'>
+<div id='label'>SuperCollider CLASSES (extension)</div>
+<div id='categories'><a href='./../Browse.html#UGens>Delays'>UGens>Delays</a></div>
+<h1>CDSkip</h1>
+<div id='summary'>Simulates CD skipping</div>
+</div>
+<div class='subheader'>
+<div id='filename'>Source: /Applications/SamplerCentral 2.6.app/Contents/Resources/SCClassLibrary/Extensions/CDSkip/Classes/<a href='file:///Applications/SamplerCentral 2.6.app/Contents/Resources/SCClassLibrary/Extensions/CDSkip/Classes/CDSkip.sc'>CDSkip.sc</a></div><div id='superclasses'>Inherits from: <a href="../Classes/MultiOutUGen.html">MultiOutUGen</a> : <a href="../Classes/UGen.html">UGen</a> : <a href="../Classes/AbstractFunction.html">AbstractFunction</a> : <a href="../Classes/Object.html">Object</a></div>
+</div>
+<div id='toc'>
+<ul class='toc'><li class='toc1'><a href='#description'>Description</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#classmethods'>Class methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#*ar'>ar</a> </li>
+<li class='toc2'><a href='#Inherited class methods'>Inherited class methods</a></li>
+</ul><li class='toc1'><a href='#instancemethods'>Instance methods</a></li>
+<ul class='toc'><li class='toc2'><a href='#Inherited instance methods'>Inherited instance methods</a></li>
+</ul><li class='toc1'><a href='#examples'>Examples</a></li>
+<ul class='toc'></ul></ul></div><h2><a class='anchor' name='description'>Description</a></h2>
+
+<p>This UGen simulates a real-time variant of CD skipping. Rather than a simple discontinuity, it includes a ballpark-accurate simulation of the random glitchy waveforms that happen when a CD player skips.
+<p>TIP: If you want easy randomized skipping without fine-grained control, enable <code class='code prettyprint lang-sc'>autoMode</code> and play with <code class='code prettyprint lang-sc'>autoSpeed</code> . Otherwise, try using Dust or Impulse in <code class='code prettyprint lang-sc'>skipTrigger</code> while playing with <code class='code prettyprint lang-sc'>pos</code> .<h2><a class='anchor' name='classmethods'>Class Methods</a></h2>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*ar' href='./../Overviews/Methods.html#ar'>ar</a> (<span class='argstr'>in</span>, <span class='argstr'>maxDelay: 2</span>, <span class='argstr'>autoMode: 0</span>, <span class='argstr'>autoSpeed: 1</span>, <span class='argstr'>skipTrigger: 0</span>, <span class='argstr'>resetTrigger: 0</span>, <span class='argstr'>pos: 0</span>, <span class='argstr'>freeze: 0</span>, <span class='argstr'>clean: 0</span>)</h3>
+<div class='method'>
+<p><h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>in<td class='argumentdesc'>
+<p>Input signal. Must be stereo!<tr><td class='argumentname'>maxDelay<td class='argumentdesc'>
+<p>Length of the internal stereo buffer in seconds. Non-modulatable.<tr><td class='argumentname'>autoMode<td class='argumentdesc'>
+<p>If positive, enable "auto mode." This automatically generates random skips and dropouts for you. Control rate only.<tr><td class='argumentname'>autoSpeed<td class='argumentdesc'>
+<p>Speed of auto mode. At 1, the timing of glitches and dropouts is based on a real CD scratch experiment. Control rate only.<tr><td class='argumentname'>skipTrigger<td class='argumentdesc'>
+<p>If input signal crosses from non-positive to positive, a skip to <code class='code prettyprint lang-sc'>pos</code> happens, where <code class='code prettyprint lang-sc'>pos</code> ranges from 0 (beginning of buffer) to 1 (end of buffer).
+<p>Audio rate only. If this signal is not audio rate, it is converted to audio rate using a T2A.<tr><td class='argumentname'>resetTrigger<td class='argumentdesc'>
+<p>If input signal crosses from non-positive to positive, a skip happens such that the read head is <code class='code prettyprint lang-sc'>pos</code> seconds behind the write head.
+<p>Audio rate only. If this signal is not audio rate, it is converted to audio rate using a T2A.
+<p>If both triggers are activated at the same time, <code class='code prettyprint lang-sc'>skipTrigger</code> overrides <code class='code prettyprint lang-sc'>resetTrigger</code>.<tr><td class='argumentname'>pos<td class='argumentdesc'>
+<p>This argument has different meanings depending on whether <code class='code prettyprint lang-sc'>skipTrigger</code> or <code class='code prettyprint lang-sc'>resetTrigger</code> is used. For <code class='code prettyprint lang-sc'>skipTrigger</code>, this ranges from 0 (beginning of buffer) to 1 (end of buffer). The position is relatively arbitrary, but this has the advantage that skipping multiple times to the same position gives the classic CD repeat effect.
+<p>For <code class='code prettyprint lang-sc'>resetTrigger</code>, <code class='code prettyprint lang-sc'>pos</code> indicates the delay in seconds, and therefore ranges from 0 (inclusive) to <code class='code prettyprint lang-sc'>maxDelay</code> (exclusive). <code class='code prettyprint lang-sc'>resetTrigger</code> may be preferable if you want controls more like a delay unit.<tr><td class='argumentname'>freeze<td class='argumentdesc'>
+<p>If positive, prevent the write head from writing anything or from advancing. Control rate only.<tr><td class='argumentname'>clean<td class='argumentdesc'>
+<p>If positive, no glitch waveform is generated, and standard discontinuities are used instead. Control rate only.</table></div><h3><a class='anchor' name='Inherited class methods'>Inherited class methods</a></h3>
+<div id='inheritedclassmets'></div><h2><a class='anchor' name='instancemethods'>Instance Methods</a></h2>
+<h3><a class='anchor' name='Inherited instance methods'>Inherited instance methods</a></h3>
+<div id='inheritedinstmets'></div><h2><a class='anchor' name='examples'>Examples</a></h2>
+<pre class='code prettyprint lang-sc'>{ CDSkip.ar(SinOsc.ar ! 2, autoMode: 1) }.play;
+
+{ CDSkip.ar(SinOsc.ar ! 2, skipTrigger: Impulse.ar(4)) }.play;</pre>
+
+<p><div class='doclink'>source: <a href='file:///Applications/SamplerCentral 2.6.app/Contents/Resources/SCClassLibrary/Extensions/CDSkip/HelpSource/Classes/CDSkip.schelp'>/Applications/SamplerCentral 2.6.app/Contents/Resources/SCClassLibrary/Extensions/CDSkip/HelpSource/Classes/CDSkip.schelp</a><br>link::Classes/CDSkip::<br>sc version: 3.6dev</div></div></body></html>

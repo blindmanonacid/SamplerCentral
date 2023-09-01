@@ -1,0 +1,223 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\froman\fcharset0 Times-Roman;
+\f3\fswiss\fcharset0 Helvetica-Oblique;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\deftab560
+\pard\pardeftab560\partightenfactor0
+
+\f0\b\fs40 \cf0 \expnd0\expndtw0\kerning0
+Using The Sampler
+\f1\b0 \
+\pard\pardeftab560\partightenfactor0
+
+\fs24 \cf0 \
+\
+\pard\pardeftab560\partightenfactor0
+
+\fs40 \cf0 The Basics\
+\pard\pardeftab560\partightenfactor0
+
+\fs24 \cf0 \
+\
+\pard\pardeftab560\partightenfactor0
+
+\f0\b\fs28 \cf0 Loading Soundfiles
+\f1\b0\fs24 \
+\
+To load a soundfile drag one from the finder on to a key, knob or slider. WAV and AIFF files are supported, not MP3 or any other.\
+\
+You can also shift-click on a key, knob or slider to browse for a file.\
+\
+You can also drag and drop more than one soundfile to load several files at once. They will spread upwards for as many keys/knobs/sliders as there are files dragged.\
+\
+It is possible to load more than one soundfile on one key, more on that below.\
+\
+\
+
+\f0\b\fs28 Knob / Slider Settings
+\f1\b0\fs24 \
+\
+\pard\pardeftab560\partightenfactor0
+\cf0 {{\NeXTGraphic using1knob.png \width2260 \height3400 \noorient \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab560\partightenfactor0
+
+\f2\fs32 \cf0 \
+
+\f0\b\fs24 Panning
+\f1\b0  - individual panning for each knob/slider. Alt-click center pans. (dragging an other knob should make the panning controlled by that knob, dosent work atm)\
+\
+
+\f0\b Output channel
+\f1\b0  - when the output channel is set to 
+\f0\b nil
+\f1\b0  the output will be what the sampler is set to.\
+\
+
+\f0\b Reset sample to start position
+\f1\b0 \
+On knobs and sliders a ctrl-click will reset the soundfile to the start and also stop it if it is playing.\
+\
+
+\f0\b Using to pan other keys/sliders/knobs\
+\pard\pardeftab560\partightenfactor0
+
+\f1\b0 \cf0 Hold cmd and click and drag a knob onto a key/slider/knob to use it to control the panning of that key/slider/knob. This is not saved in presets or when closing the sampler\
+\pard\pardeftab560\partightenfactor0
+
+\f0\b \cf0 \
+\
+\pard\pardeftab560\partightenfactor0
+
+\fs28 \cf0 Key Sound Settings
+\f1\b0\fs24 \
+\
+Clicking a key brings up the keys settings. Every key can have a different panning, output etc.\
+There are ways to automate settings depending on what folder the file is from. That is explained in the Preferences helpfile.\
+\
+The image below is old and I can't be bothered to photoshop a new one, it's mostly correct.\
+\pard\pardeftab560\partightenfactor0
+\cf0 {{\NeXTGraphic using2soundSettings.png \width7720 \height6500 \noorient \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab560\partightenfactor0
+
+\f2\fs32 \cf0 \
+\pard\pardeftab560\partightenfactor0
+
+\f1\fs24 \cf0 \
+Most of this explains itself, except maybe:\
+\
+There's also a 
+\f0\b green S
+\f1\b0  that opens options to send MIDI / OSC / DMX.\
+\
+There's also a 
+\f0\b >>
+\f1\b0  button that indicates the direction of the sound. Click it to reverse, or drag the knob above to adjust both rate and direction.\
+\
+\pard\pardeftab560\partightenfactor0
+
+\f0\b \cf0 |--| midi send
+\f1\b0  - is actually not midi send at all but opens a window where you can set loop points.\
+\
+
+\f0\b rm
+\f1\b0  - removes soundfile from key and clears all settings on that key.\
+\
+
+\f0\b killa
+\f1\b0  - stops all other sounds playing on the keys, not on sliders or knobs\
+\
+
+\f0\b sh
+\f1\b0  - "shot", ignores so called 'note off' messages so when you push the key the sound will play to the end of the file even if you stop pressing the key\
+\
+
+\f0\b menu
+\f1\b0  - in the menu you can choose between different kinds of playback:\
+\
+\pard\pardeftab560\partightenfactor0
+\cf0 {{\NeXTGraphic using3menu.png \width4540 \height5640 \noorient \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab560\partightenfactor0
+
+\f2\fs32 \cf0 \
+\pard\pardeftab560\partightenfactor0
+
+\f1\fs24 \cf0 \
+\pard\pardeftab560\partightenfactor0
+
+\f0\b \cf0 piano
+\f1\b0  - the sound plays for as long as you hold the key down, stops when you release the key\
+\
+
+\f0\b shot
+\f1\b0  - the sound plays until end of file regardless of releasing the key\
+\
+
+\f0\b toggle
+\f1\b0  - the sound plays until you push the key down a second time\
+\
+
+\f0\b 3 samples
+\f1\b0  - this is broken.... or not\
+	first sample on green strip is attack\
+	sample on key is the loop\
+	second sample on green strip is release\
+\
+
+\f0\b 2 samples
+\f1\b0  - when this is selected a green strip appears to the right of the menu. Drop a soundfile here or shift-click on it to load a second soundfile to be played. The sound loaded at the key (which name is displayed at the key and at the top of the settings part) plays when pushing the key. When releasing the key the first sound stops and the second starts and plays until the end of the sound, unless the key is pushed again, which stops the second sound and starts the first.\
+\
+
+\f0\b many
+\f1\b0  - this makes it possible to load as many sounds as you want on to one key and play them in sequence, random, or ping-pong (from the first to the last, then reverse back to first), all by hitting one key. If the key is not pushed in 5 seconds the next sound to play is the first. Releasing the key stops the sound unless the 
+\f0\b sh
+\f1\b0  button is on.\
+\
+\pard\pardeftab560\partightenfactor0
+\cf0 {{\NeXTGraphic using4many.png \width4520 \height5060 \noorient \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab560\partightenfactor0
+
+\f2\fs32 \cf0 \
+\pard\pardeftab560\partightenfactor0
+
+\f1\fs24 \cf0 \
+The best and easiest way to use this feature is to put all the sounds you want on the key in a folder, with the names of the files making the order you want, and then drop the folder on a key. This way it happens automagically. You can also choose 
+\f0\b many
+\f1\b0  from the menu and pull the samples in one by one, or select several and it will expand. Note that the soundfile 
+\f3\i on the key
+\f1\i0  is not played, only the ones loaded on the 
+\f3\i green strips
+\f1\i0 .\
+\
+(I have not tried more than ~50 files so I don't know what the limit is, if there is any...)\
+\
+\
+\pard\pardeftab560\partightenfactor0
+
+\f0\b\fs28 \cf0 PitchWheel
+\f1\b0\fs24 \
+To use the Pitchwheel on the midi keyboard to pitch the sound up and down you need to choose what is going to be pitched. The three buttons top right 
+\f0\b SL bnd
+\f1\b0 , 
+\f0\b KN bnd
+\f1\b0 , and 
+\f0\b Ky bnd
+\f1\b0 , lets you turn it on or off for Sliders, Knobs and Keys respectively.\
+\
+
+\f0\b\fs28 ModWheel
+\f1\b0\fs24 \
+Right under the bend buttons is the 
+\f0\b modWH
+\f1\b0  button. Turn this on to control the starting position in the sample with the modulation wheel on the midi keyboard. \
+\
+
+\f0\b\fs28 ProgressView (pr view)
+\f1\b0\fs24 \
+The Progress View is what I call the orange line that moves across the keys as you play a key, indicating how much time is left playing the sound, and similarly on the knobs and sliders with the timer. If for some reason you don't want this showing you can disable/enable it with this button. \
+\
+
+\f0\b\fs28 Computer Keyboard to trigger notes
+\f1\b0\fs24 \
+The KB button lets you use part of the computer keyboard to trigger the first octave or so of the keys.\
+\
+
+\f0\b\fs28 Effects
+\f1\b0\fs24 \
+The effects panel "works" but is not to be trusted at this time. It can crash everything and cause a revolution.\
+\
+
+\f0\b\fs28 Panic
+\f1\b0\fs24 \
+Things have gone out of control and you need to stop everything happening 
+\f3\i on this keyboard
+\f1\i0 ? Push 
+\f0\b panic
+\f1\b0 .\
+\
+
+\f0\b\fs28 Kill All Sound
+\f1\b0\fs24 \
+Maybe you don't like sound at all, just kill them all. This is a last resort if things have gotten out of hand\
+\
+}

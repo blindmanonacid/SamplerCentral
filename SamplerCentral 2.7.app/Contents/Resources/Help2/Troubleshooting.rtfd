@@ -1,0 +1,58 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\fswiss\fcharset0 Helvetica-BoldOblique;
+\f3\fswiss\fcharset0 Helvetica-Oblique;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\deftab720
+\pard\pardeftab720\sl460\partightenfactor0
+
+\f0\b\fs50 \cf2 \expnd0\expndtw0\kerning0
+Troubleshooting
+\f1\b0\fs40 \
+\pard\pardeftab720\sl280\partightenfactor0
+
+\fs24 \cf2 \uc0\u8232 \
+\pard\pardeftab720\sl460\partightenfactor0
+
+\fs40 \cf2 There is no sound...\
+\pard\pardeftab720\sl280\partightenfactor0
+
+\fs24 \cf2 \uc0\u8232 \
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f0\b \cf2 ...Server doesn't start / audio input and output doesn't match
+\f1\b0 \
+- Be sure that in "Audio Midi Settings" in MacOS the sample rate is set to 48000 on both input and output. Sometimes other DAW apps will mess with this, If SamplerCentral complains that audio input and output doesn't match, check Audio Midi Settings" in MacOS, if it says 48000 on both microphone and output you should be able to re-start SamplerCentral and it should work. It could also be in your soundcard settings depending on the soundcard you use.\
+\uc0\u8232 \
+
+\f0\b ...but the knobs/sliders/keys 
+\f2\i are
+\f0\i0  responding
+\f1\b0 \
+\uc0\u8232 \
+- There is a bug in SuperCollider in OSX 10.6 that crashes the sound if the headphone output is plugged/unplugged while it is running. Try restarting the program.\
+\uc0\u8232 \
+- Check if there is sound in the application itself on the level meter. Click somewhere on the menu to get it in focus and then push 'L' on your keyboard.\
+\uc0\u8232 \
+
+\f0\b ...and the knobs/sliders/keys are 
+\f2\i not
+\f0\i0  responding
+\f1\b0 \
+\uc0\u8232 \
+- Be sure you connected the midikeyboard first, 
+\f3\i then
+\f1\i0  started Sampler Central\
+\uc0\u8232 \
+- Check that you got the correct MIDI channel in preferences.\
+\uc0\u8232 \
+
+\f0\b ...MIDI stops working
+\f1\b0 \
+\
+- If during playing suddenly there's no input from the midi keyboard, maybe the cable was loose or something, try clicking the "re-init midi" button. It may fix things or you may need to restart the program.\
+\uc0\u8232 \
+\uc0\u8232 \
+\uc0\u8232 \
+\uc0\u8232 \
+}

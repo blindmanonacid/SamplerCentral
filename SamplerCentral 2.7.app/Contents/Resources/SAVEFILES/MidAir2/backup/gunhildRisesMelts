@@ -1,0 +1,297 @@
+var o, p;
+o = [
+	Array.prNew(5),  Array.prNew(37),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/test/borkman/steps/borkmSTbootbell1.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits Eng/steps/marchStepShort.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/test/borkman/steps/borkmSTbootbell1.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/test/borkman/steps/borkmanstepRev1.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/test/borkman/steps/borkmanstepRev2.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Tale/Borkman/Frida/arie hahaha.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/test/borkman/steps/folldalsteps/1bongo_dyp.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits Eng/scratch.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Et Dukkehjem/HelmerKremt.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Musikk/mugabes sang.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits Eng/writing.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Musikk/ekdalsPop/opploftende/walkingSun1.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/test/borkman/steps/iceStep11.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/test/borkman/steps/iceStep12.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/rot/ice/short/cleaned/Ice_crack_10_Sound_Effects_studio_1_0_04_797546.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/rot/ice/short/cleaned/Ice_crack_11_Sound_Effects_studio_1_0_02_797547.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/rot/ice/short/cleaned/Ice_crack_12_Sound_Effects_studio_1_0_01_797548.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits/IsKnake1.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits/isKnake2.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits/isKnake3.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits/isKnekke1.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits/isKnekke2.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits/splash_vann1.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/rot/ice/short/cleaned/Ice_crack_03_Sound_Effects_studio_1_0_02_797539.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/rot/ice/short/cleaned/Ice_crack_04_Sound_Effects_studio_1_0_02_797540.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/rot/ice/short/cleaned/Celery_Crack_HI048105_Sound_Effects_hollywoodedge_0_03_1099.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/rot/ice/short/cleaned/Celery_Crack_HI048106_Sound_Effects_hollywoodedge_0_03_1099.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/rot/ice/short/cleaned/Celery_Crack_HI048107_Sound_Effects_hollywoodedge_0_02_1099.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits Eng/screams/FSscream.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits/falle1.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits/falle2.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits/falle3.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits/falle4.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits Eng/steps/waterStep1.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/test/borkman/CallasScreamStretch.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits/skritt/sno1.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/hits/skritt/sno2.wav",  List.prNew,  
+	Array.prNew(37),  Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  
+	Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  
+	Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  
+	Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  
+	Array.prNew(11),  Array.prNew(11),  Array.prNew(13),  Array.prNew(13),  
+	Array.prNew(13),  Array.prNew(13),  Array.prNew(13),  Array.prNew(13),  
+	Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  Array.prNew(11),  
+	Array.prNew(11),  Array.prNew(13),  Array.prNew(13),  Array.prNew(13),  
+	Array.prNew(13),  Array.prNew(13),  Array.prNew(13),  Array.prNew(11),  
+	Array.prNew(13),  Array.prNew(13),  Array.prNew(8),  Array.prNew(4),  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops/bolgeskvulp.wav",  "diskin",  Array.prNew(4),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops Eng/sticky.wav",  
+	Array.prNew(4),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops/operasjon2.wav",  Array.prNew(4),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Tale/Fru Sorby/_x/FS operaLaugh.wav",  
+	"diskin",  Array.prNew(4),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops/vind_kald.wav",  Array.prNew(4),  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/test/borkman/wavesLoopTest2.wav",  Array.prNew(4),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Tale/Ekdal/_x/Ekdal oi oi oi.wav",  Array.prNew(4),  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops Eng/cryingMan.wav",  "gpLooper",  Array.prNew(9),  Array.prNew(4),  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/rot/ice/iceCrackingDeep2.wav",  "diskin",  Array.prNew(4),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/rot/ice/melting/iceMeltingTest1.wav",  
+	"gpLooper",  Array.prNew(4),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops Eng/crows.wav",  Array.prNew(4),  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/test/borkman/teethChatterGoodFast.wav",  "diskin",  Array.prNew(4),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops Eng/wavesCalm.wav",  
+	Array.prNew(4),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/Musikk/muzak.wav",  Array.prNew(4),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops/jordskjelv2.wav",  
+	"gpLooper",  Array.prNew(4),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops Eng/earthCracking.wav",  Array.prNew(4),  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/loops/vind_kald.wav",  List.prNew,  Array.prNew(37),  Array.prNew,  
+	Array.prNew,  Array.prNew(4),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/test/borkman/steps/borkmSTbootbell1.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/test/borkman/steps/borkmSTbootbell2.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/test/borkman/steps/borkmSTbootbell3.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/test/borkman/steps/borkmSTbootbell4.wav",  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew(6),  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/test/borkman/steps/folldalsteps/1bongo_dyp.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/test/borkman/steps/folldalsteps/2bongo_edge.wav",  
+	"/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/test/borkman/steps/folldalsteps/3bongo_lys_klar.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/test/borkman/steps/folldalsteps/4bongo_edge2.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/test/borkman/steps/folldalsteps/5bongo-triplet.wav",  "/Volumes/MEDIA/Prosjekter/Vildanden/Villanden Lyd/test/borkman/steps/folldalsteps/6bongo_clack.wav",  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew,  Array.prNew,  Array.prNew,  
+	Array.prNew,  Array.prNew
+];
+p = [
+	// Array
+	0, [ o[1],  o[39],  o[78],  o[98],  
+		o[121] ],  
+	// Array
+	1, [ o[2],  o[3],  o[4],  o[5],  
+		o[6],  o[7],  o[8],  o[9],  
+		o[10],  o[11],  o[12],  o[13],  
+		o[14],  o[15],  o[16],  o[17],  
+		o[18],  o[19],  o[20],  o[21],  
+		o[22],  o[23],  o[24],  o[25],  
+		o[26],  o[27],  o[28],  o[29],  
+		o[30],  o[31],  o[32],  o[33],  
+		o[34],  o[35],  o[36],  o[37],  
+		o[38] ],  
+	// List
+	39, [ array: o[40] ],  
+	// Array
+	40, [ o[41],  o[42],  o[43],  o[44],  
+		o[45],  o[46],  o[47],  o[48],  
+		o[49],  o[50],  o[51],  o[52],  
+		o[53],  o[54],  o[55],  o[56],  
+		o[57],  o[58],  o[59],  o[60],  
+		o[61],  o[62],  o[63],  o[64],  
+		o[65],  o[66],  o[67],  o[68],  
+		o[69],  o[70],  o[71],  o[72],  
+		o[73],  o[74],  o[75],  o[76],  
+		o[77] ],  
+	// Array
+	41, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	42, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	43, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	44, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	45, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	46, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	47, [ 0.500000,  0,  5,  0.010000,  
+		0.200000,  0,  0,  2,  
+		0,  0,  nil ],  
+	// Array
+	48, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	49, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	50, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	51, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	52, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	53, [ 1.000000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	54, [ 1.000000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	55, [ 1.000000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	56, [ 1.000000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	57, [ 1.000000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	58, [ 1.000000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	59, [ 1.000000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	60, [ 1.000000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	61, [ 1.000000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	62, [ 0.933962,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	63, [ 0.706897,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	64, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	65, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	66, [ 0.830189,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	67, [ 0.830189,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	68, [ 0.915094,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	69, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	70, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	71, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	72, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	73, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	74, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	75, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil ],  
+	// Array
+	76, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	77, [ 0.500000,  0,  0,  0.010000,  
+		0.200000,  0,  0,  3,  
+		0,  0,  nil,  nil,  
+		nil ],  
+	// Array
+	78, [ o[79],  o[82],  o[84],  o[86],  
+		o[89],  o[91],  o[93],  o[95] ],  
+	// Array
+	79, [ o[80],  o[81],  1,  nil ],  
+	// Array
+	82, [ o[83],  o[81],  1,  nil ],  
+	// Array
+	84, [ o[85],  o[81],  1,  nil ],  
+	// Array
+	86, [ o[87],  o[88],  1,  nil ],  
+	// Array
+	89, [ o[90],  o[81],  1,  nil ],  
+	// Array
+	91, [ o[92],  o[81],  1,  nil ],  
+	// Array
+	93, [ o[94],  o[81],  1,  nil ],  
+	// Array
+	95, [ o[96],  o[97],  1,  nil ],  
+	// Array
+	98, [ o[99],  o[102],  o[105],  o[107],  
+		o[110],  o[112],  o[114],  o[117],  
+		o[119] ],  
+	// Array
+	99, [ o[100],  o[101],  1,  nil ],  
+	// Array
+	102, [ o[103],  o[104],  1,  nil ],  
+	// Array
+	105, [ o[106],  o[104],  1,  nil ],  
+	// Array
+	107, [ o[108],  o[109],  1,  nil ],  
+	// Array
+	110, [ o[111],  o[109],  1,  nil ],  
+	// Array
+	112, [ o[113],  o[101],  1,  nil ],  
+	// Array
+	114, [ o[115],  o[116],  1,  nil ],  
+	// Array
+	117, [ o[118],  o[101],  1,  nil ],  
+	// Array
+	119, [ o[120],  o[109],  1,  nil ],  
+	// List
+	121, [ array: o[122] ],  
+	// Array
+	122, [ o[123],  o[124],  o[125],  o[130],  
+		o[131],  o[132],  o[133],  o[140],  
+		o[141],  o[142],  o[143],  o[144],  
+		o[145],  o[146],  o[147],  o[148],  
+		o[149],  o[150],  o[151],  o[152],  
+		o[153],  o[154],  o[155],  o[156],  
+		o[157],  o[158],  o[159],  o[160],  
+		o[161],  o[162],  o[163],  o[164],  
+		o[165],  o[166],  o[167],  o[168],  
+		o[169] ],  
+	// Array
+	125, [ o[126],  o[127],  o[128],  o[129] ],  
+	// Array
+	133, [ o[134],  o[135],  o[136],  o[137],  
+		o[138],  o[139] ]
+];
+prUnarchive(o,p);

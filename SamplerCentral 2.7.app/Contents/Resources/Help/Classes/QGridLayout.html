@@ -1,0 +1,75 @@
+<html><head><title>QGridLayout</title>
+<link rel='stylesheet' href='./../scdoc.css' type='text/css' />
+<link rel='stylesheet' href='./../frontend.css' type='text/css' />
+<link rel='stylesheet' href='./../custom.css' type='text/css' />
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<script src='./../scdoc.js' type='text/javascript'></script>
+<script src='./../docmap.js' type='text/javascript'></script>
+<script src='./../prettify.js' type='text/javascript'></script>
+<script src='./../lang-sc.js' type='text/javascript'></script>
+<script src='./../MathJax/MathJax.js?config=TeX-AMS_HTML,scmathjax' type='text/javascript'></script>
+<script type='text/javascript'>var helpRoot='./..';</script>
+</head>
+<ul id='menubar'></ul>
+<body onload='fixTOC();prettyPrint()'>
+<div class='contents'>
+<div class='header'>
+<div id='label'>SuperCollider CLASSES</div>
+<div id='categories'><a href='./../Browse.html#Redirect Class Implementors'>Redirect Class Implementors</a></div>
+<h1>QGridLayout</h1>
+<div id='summary'>Implements GridLayout</div>
+</div>
+<div class='subheader'>
+<div id='filename'>Source: /Applications/SamplerCentral 2.3.app/Contents/Resources/SCClassLibrary/QtCollider/<a href='file:///Applications/SamplerCentral 2.3.app/Contents/Resources/SCClassLibrary/QtCollider/QLayout.sc'>QLayout.sc</a></div><div id='superclasses'>Inherits from: <a href="../Classes/QLayout.html">QLayout</a> : <a href="../Classes/QObject.html">QObject</a> : <a href="../Classes/Object.html">Object</a></div>
+</div>
+<div id='toc'>
+<ul class='toc'><li class='toc1'><a href='#description'>Description</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#classmethods'>Class methods</a></li>
+<ul class='toc'><li class='toc2'><a href='#Inherited class methods'>Inherited class methods</a></li>
+<li class='toc2'><a href='#Undocumented class methods'>Undocumented class methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#*columns'>columns</a> </li>
+<li class='toc3'><a href='#*implementsClass'>implementsClass</a> </li>
+<li class='toc3'><a href='#*new'>new</a> </li>
+<li class='toc3'><a href='#*parse'>parse</a> </li>
+<li class='toc3'><a href='#*qtClass'>qtClass</a> </li>
+<li class='toc3'><a href='#*rows'>rows</a> </li>
+</ul></ul><li class='toc1'><a href='#instancemethods'>Instance methods</a></li>
+<ul class='toc'><li class='toc2'><a href='#Inherited instance methods'>Inherited instance methods</a></li>
+<li class='toc2'><a href='#Undocumented instance methods'>Undocumented instance methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#-add'>add</a> </li>
+<li class='toc3'><a href='#-addSpanning'>addSpanning</a> </li>
+<li class='toc3'><a href='#-hSpacing'>hSpacing</a> </li>
+<li class='toc3'><a href='#-minColumnWidth'>minColumnWidth</a> </li>
+<li class='toc3'><a href='#-minRowHeight'>minRowHeight</a> </li>
+<li class='toc3'><a href='#-setAlignment'>setAlignment</a> </li>
+<li class='toc3'><a href='#-setColumnStretch'>setColumnStretch</a> </li>
+<li class='toc3'><a href='#-setMinColumnWidth'>setMinColumnWidth</a> </li>
+<li class='toc3'><a href='#-setMinRowHeight'>setMinRowHeight</a> </li>
+<li class='toc3'><a href='#-setRowStretch'>setRowStretch</a> </li>
+<li class='toc3'><a href='#-vSpacing'>vSpacing</a> </li>
+</ul></ul></ul></div><h2><a class='anchor' name='description'>Description</a></h2>
+
+<p>Implements <a href="./../Classes/GridLayout.html">GridLayout</a><h2><a class='anchor' name='classmethods'>Class Methods</a></h2>
+<h3><a class='anchor' name='Inherited class methods'>Inherited class methods</a></h3>
+<div id='inheritedclassmets'></div><h3><a class='anchor' name='Undocumented class methods'>Undocumented class methods</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*columns' href='./../Overviews/Methods.html#columns'>columns</a> ( <span class='argstr'>... cols</span>)</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*implementsClass' href='./../Overviews/Methods.html#implementsClass'>implementsClass</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*new' href='./../Overviews/Methods.html#new'>new</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*parse' href='./../Overviews/Methods.html#parse'>parse</a> (<span class='argstr'>in</span>, <span class='argstr'>row</span>, <span class='argstr'>col</span>)</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*qtClass' href='./../Overviews/Methods.html#qtClass'>qtClass</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*rows' href='./../Overviews/Methods.html#rows'>rows</a> ( <span class='argstr'>... rows</span>)</h3>
+<h2><a class='anchor' name='instancemethods'>Instance Methods</a></h2>
+<h3><a class='anchor' name='Inherited instance methods'>Inherited instance methods</a></h3>
+<div id='inheritedinstmets'></div><h3><a class='anchor' name='Undocumented instance methods'>Undocumented instance methods</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-add' href='./../Overviews/Methods.html#add'>add</a> (<span class='argstr'>item</span>, <span class='argstr'>row</span>, <span class='argstr'>column</span>, <span class='argstr'>align</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-addSpanning' href='./../Overviews/Methods.html#addSpanning'>addSpanning</a> (<span class='argstr'>item</span>, <span class='argstr'>row</span>, <span class='argstr'>column</span>, <span class='argstr'>rowSpan: 1</span>, <span class='argstr'>columnSpan: 1</span>, <span class='argstr'>align</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-hSpacing' href='./../Overviews/Methods.html#hSpacing'>hSpacing</a><h3 class='imethodname'><span class='methprefix'>-</span><a name='-hSpacing' href='./../Overviews/Methods.html#hSpacing'>hSpacing</a> = <span class='argstr'>spacing</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-minColumnWidth' href='./../Overviews/Methods.html#minColumnWidth'>minColumnWidth</a> (<span class='argstr'>column</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-minRowHeight' href='./../Overviews/Methods.html#minRowHeight'>minRowHeight</a> (<span class='argstr'>row</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setAlignment' href='./../Overviews/Methods.html#setAlignment'>setAlignment</a> (<span class='argstr'>item</span>, <span class='argstr'>align</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setColumnStretch' href='./../Overviews/Methods.html#setColumnStretch'>setColumnStretch</a> (<span class='argstr'>column</span>, <span class='argstr'>factor</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setMinColumnWidth' href='./../Overviews/Methods.html#setMinColumnWidth'>setMinColumnWidth</a> (<span class='argstr'>column</span>, <span class='argstr'>width</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setMinRowHeight' href='./../Overviews/Methods.html#setMinRowHeight'>setMinRowHeight</a> (<span class='argstr'>row</span>, <span class='argstr'>height</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setRowStretch' href='./../Overviews/Methods.html#setRowStretch'>setRowStretch</a> (<span class='argstr'>row</span>, <span class='argstr'>factor</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-vSpacing' href='./../Overviews/Methods.html#vSpacing'>vSpacing</a><h3 class='imethodname'><span class='methprefix'>-</span><a name='-vSpacing' href='./../Overviews/Methods.html#vSpacing'>vSpacing</a> = <span class='argstr'>spacing</span></h3>
+<div class='doclink'>link::Classes/QGridLayout::<br>sc version: 3.6dev</div></div></body></html>

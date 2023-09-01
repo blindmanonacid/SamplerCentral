@@ -1,0 +1,118 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\deftab560
+\pard\pardeftab560
+
+\f0\b\fs48 \cf0 \expnd0\expndtw0\kerning0
+Global Setup
+\f1\b0 \
+
+\fs40 \
+
+\fs24 Global Setup is accessed by clicking the black '
+\f0\b global setup
+\f1\b0 ' button near the bottom of the menu where you load new samplers.\
+\
+\
+
+\fs40 Sound Card Connection Priority\
+
+\fs24 \
+Here you can choose what soundcard Sampler Central should connect to if it is present. This is uselful if you work with different soundcards and dont want to mess around with settings at startup.\
+\
+\
+
+\f0\b\fs28 Output Bus Channels
+\f1\b0 \
+
+\fs24 \
+The number of internal channels Sampler Central uses. It should be set to the same or more than your soundcard has outputs. This is not displaying channels available in the soundcard.\
+\
+\
+
+\f0\b\fs28 Input Bus Channels
+\f1\b0 \
+
+\fs24 \
+The number of internal channels Sampler Central uses for input. Sampler Central at the moment does not use any input (this will change soon though...) so it's good to set to 0. This is also not displaying channels available in the soundcard.\
+\
+\
+
+\f0\b\fs28 Sample Rate
+\f1\b0 \
+
+\fs24 \
+If for some reason you don't want to use 44100 as a sample rate you can change that here.\
+\
+\
+
+\f0\b\fs28 Hardware Buffer Size
+\f1\b0 \
+
+\fs24 \
+This is the number of samples that SC processes at every tick of the CPU. Lower settings means more work for the CPU, but less latency in the sound. 1024 is generally a good setting. If you have CPU problems you can try to set this to a higher value.\
+\
+\
+
+\f0\b\fs28 Memory Size
+\f1\b0 \
+
+\fs24 \
+At the moment there is no reason to change this since no effects or processes uses much of this memory...\
+\
+\
+\pard\pardeftab560
+
+\fs40 \cf0 Launch Sampler at Startup
+\fs24 \
+\
+\pard\pardeftab560
+\cf0 Choose a sampler from the menu to have it open when SamplerCentral starts. To remove it from starting (not deleting the sampler) click 
+\f0\b rm
+\f1\b0 . Remember to 
+\f0\b Save Preferences
+\f1\b0 . I hope to update this soon so it remembers what position each sampler window has too... \
+\
+\pard\pardeftab560
+
+\fs40 \cf0 Updating
+\fs24 \
+\
+\pard\pardeftab560
+\cf0 First close any open instance of SamplerCentral.\
+\
+1. unzip and move the newer version folder of SamplerCentral 2.x.x to Applications\
+2. Open the 
+\f0\b new version
+\f1\b0  of SamplerCentral\
+3. Click 
+\f0\b global setup
+\f1\b0  from the menu and then the 
+\f0\b update/merge
+\f1\b0  button.\
+4. Drag the 
+\f0\b old version
+\f1\b0  of SamplerCentral (the app) into the square that says 
+\f0\b drop app here
+\f1\b0 .\
+5. Click the 
+\f0\b reset/clean up
+\f1\b0  button, click 
+\f0\b ok
+\f1\b0  in the pop up window\
+6. Click the 
+\f0\b merge from old
+\f1\b0  button, click 
+\f0\b ok
+\f1\b0  in the pop up window\
+7. Close and open SamplerCentral again (or press 
+\f0\b cmd+k
+\f1\b0 , this restarts the app)\
+8. If it all seems to work fine remember to also remove the SamplerCentral icon from the dock of the old version and drag the new version of the app to the dock.\
+\
+\pard\pardeftab560
+\cf0 \
+\
+}
