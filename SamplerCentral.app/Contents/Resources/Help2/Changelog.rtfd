@@ -1,0 +1,33 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\deftab560
+\pard\pardeftab560
+
+\f0\b\fs60 \cf0 \expnd0\expndtw0\kerning0
+Changelog\
+
+\f1\b0\fs32 \
+Here are what has been changed in each update. \
+\
+\pard\pardeftab560
+
+\fs30 \cf0 ??/2023 - Version 2.7.3\
+- added hotkeys. Bind midi buttons to record or change outputs more intuitively\
+- added documentation for using mp3 in tips and tricks helpfile
+\fs32 \
+\
+
+\fs30 31/08/2023 - Version 2.7.2\
+fixed a big mistake, don't use 2.7.1\
+- added window position memory. Sampler windows will open in the same place as they were last session\
+\
+30/08/2023 - Version 2.7.1\
+- added mixer\
+\
+24/08/2023 - Version 2.7\
+- added Clock robot controls\
+- added xbox robot controls\
+- finally the help documentation is more or less complete\
+- }

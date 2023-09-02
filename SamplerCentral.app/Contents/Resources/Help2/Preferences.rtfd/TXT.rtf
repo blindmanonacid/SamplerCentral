@@ -1,0 +1,177 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\fswiss\fcharset0 Helvetica-Oblique;
+\f3\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\deftab560
+\pard\pardeftab560
+
+\f0\b\fs48 \cf0 \expnd0\expndtw0\kerning0
+Preferences
+\f1\b0 \
+
+\fs40 \
+
+\fs24 Preferences are accessed by clicking the black '
+\f0\b setup
+\f1\b0 ' button in the upper right corner of the sampler.\
+\
+\
+
+\fs40 Preferences\
+
+\fs24 \
+Some settings are greyed and cant be changed once the sampler is created - the number of keys, faders and knobs and the name.\
+\
+You can set up faders and knobs again, and change the lowest key on the keyboard, and change the midi input.\
+\
+There are some new settings in the preferences:\
+\
+
+\f0\b MIDI channel
+\f1\b0 \
+Only listen to one MIDI channel, 1-16, or set to 0 to accept MIDI from all channels.\
+\
+
+\f0\b Main Output
+\f1\b0 \
+This sets the output channel that the key/knob/slider will output on unless an other output channel is set at the key/knob/slider's own setting. If set to 
+\f0\b nil
+\f1\b0  it will default to the first two channels on the soundcard. If set to anything else the sampler 
+\f2\i should
+\f1\i0  be smart enough to sense if running on the internal soundcard (which only has stereo out) and play all sounds on those channels temporarily.\
+\
+\
+\
+
+\fs40 Backups\
+
+\fs24 \
+Previously saved presets are saved as backups. To restore one choose them from the menu at the bottom and press the black and red 
+\f0\b L
+\f1\b0  (load) key. The name of the file is the date and time it was backed up. The backed up preset you load will not be active until you push the Save Preset button and restart.\
+\
+\pard\pardeftab560
+\cf0 {{\NeXTGraphic preferences3backup.png \width10280 \height700 \noorient \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab560
+
+\f3\fs32 \cf0 \
+\pard\pardeftab560
+
+\f1\fs24 \cf0 \
+\
+\
+
+\fs40 Folder Specific Rules\
+
+\fs24 \
+This allows you to make soundfiles that come from certain folders to automatically get their own setting.\
+\
+\pard\pardeftab560
+\cf0 This can be very very useful. For example, I always have a rule that all files from my "Speech" folder is routed to its own channel. Maybe you have music or atmospheres in separate folders and want those files to always go to specific output channels. Be aware that if you use the mixer, that volume only controls the samplers main out. I'm going to make changes to this in the future..\
+\
+\pard\pardeftab560
+\cf0 {{\NeXTGraphic preferences1rules.png \width11680 \height3900 \noorient \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab560
+
+\f3\fs32 \cf0 \
+\pard\pardeftab560
+
+\f1\fs24 \cf0 \
+1. Click 
+\f0\b folder
+\f1\b0  button to specify which folder you want to carry the rule. You have to select any file in that folder. Files from all folders within this folder will also be subject to the rule.\
+\
+2. Click the 
+\f0\b activate settings
+\f1\b0  buttons for the settings you want applied (they turn yellow).\
+\
+3. Click 
+\f0\b edit
+\f1\b0  to edit the settings. This brings up a display below like the key-settings display. Edit the settings to how you want them. \
+\
+
+\f0\b vol
+\f1\b0  - volume slider\
+
+\f0\b loop
+\f1\b0  - loop on / loop off button\
+
+\f0\b mnu
+\f1\b0  - playback menu, choose from piano, shot and toggle\
+
+\f0\b atk
+\f1\b0  - attack time\
+
+\f0\b rls
+\f1\b0  - release time\
+
+\f0\b kill
+\f1\b0  - "killa" button\
+- (disabled)\
+- (disabled)\
+
+\f0\b shot
+\f1\b0  - sh button\
+
+\f0\b pan
+\f1\b0  - panning\
+
+\f0\b out
+\f1\b0  - output button\
+
+\f0\b midi
+\f1\b0  - |--| (work in progress)\
+\
+	{{\NeXTGraphic preferences2rules.png \width10400 \height5800 \noorient \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\
+\
+Note that for the settings to be applied, they have to be set in the settings display below 
+\f2\i and 
+\f1\i0 activated (yellow) in the 
+\f0\b activate settings
+\f1\b0  buttons, 
+\f2\i and
+\f1\i0  lastly:\
+\
+4. Click the 
+\f0\b activate rule
+\f1\b0  button, reading 
+\f0\b off
+\f1\b0 , so that it is green and says 
+\f0\b on
+\f1\b0 .\
+\
+5. And offcourse, click 
+\f0\b Save Preferences
+\f1\b0  in the end to save and restart.\
+\
+\
+
+\fs40 Things to take note of on Folder Specific Rules\
+
+\fs24 \
+
+\f0\b Overriding
+\f1\b0 \
+\
+If you have one rule on a folder, say:\
+
+\f2\i ~/sounds/loops/
+\f1\i0 \
+stored in "Rule 1"\
+and then another rule on a sub-folder of the same folder, say:\
+
+\f2\i ~/sounds/loops/atmos/
+\f1\i0 \
+stored in "Rule 2"\
+then the rules in "Rule 2" will overwrite the ones in "Rule 1" 
+\f2\i if they are applied
+\f1\i0  (yellow).\
+That is, the rules are checked with number 1 first and number 4 last.\
+This can be useful if for example you have a folder of speech and you want all speech to have certain settings, but then have folders withing that speech folder which you want to have additional settings, but still keep some of the settings that all speech has.\
+\
+\
+\
+\
+}

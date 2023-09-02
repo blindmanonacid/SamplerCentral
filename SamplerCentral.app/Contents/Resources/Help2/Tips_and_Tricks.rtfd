@@ -1,0 +1,76 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\fswiss\fcharset0 Helvetica-Oblique;
+}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\deftab560
+\pard\pardeftab560
+
+\f0\b\fs60 \cf0 \expnd0\expndtw0\kerning0
+Tips and Tricks
+\f1\b0 \
+
+\fs32 \
+Packs\
+\
+\pard\pardeftab560
+
+\fs24 \cf0 Organizing soundfiles that are often used together in 'packs' with numbers at the start of the files makes it easy to quickly drag them to keys and they will be in an order that you are used to. Make copies of sounds and put them in a folder called "whateverPack".\
+\
+(image)\
+\
+This is also very useful combined with the "folder rules" explained in Preferences.\
+\
+\
+\pard\pardeftab560
+
+\fs32 \cf0 Tags
+\fs24 \
+\
+Searching for a file can sometimes be difficult and what is the best name anyways? "punch", "hit", "smash", that's all violence. By right clicking on any file(s), scrolling down that menu there's an option called 
+\f0\b Tags... 
+\f1\b0 which lets you add written tags, as many as you want. Round up all the soundfiles that fit in a category and tag them, it makes it a lot easier to find later. Many soundfiles in the collection are tagged but many are not. In the menu in SamplerCentral at the bottom where it says "post tags", if a soundfile is dragged onto it the tags will be written in the post window if it has any.\
+\
+At the moment, if the soundfile has the tag 
+\f0\b Loop
+\f1\b0   (capital "L" !) it will automatically be looped when loaded on a key. I will probably add more of these in the future.\
+\
+\
+
+\fs32 Sustain Pedal
+\fs24 \
+\
+A sustain pedal can be helpful if you run out of fingers.\
+\
+\
+
+\fs32 Ableton
+\fs24 \
+\
+In some versions of ableton it's possible to drag a sound clip straight to a key/slider/knob in SamplerCentral. Make sure to cmd-j on the clip first if it has been edited. As of now (2023) it works in Ableton 10 but may not work in newer versions.\
+\
+\
+
+\fs32 MP3 playback
+\fs24 \
+\
+It 
+\f2\i is possible
+\f1\i0  to play mp3 files with the sampler but it requires a bit of setup. When that is done it's possible to drag mp3 files onto keys/knobs/sliders. The mp3 file will be converted to wav, put in a temporary folder and not saved with the sampler.\
+\
+To set up for mp3 playback we need to use 
+\f0\b homebrew
+\f1\b0  to install 
+\f0\b curl
+\f1\b0  and 
+\f0\b lame
+\f1\b0  binaries.\
+\
+1. Open terminal in MacOS and copy paste this command into it:\
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"\
+2. Push enter and do what it says, it may ask you for password\
+3. When it is finished copy paste this command and press enter:\
+brew install curl\
+4. And the same with this:\
+brew install lame\
+5.Done. Restart SamplerCentral and mp3 files should work.}

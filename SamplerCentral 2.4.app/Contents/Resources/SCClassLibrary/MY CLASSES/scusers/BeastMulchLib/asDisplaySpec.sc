@@ -1,3 +1,0 @@
-+ Nil {
-	displaySpec {^nil.asSpec }
-}
